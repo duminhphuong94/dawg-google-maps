@@ -1,0 +1,41 @@
+---
+#Front Matter Being Initialized Here
+#Do Not Delete
+---
+
+//Imports
+@import "variables.scss";
+
+* {
+  text-decoration: none;
+}
+
+body {
+  font-size: 1.5rem;
+  color: $black;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dawgGoogleMaps {
+  .mainSiteBorder {
+    background: #fafafa;
+  }
+
+  .mainContentBorder {
+    border: 1px solid $black;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+
+

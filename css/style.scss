@@ -1,0 +1,35 @@
+---
+#Front Matter Initialization For Jekyll
+#Do Not Delete This
+---
+
+//Import Details
+@import "variables";
+
+* {
+  outline: none;
+}
+
+body {
+  color: $black;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: #ec0000;
+  font-size: 5rem;
+}
+
+p {
+  font-size: 2.0rem;
+}
