@@ -80,6 +80,12 @@ a {
   clear: both;
 }
 
+.code {
+  background: $paleSilver;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+
 .dawgGoogleMaps {
   .mainSiteBorder {
     background: #fafafa;
@@ -117,12 +123,22 @@ a {
       }
     }
   }
+  .overviewSection {
+    padding: 45px;
+  }
   .infoSection {
     padding: 30px 0;
     .segment {
       padding: 0 15px;
       float: left;
       width: 50%;
+      .embed-maps-iframe {
+        width: 100%;
+        height: 450px;
+        -webkit-box-shadow: 0px 0px 8px -1px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 8px -1px rgba(0,0,0,1);
+        box-shadow: 0px 0px 8px -1px rgba(0,0,0,1);
+      }
     }
   }
   .footerParent {

@@ -1,0 +1,115 @@
+---
+url: "/embed-maps"
+layout: "default-structure"
+title: "Dawg-Google-Maps: Embed Google Maps"
+---
+
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="posContainer">
+    <div class="frameBorder dawgRow">
+      <div class="segment">
+        <h1>Google Maps Embed API</h1>
+        <p>An embed version for placing google maps onto your web-pages without having to code in Javascript.</p>
+        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+      </div>
+      <div class="segment">
+      </div>
+    </div>
+  </div>
+</div>
+<!--Jumbotron Section Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      Image Placement
+    </div>
+    <div class="segment">
+      <h2 class="text-center">Overview</h2>
+      <p>Embed is done with an iframe on your webpage, which carries an <span class="code">src</span> attribute values that finally helps display the map. There are 5 types of modes:</p>
+      <ul class="overviewList">
+        <li>Place Mode [ <span class="code">place</span> ]</li>
+        <li>Directions Mode [ <span class="code">directions</span> ]</li>
+        <li>Search Mode [ <span class="code">search</span> ]</li>
+        <li>View Mode [ <span class="code">view</span> ]</li>
+        <li>StreetView Mode [ <span class="code">streetview</span> ]</li>
+      </ul>
+      <p>An example URL that is required for this kind of API request is <span class="code">https://www.google.com/maps/embed/v1/MODE?key=YOUR_API_KEY&amp;parameters</span>. Refer to <a href="https://developers.google.com/maps/documentation/embed/guide">Google Maps Embed API Guide</a> for further information.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <h3>Embed Maps: Place Mode</h3>
+      <p>Embed a map location onto your webpage with <span class="code">place</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&amp;q=Central+Park+New+York</span>.</p>
+    </div>
+    <div class="segment">
+      <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&q=Central+Park+New+York"></iframe>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&origin=trump+tower+newyork&destination=central+park+newyork"></iframe>
+    </div>
+    <div class="segment">
+      <h3>Embed Maps: Direction Mode</h3>
+      <p>Embed a map location onto your webpage with <span class="code">directions</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin=trump+tower+newyork&destination=central+park+newyork</span>.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <h3>Embed Maps: Search Mode</h3>
+      <p>Embed a map location onto your webpage with <span class="code">search</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/search?key=YOUR_API_KEY&amp;q=indian+restaurants+in+tokyo</span>.</p>
+    </div>
+    <div class="segment">
+      <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&q=indian+restaurants+in+tokyo"></iframe>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=36.1699,-115.1398&zoom=15&maptype=satellite"></iframe>
+    </div>
+    <div class="segment">
+      <h3>Embed Maps: View Mode</h3>
+      <p>Embed a map location onto your webpage with <span class="code">view</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/search?key=YOUR_API_KEY&amp;center=36.1699,-115.1398&amp;zoom=15&amp;maptype=satellite</span>.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <h3>Embed Maps: StreetView Mode</h3>
+      <p>Embed a map location onto your webpage with <span class="code">streetview</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/streetview?key=YOUR_API_KEY&amp;location=29.9773,31.1325&amp;heading=210&amp;pitch=30&amp;fov=35</span>.</p>
+    </div>
+    <div class="segment">
+      <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&location=29.9773,31.1325&heading=210&pitch=30&fov=35"></iframe>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
