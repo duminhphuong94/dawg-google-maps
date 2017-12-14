@@ -1,0 +1,83 @@
+---
+url: "/static-maps"
+layout: "default-structure"
+title: "Dawg-Google-Maps: Google Static Maps API"
+---
+
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="posContainer">
+    <div class="frameBorder dawgRow">
+      <div class="segment">
+        <h1>Google Static Maps API</h1>
+        <p>An embed version for placing google maps onto your web-pages without having to code in Javascript. Please ensure to enabled the <span class="code">Google Static Maps API</span> at <span class="code">https://console.developers.google.com/apis</span> post creating your API key.</p>
+        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+      </div>
+      <div class="segment">
+      </div>
+    </div>
+  </div>
+</div>
+<!--Jumbotron Section Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      Image Placement
+    </div>
+    <div class="segment">
+      <h2 class="text-center">Overview</h2>
+      <p>A Google Static Map is created in response to an HTTP request via a URL, the type of file could be either GIF, PNG or JPEG. The google map image is embedded within an <span class="code">&lt;img&gt;</span> tag A google static maps api url is of the following form: <span class="code">https://maps.googleapis.com/maps/api/staticmap?parameters</span>.</p>
+      <p>Please refer to <a href="https://developers.google.com/maps/documentation/static-maps/" target="_blank">Google Static Maps Documentation</a> for more information.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <h3>Static Maps: Required Parameters</h3>
+      <p>In the example on the showing Moscow, parameters being used to generate these would be <b>Center</b>, <b>Zoom</b>, <b>Size</b> and the respective <b>API Key</b>. The url request to generate the image would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=kremlin+russia&amp;zoom=15&amp;size=1920x450</span>.</p>
+    </div>
+    <div class="segment">
+      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=kremlin+russia&zoom=15&size=1920x450"/>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=grand+canyon+usa&zoom=12&size=1920x450&scale=2"/>
+    </div>
+    <div class="segment">
+      <h3>Static Maps: Scale Parameter</h3>
+      <p>Applied in default value of <span class="code">1</span>, other accepted values for this parameters are <b>2></b> and <b>4 [Available for Google Maps APIs Premium Plan Customers]</b>. This parameter is responsible for developing higher resolution images.</p>
+      <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=grand+canyon+usa&zoom=12&amp;size=1920x450&amp;scale=2</span>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <h3>Static Maps: Format, Maptype and Lanugage</h3>
+      <p>Available formats for Static Maps are <b>JPEG</b>, <b>GIF</b> and <b>PNG</b> types. Maptypes are available in <span class="code">roadmap</span>, <span class="code">satellite</span>, <span class="code">hybrid</span> and <span class="code">terrain</span>. Language support available only for some supported country tiles.</p>
+      <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=new+delhi+india&amp;zoom=12&amp;size=1920x450&amp;scale=2&amp;format=JPEG&amp;maptype=terrain&amp;language=hindi</span></p>
+    </div>
+    <div class="segment">
+      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=new+delhi+india&zoom=12&size=1920x450&scale=2&format=JPEG&maptype=terrain&language=hindi"/>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+
