@@ -80,4 +80,33 @@ title: "Dawg-Google-Maps: Google Static Maps API"
 </div>
 <!--Section Details Ends Here-->
 
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&size=1920x450&markers=color:blue|label:A|cape+town+south+africa&markers=color:black|label:D|durban+south+africa&markers=color:purple|label:B|mossel+bay+south+africa&markers=color:yellow|label:C|port+elizabeth+south+africa"/>
+    </div>
+    <div class="segment">
+      <h3>Static Maps: Map Markers</h3>
+      <p>Markers refers to one or more parameters that defines map pins at set locations. A marker parameter has a set of key-value pairings which could be used, namely <b>size</b>, <b>color</b> and <b>label</b>. Markers also have the capacity to taken in location details.</p>
+      <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;size=1920x450&amp;markers=color:blue|label:A|cape+town+south+africa&amp;markers=color:black|label:D|durban+south+africa&amp;markers=color:purple|label:B|mossel+bay+south+africa&amp;markers=color:yellow|label:C|port+elizabeth+south+africa</span></p>
+      <p>Google Static Maps has an option to help insert custom markers, but over serveral attempts to even have images placed on Google Drive, it doesn't seem to be a reliable feature.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
 
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <h3>Static Maps: Paths</h3>
+      <p>Paths helps connect two or more lines as an overlay on your google maps, where key value pairs for this parameter are separated by a pipe character (<span class="code">|</span>). Optinal path styles include <b>weight</b> (specifies thickness of the path line), <b>color</b> (helps define the color of the path line, <b>fillcolor</b> (for specifying a color value that would be used to fill up a closed loop area, like shown in the example), <b>geodesic</b> ( indicates that the requested path should be interpreted as a geodesic line that follows the curvature of the earth. When false, the path is rendered as a straight line in screen space. Defaults to false).</p>
+      <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=paris+france+&amp;size=1920x450&amp;zoom=8&amp;path=weight:2|color:blue|fillcolor:orange|geodesic:true|<br/>versailles+france|dreux+france|rouen+france|beauvais+france|<br/>saint+denis+france|paris+france|versailles+france</span>.</p>
+    </div>
+    <div class="segment">
+      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=paris+france+&size=1920x450&zoom=8&path=weight:2|color:blue|fillcolor:orange|geodesic:true|versailles+france|dreux+france|rouen+france|beauvais+france|saint+denis+france|paris+france|versailles+france"/>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
