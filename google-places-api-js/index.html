@@ -1,0 +1,75 @@
+---
+url: "/google-places-api-js"
+layout: "default-structure"
+title: "Dawg-Google-Maps: Javascript Places API"
+---
+
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="videoParent placesApiVideoParent">
+    <video autoplay="autoplay" loop muted class="hidden-xs">
+      <source src="{{ site.baseurl }}/assets/videos/ski-video.mp4" type="video/mp4"/>
+      <source src="{{ site.baseurl }}/assets/videos/ski-video.ogg" type="video/ogg"/>
+      <source src="{{ site.baseurl }}/assets/videos/ski-video.webm" type="video/webm"/>
+    </video>
+  </div>
+  <div class="posContainer">
+    <div class="frameBorder dawgRow">
+      <div class="segment">
+        <h1>Google Javascript Places API</h1>
+        <p>All the way from basic map creation to some advanced topics covered on Google Maps Javscript API</p>
+        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Jumbotron Section Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+      <h2 class="text-center">Overview</h2>
+      <p>As mentioned by google, <span class="code">"The Places service is a self-contained library, separate from the main Maps JavaScript API code"</span>. Our HTML document first needs to be initiated with the respective URL, <span class="code">&lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"&gt;&lt;/script&gt;</span>.</p> 
+      <p>The API example(s) shown below are handled on the client-side. Ensure to activate the <span class="code">Google Maps Javascript API</span> and <span class="code">
+        Google Places API Web Service</span> from your API Dashboard.</p>
+      <p>Please refer to <a href="https://developers.google.com/places/javascript/" target="_blank">Google Places API Documentation</a> for more information.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal1">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Places JS API: <span class="subTopic">Let's Start</span></h3>
+      <p>While this may not be mandatory from a learning perspective, but the results made with the help of this API is best understood by generating a map with Javascript. Not sure how? <a href="https://developers.google.com/maps/documentation/javascript/tutorial" title="Redirection to Google Maps JS API Documentation">Click Here</a> to get started.</p>
+      <p>We'll begin by selecting a location or latitude-longitude cooridates. Here, the location is <b>Tokyo</b>, set with lat-long coordinates, which is then initiated into a map image with Javascript. To create a <span class="code">Places Search</span>, we'll need to create a <b>Service Object</b> with <span class="code">new google.maps.places.PlacesService(map)</span>, followed by <span class="code">service.nearbySearch(request, callback)</span>.</p>
+      <p>The <span class="code">request</span> argument is an object and <span class="code">callback</span> refers to a function that would help generate the results of your call. You could then either <span class="code">console.log</span> to view the results on your browser console or <span class="code">create markers</span> to place them on the map itself.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap1"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 1 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal1">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+		</div>
+	</div>
+</div>
+<!--Example 1 Modal Details Ends Here-->

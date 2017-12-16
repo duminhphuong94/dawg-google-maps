@@ -1,10 +1,139 @@
 (function jqueryInit($) {
-  function testInit() {
-    console.log("Document initialized");
+	function restrictSiteScroll() {
+		var siteContainer = $("#mainSiteBorder");
+		var currentScrollPos = $(window).scrollTop();
+		siteContainer.addClass("restrictScroll");
+		siteContainer.scrollTop(currentScrollPos);
+	}
+
+	function destroyRestrictSiteScroll() {
+		var siteContainer = $("#mainSiteBorder");
+		var currentScrollPos = siteContainer.scrollTop();
+		siteContainer.removeClass("restrictScroll");
+		$(window).scrollTop(currentScrollPos);
+	}
+
+  function generalBodyFunctionality() {
+		var IOSStatus = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false);
+		if(IOSStatus) {
+			$("body").addClass("IOSClickableStatus");
+		} 
+
+    $(document).on("keyup", function(event) {
+      if(event.keyCode === 27) {
+        if($(".dawgModalUnit").length > 0) {
+          var dawgModalUnit = $(".dawgModalUnit");
+          dawgModalUnit.each(function(index, thisDawgModal) {
+            if(!$(thisDawgModal).hasClass("hiddenTransform")) {
+              $(thisDawgModal).find(".posContainer").addClass("hiddenTransform");
+              setTimeout(function() {
+                $(thisDawgModal).addClass("hiddenTransform");
+                destroyRestrictSiteScroll();
+              }, 350);
+            }
+          });
+        }
+      }
+    });
+  }
+
+  function toolTipFunctionality() {
+    if($(window).innerWidth() > 1199 && $(".toolTipMessage").length > 0 && $(".sourceCode").length > 0) {
+      $(".sourceCode").on("mouseover", function() {
+        var $this = $(this);
+        $this.parent().find(".toolTipMessage").removeClass("hiddenTransform");
+      });
+
+      $(".sourceCode").on("mouseout", function() {
+        var $this = $(this);
+        $this.parent().find(".toolTipMessage").addClass("hiddenTransform");
+      });
+    }
+  }
+
+  function dawgModalFunctionality() {
+    if($(".sourceCode").length > 0 && $(".dawgModalUnit").length > 0) {
+      var sourceCodeElement = $(".sourceCode");
+			var modalCloser = $(".dawgModalUnit").find(".closeButton");
+      
+			sourceCodeElement.on("click", function() {
+        var $this = $(this);
+        var dataString = $this.attr("data-modalLink");
+        $(dataString).removeClass("hiddenTransform");
+        setTimeout(function() {
+          $(dataString).find(".posContainer").removeClass("hiddenTransform");
+					restrictSiteScroll();
+        }, 350);
+      });
+
+			modalCloser.on("click", function() {	
+				var $this = $(this);
+				$this.parent().find(".posContainer").addClass("hiddenTransform");
+				setTimeout(function() {
+					$this.parent().addClass("hiddenTransform");
+					destroyRestrictSiteScroll();
+				}, 350);
+			});
+
+      $(".dawgModalUnit").on("click", function(event) {
+        var $this = $(this);
+        if($(event.target).hasClass("dawgModalUnit") || $(event.target).hasClass("posContainer")) {
+          $this.find(".closeButton").trigger("click");
+        }
+      });
+    }
+  }
+
+  function googlePlacesLibraryFunc() {
+    if(document.location.href.indexOf("google-places-api-js") > -1) {
+      (function placesExample1() {
+        var location1 = new google.maps.LatLng(35.6895, 139.6917);
+        var map1 = new google.maps.Map(document.getElementById("gMap1"), {
+          center: location1,
+          zoom: 13
+        });
+        var service1 = new google.maps.places.PlacesService(map1);
+        service1.nearbySearch({
+          location: location1,
+          radius: 200,
+          type: ["restaurant"]
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          console.log(status);
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            Array.prototype.forEach.call(results, function(thisValue, index) {
+              createMarker(thisValue);
+            });
+          }
+          else {
+            console.error("Google Places API - Service 1 Error, please check");
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map1,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+
+      (function placesExample2() {
+        var location2;
+      })();
+    }
   }
 
   function centralProcessor() {
-    testInit();
+    generalBodyFunctionality();
+    toolTipFunctionality();
+    dawgModalFunctionality();
+    googlePlacesLibraryFunc();
+
+    $(window).resize(function() {
+      toolTipFunctionality();
+    });
   }
 
   $(document).ready(function() {

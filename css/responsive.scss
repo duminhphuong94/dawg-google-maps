@@ -6,6 +6,14 @@
 //Imports
 @import "variables.scss";
 
+@media only screen and (max-width: 1199px) {
+  .dawgGoogleMaps {
+    .dawgModalUnit {
+      cursor: pointer;
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
 	body {
 		font-size: 1.5rem;

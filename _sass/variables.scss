@@ -11,3 +11,11 @@ $weldonBlue: #7c9eb2;
 $linkBlue: #0886da;
 $headingFont: 'Vollkorn SC', serif;
 $contentFont: 'Roboto', sans-serif;
+
+@mixin transition($type, $duration, $style) {
+  transition: $type, $duration, $style;
+  -webkit-transition: $type, $duration, $style;
+  -moz-transition: $type, $duration, $style;
+  -ms-transition: $type, $duration, $style;
+  -o-transition: $type, $duration, $style;
+}
