@@ -88,6 +88,7 @@ a.refLink {
   background: $paleSilver;
   border-radius: 3px;
   padding: 0 5px;
+	color: $black !important;
 }
 
 .dawgGoogleMaps {
@@ -96,16 +97,54 @@ a.refLink {
     border: 15px solid $black;
     max-width: 1920px;
     margin: 0 auto;
+		position: relative;
+		z-index: 150;
   }
   .jumbotronParent {
     height: 100vh;
     .curtain {
       width: 100%;
       height: 100%;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
+      z-index: 80;
+      background: rgba(49, 62, 70, 0.9);
     }
+    .videoParent {
+      position: fixed;
+      top: 0;
+      left: 0;
+			right: 0;
+			bottom: 0;
+      z-index: 50;
+			overflow: hidden;
+			background: url("{{ site.baseurl }}/assets/images/earth-space.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+      video {
+				position: absolute;
+				top: 0;
+				left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+		.embedPageVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/beach-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.staticPageVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/london-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.streetPageVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/street-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
     .posContainer {
       position: absolute;
       top: 50%;
@@ -119,6 +158,9 @@ a.refLink {
         .segment {
           float: left;
           width: 50%;
+          h1, p {
+            color: $white;
+          }
 					.dawgButton {
 						margin-top: 45px;
 						width: 250px;
@@ -132,6 +174,9 @@ a.refLink {
   }
   .infoSection {
     padding: 30px 0;
+    position: relative;
+    z-index: 150;
+		background: $white;
     .segment {
       padding: 0 15px;
       float: left;
@@ -149,6 +194,8 @@ a.refLink {
   .footerParent {
     padding: 15px;
     background: $black;
+    position: relative;
+    z-index: 150;
     .segment {
       margin-bottom: 30px;
       h5 {
@@ -173,4 +220,30 @@ a.refLink {
       }
     }
   }
+}
+
+@media (min-aspect-ratio: 16/9) {
+	.dawgGoogleMaps {
+		.jumbotronParent {
+			.videoParent {
+				video {
+					top: -100%;
+					height: 300%;
+				}
+			}
+		}
+	}	
+}
+
+@media (max-aspect-ratio: 16/9) {
+	.dawgGoogleMaps {
+		.jumbotronParent {
+			.videoParent {
+				video {
+					width: 300%;
+					left: -100%;
+				}
+			}
+		}
+	}	
 }
