@@ -52,7 +52,7 @@ title: "Dawg-Google-Maps: Javascript Places API"
 			</svg>
 			</span>
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
-      <h3>Google Places JS API: <span class="subTopic">Let's Start</span></h3>
+      <h3>Google Places JS API: <span class="subTopic">Let's Start - Location, Radius and Type</span></h3>
       <p>While this may not be mandatory from a learning perspective, but the results made with the help of this API is best understood by generating a map with Javascript. Not sure how? <a href="https://developers.google.com/maps/documentation/javascript/tutorial" title="Redirection to Google Maps JS API Documentation">Click Here</a> to get started.</p>
       <p>We'll begin by selecting a location or latitude-longitude cooridates. Here, the location is <b>Tokyo</b>, set with lat-long coordinates, which is then initiated into a map image with Javascript. To create a <span class="code">Places Search</span>, we'll need to create a <b>Service Object</b> with <span class="code">new google.maps.places.PlacesService(map)</span>, followed by <span class="code">service.nearbySearch(request, callback)</span>.</p>
       <p>The <span class="code">request</span> argument is an object and <span class="code">callback</span> refers to a function that would help generate the results of your call. You could then either <span class="code">console.log</span> to view the results on your browser console or <span class="code">create markers</span> to place them on the map itself.</p>
@@ -73,3 +73,137 @@ title: "Dawg-Google-Maps: Javascript Places API"
 	</div>
 </div>
 <!--Example 1 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap2"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal2">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Places JS API: <span class="subTopic">Keyword Field &amp; Open Now</span></h3>
+      <p>In this example, we've added another field to the request object called <b>keyword</b> which would help provided a slightly more filtered results for the places search. Here, while still in Tokyo, the request has been placed with a <b>keyword</b> value called <span class="code">russian</span> which should signify restaurant that serve Russian Food.</p>
+      <p>The <b>openNow</b> field also provides an additional level of filter, which takes a <span class="code">Boolean</span> data type.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 2 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal2">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+		</div>
+	</div>
+</div>
+<!--Example 2 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal3">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Places JS API: <span class="subTopic">Min Price Level &amp; Max Price Level</span></h3>
+      <p>The <b>minPriceLevel</b> and <b>maxPriceLevel</b>, have values ranging from 0 (which are most affordable) to 4 (most expensive). For this example, a search has been made with the <b>keyword</b> field bearing the value <span class="code">indian restaurant</span>, along with the <b>minPriceLevel</b> and <b>maxPriceLevel</b> values set at <span class="code">4</span>.</p>
+      <p>The final result(s) signify the most expensive <span class="code">Indian Restaurants</span> present in Tokyo.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap3"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 3 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal3">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+		</div>
+	</div>
+</div>
+<!--Example 3 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap4"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal4">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Places JS API: <span class="subTopic">Name Field</span></h3>
+      <p>The <b>name</b> field helps restrict locations that contain the string value being passed here. In this example, our location is <b>Orlando, Florida</b>, where we've created a search for restaurants with that would bear the name <span class="code">subway</span>. The API would then process this request and display the result(s) as shown in the map.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 4 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal4">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+		</div>
+	</div>
+</div>
+<!--Example 4 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal5">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Places JS API: <span class="subTopic">Rank By</span></h3>
+      <p>The <b>rankBy</b> field has a default value of <span class="code">google.maps.places.RankBy.PROMINENCE</span> which is resposible for sorting out results based on a certain level of <b>Prominence</b>. The location prominence is based on factors like <b>Google's Index</b>, <b>Global Popularity</b> etc.</p>
+      <p>In this example, the <b>rankBy</b> field is given the value of <span class="code">google.maps.places.RankBy.DISTANCE</span>, providing results in an ascending order by their distance from the specified <b>location</b> field. Please note that you cannot specify the <b>bounds</b> or the <b>radius</b> fields for this type of field result.</p>
+      <p>The results for the search in the example map locaiton provided <b>[showing location name values and part of the full list]</b> are:</p>
+      <ul id="rankByResults">
+      </ul>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap5"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 5 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal5">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+		</div>
+	</div>
+</div>
+<!--Example 5 Modal Details Ends Here-->

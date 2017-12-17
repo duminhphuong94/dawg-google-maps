@@ -224,6 +224,7 @@ a.refLink {
       padding: 0 15px;
       float: left;
       width: 50%;
+      position: relative;
       span.sourceCode {
         background: $roseQuartz;
         padding: 4px 4px;
@@ -241,7 +242,7 @@ a.refLink {
       .toolTipMessage {
         position: absolute;
         left: 57px;
-        top: 31px;
+        top: 2px;
         background: $black;
         color: $white;
         padding: 5px;

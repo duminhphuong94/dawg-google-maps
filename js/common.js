@@ -120,7 +120,136 @@
       })();
 
       (function placesExample2() {
-        var location2;
+        var location2 = new google.maps.LatLng(35.6895, 139.6917);
+        var map2 = new google.maps.Map(document.getElementById("gMap2"), {
+          center: location2,
+          zoom: 13
+        });
+        var service2 = new google.maps.places.PlacesService(map2);
+        service2.nearbySearch({
+          location: location2,
+          radius: 600,
+          type: ["restaurant"],
+          keyword: "russian",
+          openNow: true,
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            Array.prototype.forEach.call(results, function(thisValue, index) {
+              createMarker(thisValue);
+            });
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map2,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+      
+      (function placesExample3() {
+        var location3 = new google.maps.LatLng(35.6895, 139.6917);
+        var map3 = new google.maps.Map(document.getElementById("gMap3"), {
+          center: location3,
+          zoom: 13
+        });
+        var service3 = new google.maps.places.PlacesService(map3);
+        service3.nearbySearch({
+          location: location3,
+          radius: 600,
+          type: ["restaurant"],
+          keyword: "indian restaurant",
+          openNow: false,
+          minPriceLevel: 4,
+          maxPriceLevel: 4
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            Array.prototype.forEach.call(results, function(thisValue, index) {
+              createMarker(thisValue);
+            });
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map3,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+      
+      (function placesExample4() {
+        var location4 = new google.maps.LatLng(28.5383, -81.3792);
+        var map4 = new google.maps.Map(document.getElementById("gMap4"), {
+          center: location4,
+          zoom: 15,
+        });
+        var service4 = new google.maps.places.PlacesService(map4);
+        service4.nearbySearch({
+          location: location4,
+          radius: 600,
+          type: ["restaurant"],
+          openNow: false,
+          name: "subway"
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            Array.prototype.forEach.call(results, function(thisValue, index) {
+              createMarker(thisValue);
+            });
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map4,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+      
+      (function placesExample4() {
+        var location5 = new google.maps.LatLng(28.5383, -81.3792);
+        var map5 = new google.maps.Map(document.getElementById("gMap5"), {
+          center: location5,
+          zoom: 15,
+        });
+        var service5 = new google.maps.places.PlacesService(map5);
+        service5.nearbySearch({
+          location: location5,
+          type: ["restaurant"],
+          openNow: false,
+          keyword: "burger",
+          name: "burger",
+          rankBy: google.maps.places.RankBy.DISTANCE,
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            var parentList = $("#rankByResults");
+            Array.prototype.forEach.call(results, function(thisValue, index) {
+              if(index <= 5) {
+                var createThisLi = $("<li></li>");
+                var locationName = thisValue.name;
+                createThisLi.text(thisValue.name).appendTo(parentList);
+                createMarker(thisValue);
+              }
+            });
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map5,
+            position: locationObj.geometry.location
+          });
+        }
       })();
     }
   }
