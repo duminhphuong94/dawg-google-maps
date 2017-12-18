@@ -266,7 +266,7 @@ a.refLink {
         transform: rotateX(-90deg);
         -webkit-transform: rotateX(-90deg);
       }
-      h3 {
+      h2, h3 {
         .subTopic {
           color: $linkBlue;
         }
@@ -282,11 +282,39 @@ a.refLink {
       .googleMapHolder {
         height: 450px;
       }
+      .errorMessage {
+        padding: 5px;
+        background: $errorRed;
+        display: inline-block;
+        border-radius: 3px;
+        span {
+          color: $white;
+          font-size: 1.2rem;
+          display: block;
+        }
+      }
     }
     .overviewSegment {
       float: none;
       width: 100%;
       padding: 30px 150px;
+      .loadMoreButton {
+        width: 170px;
+        display: block;
+        margin: 15px auto 15px;
+      }
+      .objectResultList {
+        margin-top: 15px;
+        padding-left: 15px;
+        li {
+          .resultIcon {
+            display: inline-block;
+            width: 25px;
+            vertical-align: middle;
+            margin-top: -4px;
+          }
+        }
+      }
     }
   }
   .dawgModalUnit {

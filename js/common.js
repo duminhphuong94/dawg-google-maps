@@ -106,7 +106,7 @@
             });
           }
           else {
-            console.error("Google Places API - Service 1 Error, please check");
+            console.error("Google Places API - Service 1 Error, please check", status);
           }
         }
 
@@ -265,7 +265,7 @@
 
         function resultCallback(results, status) {
           if(status === google.maps.places.PlacesServiceStatus.OK) {
-            var listParent = $("#gMap6").parent().next().find(".resultsUI");
+            var listParent = $("#gMap6").parent().parent().find(".resultsUI");
             map6.setCenter(results[0].geometry.location);
             Array.prototype.forEach.call(results, function(locationObj, index) {
               if(index <= 6) {
@@ -280,6 +280,185 @@
         function createMarker(locationObj) {
           var marker = new google.maps.Marker({
             map: map6,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+      
+      (function textSearchRequest2() {
+        var location7 = new google.maps.LatLng(51.5074, -0.1278);
+        var map7 = new google.maps.Map(document.getElementById("gMap7"), {
+          center: location7,
+          zoom: 12
+        });
+
+        var service = new google.maps.places.PlacesService(map7);
+        service.textSearch({
+          query: "mcdonalds restaurant in chennai, tamilnadu",
+          openNow: true
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            var listParent = $("#gMap7").parent().parent().find(".resultsUI");
+            map7.setCenter(results[0].geometry.location);
+            map7.setZoom(11);
+            Array.prototype.forEach.call(results, function(locationObj, index) {
+              if(index <= 6) {
+                createMarker(locationObj);
+                var liElement = $("<li></li>");
+                liElement.html("<b>" + locationObj.name + "</b>" + "-" + locationObj.formatted_address).appendTo(listParent);
+              }
+            });
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map7,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+      
+      (function textSearchRequest3() {
+        var location8 = new google.maps.LatLng(51.5074, -0.1278);
+        var map8 = new google.maps.Map(document.getElementById("gMap8"), {
+          center: location8,
+          zoom: 12
+        });
+
+        var service = new google.maps.places.PlacesService(map8);
+        service.textSearch({
+          query: "Hotels in Florida",
+          type: ["restaurant"],
+          minPriceLevel: 3,
+          maxPriceLevel: 4,
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            var listParent = $("#gMap8").parent().parent().find(".resultsUI");
+            map8.setCenter(results[0].geometry.location);
+            map8.setZoom(11);
+            Array.prototype.forEach.call(results, function(locationObj, index) {
+              if(index <= 6) {
+                createMarker(locationObj);
+                var liElement = $("<li></li>");
+                liElement.html("<b>" + locationObj.name + "</b>" + "-" + locationObj.formatted_address).appendTo(listParent);
+              }
+            });
+          }
+          else {
+            console.error("Service Status Error: " + status);
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map8,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+
+      (function placesResultsObject() {
+        var location9 = new google.maps.LatLng(36.1699, -115.1398);
+        var map9 = new google.maps.Map(document.getElementById("gMap9"), {
+          center: location9,
+          zoom: 13
+        });
+        var service = new google.maps.places.PlacesService(map9);
+        service.textSearch({
+          query: "Caesars Place, Las Vegas NV",
+        }, resultCallback);
+
+        function resultCallback(result, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            createMarker(result[0]);
+            map9.setCenter(result[0].geometry.location);
+            map9.setZoom(18);
+            var listParent = $("#gMap9").parent().find(".objectResultList");
+      
+            var nameLi = $("<li></li>").html("<b>Name:</b> " + result[0].name);
+            nameLi.appendTo(listParent);
+
+            var addressLi = $("<li></li>").html("<b>Address:</b> " + result[0].formatted_address);
+            addressLi.appendTo(listParent);
+
+            var latLngLi = $("<li></li>").html("<b>Latitude-Longitude Coordinates:</b> " + result[0].geometry.location.lat() + "-" + result[0].geometry.location.lng());
+            latLngLi.appendTo(listParent);
+
+            var iconLi = $("<li></li>").html("<b>Icon:</b> " + "<img src=" + result[0].icon + " class='img-responsive resultIcon' alt='icon' title='icon'/>");
+            iconLi.appendTo(listParent);
+
+            var ratingLi = $("<li></li>").html("<b>Rating</b> " + result[0].rating);
+            ratingLi.appendTo(listParent);
+
+            var placeIdLi = $("<li></li>").html("<b>Place_ID:</b> " + result[0].place_id);
+            placeIdLi.appendTo(listParent);
+
+            var typesArrayString = result[0].types;
+            var typesString = "";
+            Array.prototype.forEach.call(typesArrayString, function(stringValue, q) {
+              typesString += (typesString === "") ? stringValue : ", " + stringValue;
+            });
+            var typesLi = $("<li></li>").html("<b>Type</b> " + typesString);
+            typesLi.appendTo(listParent);
+          }
+          else {
+            console.error("Service Request Error", status);
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map9,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+      
+      (function placesPaginationHandling() {
+        var location10 = new google.maps.LatLng(36.1699, -115.1398);
+        var map10 = new google.maps.Map(document.getElementById("gMap10"), {
+          center: location10,
+          zoom: 13
+        });
+        var service = new google.maps.places.PlacesService(map10);
+        service.textSearch({
+          query: "Pawn Shops in Las Vegas, NV"
+        }, resultCallback);
+
+        function resultCallback(result, status, pagination) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            console.log(result);
+            console.log(pagination);
+            var listParent = $("#gMap10").parent().find(".objectResultList");
+            Array.prototype.forEach.call(result, function(thisObj, index) {
+              createMarker(thisObj);
+              var liElement = $("<li></li>").html("<b>Establishment No " + index + ":</b> " + thisObj.name + " | " + thisObj.formatted_address);
+              liElement.appendTo(listParent);
+            });
+            if(pagination.hasNextPage) {
+              $("#gMap10").parent().find(".loadMoreButton").on("click", function() {
+                console.log("next page");
+                $("#gMap10").parent().find(".errorMessage").addClass("hide");
+                pagination.nextPage();
+              });
+            }
+          }
+          else {
+            var errorElement = $("#gMap10").parent().find(".errorMessage");
+            errorElement.find("span").text("Error Message from API Request Made: " + "Service Request Error - " + status);
+            errorElement.removeClass("hide");
+            console.error("Service Request Error", status);
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map10,
             position: locationObj.geometry.location
           });
         }
