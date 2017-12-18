@@ -86,21 +86,20 @@
 
   function googlePlacesLibraryFunc() {
     if(document.location.href.indexOf("google-places-api-js") > -1) {
-      (function placesExample1() {
+      (function nearbySearchRequest1() {
         var location1 = new google.maps.LatLng(35.6895, 139.6917);
         var map1 = new google.maps.Map(document.getElementById("gMap1"), {
           center: location1,
           zoom: 13
         });
-        var service1 = new google.maps.places.PlacesService(map1);
-        service1.nearbySearch({
+        var service = new google.maps.places.PlacesService(map1);
+        service.nearbySearch({
           location: location1,
           radius: 200,
           type: ["restaurant"]
         }, resultCallback);
 
         function resultCallback(results, status) {
-          console.log(status);
           if(status === google.maps.places.PlacesServiceStatus.OK) {
             Array.prototype.forEach.call(results, function(thisValue, index) {
               createMarker(thisValue);
@@ -119,14 +118,14 @@
         }
       })();
 
-      (function placesExample2() {
+      (function nearbySearchRequest2() {
         var location2 = new google.maps.LatLng(35.6895, 139.6917);
         var map2 = new google.maps.Map(document.getElementById("gMap2"), {
           center: location2,
           zoom: 13
         });
-        var service2 = new google.maps.places.PlacesService(map2);
-        service2.nearbySearch({
+        var service = new google.maps.places.PlacesService(map2);
+        service.nearbySearch({
           location: location2,
           radius: 600,
           type: ["restaurant"],
@@ -150,14 +149,14 @@
         }
       })();
       
-      (function placesExample3() {
+      (function nearbySearchRequest3() {
         var location3 = new google.maps.LatLng(35.6895, 139.6917);
         var map3 = new google.maps.Map(document.getElementById("gMap3"), {
           center: location3,
           zoom: 13
         });
-        var service3 = new google.maps.places.PlacesService(map3);
-        service3.nearbySearch({
+        var service = new google.maps.places.PlacesService(map3);
+        service.nearbySearch({
           location: location3,
           radius: 600,
           type: ["restaurant"],
@@ -183,14 +182,14 @@
         }
       })();
       
-      (function placesExample4() {
+      (function nearbySearchRequest4() {
         var location4 = new google.maps.LatLng(28.5383, -81.3792);
         var map4 = new google.maps.Map(document.getElementById("gMap4"), {
           center: location4,
           zoom: 15,
         });
-        var service4 = new google.maps.places.PlacesService(map4);
-        service4.nearbySearch({
+        var service = new google.maps.places.PlacesService(map4);
+        service.nearbySearch({
           location: location4,
           radius: 600,
           type: ["restaurant"],
@@ -214,14 +213,14 @@
         }
       })();
       
-      (function placesExample4() {
+      (function nearbySearchRequest5() {
         var location5 = new google.maps.LatLng(28.5383, -81.3792);
         var map5 = new google.maps.Map(document.getElementById("gMap5"), {
           center: location5,
           zoom: 15,
         });
-        var service5 = new google.maps.places.PlacesService(map5);
-        service5.nearbySearch({
+        var service = new google.maps.places.PlacesService(map5);
+        service.nearbySearch({
           location: location5,
           type: ["restaurant"],
           openNow: false,
@@ -247,6 +246,40 @@
         function createMarker(locationObj) {
           var marker = new google.maps.Marker({
             map: map5,
+            position: locationObj.geometry.location
+          });
+        }
+      })();
+
+      (function textSearchRequest1() {
+        var location6 = new google.maps.LatLng(51.5074, -0.1278);
+        var map6 = new google.maps.Map(document.getElementById("gMap6"), {
+          center: location6,
+          zoom: 12
+        });
+
+        var service = new google.maps.places.PlacesService(map6);
+        service.textSearch({
+          query: "indian restaurants in paris",
+        }, resultCallback);
+
+        function resultCallback(results, status) {
+          if(status === google.maps.places.PlacesServiceStatus.OK) {
+            var listParent = $("#gMap6").parent().next().find(".resultsUI");
+            map6.setCenter(results[0].geometry.location);
+            Array.prototype.forEach.call(results, function(locationObj, index) {
+              if(index <= 6) {
+                createMarker(locationObj);
+                var liElement = $("<li></li>");
+                liElement.text(locationObj.name).appendTo(listParent);
+              }
+            });
+          }
+        }
+
+        function createMarker(locationObj) {
+          var marker = new google.maps.Marker({
+            map: map6,
             position: locationObj.geometry.location
           });
         }
