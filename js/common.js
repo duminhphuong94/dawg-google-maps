@@ -1,16 +1,20 @@
 (function jqueryInit($) {
 	function restrictSiteScroll() {
 		var siteContainer = $("#mainSiteBorder");
-		var currentScrollPos = $(window).scrollTop();
+		var currentScrollPos = 0;
+	  currentScrollPos = $(window).scrollTop();
 		siteContainer.addClass("restrictScroll");
-		siteContainer.scrollTop(currentScrollPos);
+		siteContainer.scrollTop(0);
+    if(siteContainer.scrollTop() !== currentScrollPos) {
+      siteContainer.scrollTop(currentScrollPos);
+    }
 	}
 
 	function destroyRestrictSiteScroll() {
 		var siteContainer = $("#mainSiteBorder");
-		var currentScrollPos = siteContainer.scrollTop();
+		var YScrollPos = siteContainer.scrollTop();
 		siteContainer.removeClass("restrictScroll");
-		$(window).scrollTop(currentScrollPos);
+		$(window).scrollTop(YScrollPos);
 	}
 
   function generalBodyFunctionality() {
@@ -41,7 +45,6 @@
     var menuParent = $("#dawgNavParent");
     var menuButton = menuParent.find("#menuButton");
     var siteModal = $("#dawgMenuModal");
-    var siteModalCloser = siteModal.find(".closeButton");
     var menuDropDownLi = siteModal.find(".dropdownItem");
 
     menuButton.on("click", function() {
@@ -54,15 +57,6 @@
       }, 350);
     });
   
-    siteModalCloser.on("click", function() {
-      var $this = $(this);
-      $this.parent().find(".posContainer").addClass("hiddenTransform");
-      setTimeout(function() {
-        $this.parent().addClass("hiddenTransform");
-        destroyRestrictSiteScroll();
-      }, 350);
-    });
-
     menuDropDownLi.on("click", function() {
       menuDropDownLi.find("ul").slideUp(350);
       var $this = $(this);
@@ -85,7 +79,7 @@
   }
 
   function dawgModalFunctionality() {
-    if($(".sourceCode").length > 0 && $(".dawgModalUnit").length > 0) {
+    if($(".dawgModalUnit").length > 0) {
       var sourceCodeElement = $(".sourceCode");
 			var modalCloser = $(".dawgModalUnit").find(".closeButton");
       

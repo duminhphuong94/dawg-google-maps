@@ -156,27 +156,13 @@ a.refLink {
       svg {
         width: 25px;
       }
-      .siteName {
-        color: $white;
-        font-size: 3rem;
-        font-family: $headingFont;
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: -4px;
-        word-spacing: 5px;
-        font-weight: 700;
-      }
-      .siteLogo {
-        vertical-align: middle;
-        margin-top: -8px;
-      }
       .dawgButton {
         background: transparent;
         border-color: transparent;
         width: 30px;
         height: 30px;
         display: block;
-        margin: 0 15px 0 auto;
+        margin: -2px 15px 0 auto;
         padding: 0;
       }
     }
@@ -468,6 +454,9 @@ a.refLink {
   }
   .dawgMenuModal {
     background: $white;
+    @include transition(all, 0.25s, linear);
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
     .posContainer {
       max-width: 450px;
       .modalContent {
