@@ -37,6 +37,39 @@
     });
   }
 
+  function siteMenuFunctionality() {
+    var menuParent = $("#dawgNavParent");
+    var menuButton = menuParent.find("#menuButton");
+    var siteModal = $("#dawgMenuModal");
+    var siteModalCloser = siteModal.find(".closeButton");
+    var menuDropDownLi = siteModal.find(".dropdownItem");
+
+    menuButton.on("click", function() {
+      var $this = $(this);
+      var dataString = $this.attr("data-modalLink");
+      $(dataString).removeClass("hiddenTransform");
+      setTimeout(function() {
+        $(dataString).find(".posContainer").removeClass("hiddenTransform");
+        restrictSiteScroll();
+      }, 350);
+    });
+  
+    siteModalCloser.on("click", function() {
+      var $this = $(this);
+      $this.parent().find(".posContainer").addClass("hiddenTransform");
+      setTimeout(function() {
+        $this.parent().addClass("hiddenTransform");
+        destroyRestrictSiteScroll();
+      }, 350);
+    });
+
+    menuDropDownLi.on("click", function() {
+      menuDropDownLi.find("ul").slideUp(350);
+      var $this = $(this);
+      $this.find("ul").slideDown(350);
+    });
+  }
+
   function toolTipFunctionality() {
     if($(window).innerWidth() > 1199 && $(".toolTipMessage").length > 0 && $(".sourceCode").length > 0) {
       $(".sourceCode").on("mouseover", function() {
@@ -491,7 +524,6 @@
           });
         }
       })();
-      */
 
       (function placesDetailHandling() {
         var location11 = new google.maps.LatLng(19.0760, 72.8777);
@@ -537,11 +569,13 @@
           });
         }
       })();
+      */
     }
   }
 
   function centralProcessor() {
     generalBodyFunctionality();
+    siteMenuFunctionality();
     toolTipFunctionality();
     dawgModalFunctionality();
     googlePlacesLibraryFunc();

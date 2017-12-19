@@ -41,6 +41,22 @@ h4 {
   font-size: 2.5rem;
 }
 
+div {
+  box-sizing: border-box;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+}
+
+a.refLink {
+  color: $black;
+}
+
+.positionRelative {
+  position: relative;
+}
+
 .dawgButton {
 	height: 55px;
 	padding: 15px;
@@ -64,22 +80,6 @@ h4 {
 	color: $black;
 }
 
-div {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-a.refLink {
-  color: $black;
-}
-
-.positionRelative {
-  position: relative;
-}
-
 .dawgRow:before, .dawgRow:after {
   display: table;
   content: "";
@@ -93,11 +93,6 @@ a.refLink {
   border-radius: 3px;
   padding: 0 5px;
 	color: $black !important;
-}
-
-.dawgModalOpen {
-  height: 100%;
-  overflow: hidden;
 }
 
 .closeButton {
@@ -137,6 +132,54 @@ a.refLink {
     width: 100%;
     height: 100%;
     overflow: hidden;
+  }
+  .dawgNavParent {
+    background: $black;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 100%;
+    max-width: calc(100% - 30px);
+    z-index: 1000;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.6);
+    .segment {
+      width: 50%;
+      float: left;
+      padding: 15px;
+      color: $white;
+      height: 60px;
+      svg {
+        width: 25px;
+      }
+      .siteName {
+        color: $white;
+        font-size: 3rem;
+        font-family: $headingFont;
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -4px;
+        word-spacing: 5px;
+        font-weight: 700;
+      }
+      .siteLogo {
+        vertical-align: middle;
+        margin-top: -8px;
+      }
+      .dawgButton {
+        background: transparent;
+        border-color: transparent;
+        width: 30px;
+        height: 30px;
+        display: block;
+        margin: 0 15px 0 auto;
+        padding: 0;
+      }
+    }
   }
   .jumbotronParent {
     height: 100vh;
@@ -423,6 +466,73 @@ a.refLink {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
   }
+  .dawgMenuModal {
+    background: $white;
+    .posContainer {
+      max-width: 450px;
+      .modalContent {
+        background: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        .mainMenuList {
+          li {
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: $headingFont;
+            svg {
+              width: 18px;
+              vertical-align: middle;
+              margin-top: -4px;
+              margin-right: 5px;
+            }
+            .smallText {
+              font-size: 1.3rem;
+              font-family: $contentFont;
+              margin-top: -3px;
+              padding-left: 25px;
+              color: $weldonBlue;
+              display: block;
+            }
+          }
+          .menuItem {
+            a {
+              color: $black;
+            }
+          }
+        }
+        .dropdownItem {
+          color: $black;
+          ul {
+            padding-left: 45px;
+            margin-top: 10px;
+            li {
+              font-size: 1.6rem;
+              margin-bottom: 5px;
+              a {
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dawgMenuModal.hiddenTransform {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -100px;
+    overflow: visible;
+    opacity: 0;
+    bottom: auto;
+    left: auto;
+    border-radius: 50%;
+    transform: none;
+    -webkit-transform: none;
+  }
   .footerParent {
     padding: 15px;
     background: $black;
@@ -444,10 +554,21 @@ a.refLink {
       }
       .socialList {
         margin-top: 10px;
+        text-align: right;
         li {
+          display: inline-block;
+          margin-right: 10px;
           img {
             width: 40px;
           }
+        }
+        li:nth-child(2) {
+          img {
+            width: 80px;
+          }
+        }
+        li:last-child {
+          margin-right: 0;
         }
       }
     }

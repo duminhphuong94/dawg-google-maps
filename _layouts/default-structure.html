@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{{ page.title }}</title>
+    <link href="{{ site.baseurl }}/assets/images/compass.svg" rel="shortcut icon" type="image/svg"/>
 
     <!-- Bootstrap -->
     <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +22,268 @@
   </head>
   <body class="dawgGoogleMaps">
     <div class="mainSiteBorder" id="mainSiteBorder">
+      <nav>
+        <div class="dawgNavParent dawgRow" id="dawgNavParent">
+          <div class="segment">
+           	<?xml version="1.0" encoding="iso-8859-1"?>
+						<svg class="siteLogo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+							<path style="fill:#2EA9D3;" d="M256,0c141.384,0,256,114.616,256,256S397.384,512,256,512S0,397.384,0,256S114.616,0,256,0z"/>
+							<path style="fill:#EFEFEF;" d="M256,40.96c118.764,0,215.04,96.282,215.04,215.04c0,118.764-96.276,215.04-215.04,215.04
+								S40.96,374.764,40.96,256C40.96,137.242,137.236,40.96,256,40.96z"/>
+							<path style="fill:#CCD0D2;" d="M256,158.72c-53.724,0-97.28,43.556-97.28,97.28c0,53.729,43.556,97.28,97.28,97.28
+								s97.28-43.551,97.28-97.28C353.28,202.276,309.724,158.72,256,158.72z M256,343.04c-48.072,0-87.04-38.968-87.04-87.04
+								s38.968-87.04,87.04-87.04s87.04,38.968,87.04,87.04S304.072,343.04,256,343.04z"/>
+							<path style="fill:#BF392B;" d="M373.33,138.834c7.48,7.465-82.145,137.472-89.615,144.947c-7.475,7.47-137.38,97.213-145.044,89.554
+								c-7.501-7.496,82.376-137.702,89.615-144.947C235.525,221.148,365.45,130.959,373.33,138.834L373.33,138.834z"/>
+							<path style="fill:#CCD0D2;" d="M256,87.04c-5.652,0-10.24,4.588-10.24,10.24s4.588,10.24,10.24,10.24
+								c5.652,0,10.24-4.588,10.24-10.24S261.652,87.04,256,87.04z M256,404.48c-5.652,0-10.24,4.588-10.24,10.24
+								c0,5.658,4.588,10.24,10.24,10.24c5.652,0,10.24-4.582,10.24-10.24C266.24,409.068,261.652,404.48,256,404.48z M414.72,245.76
+								c-5.652,0-10.24,4.588-10.24,10.24c0,5.658,4.588,10.24,10.24,10.24c5.652,0,10.24-4.582,10.24-10.24
+								C424.96,250.348,420.372,245.76,414.72,245.76z M97.28,245.76c-5.652,0-10.24,4.588-10.24,10.24c0,5.658,4.588,10.24,10.24,10.24
+								s10.24-4.582,10.24-10.24C107.52,250.348,102.932,245.76,97.28,245.76z M360.991,360.991c-3.999,3.999-3.999,10.486,0,14.484
+								c3.999,3.994,10.486,3.994,14.484,0c3.994-3.999,3.994-10.486,0-14.484C371.476,356.992,364.989,356.992,360.991,360.991z
+								 M136.525,136.53c-3.994,3.999-3.994,10.481,0,14.484c3.999,3.999,10.486,3.999,14.484,0c3.999-3.999,3.999-10.481,0-14.484
+								C147.011,132.526,140.523,132.526,136.525,136.53z"/>
+							<path style="fill:#E2574C;" d="M285.481,281.697c14.474-18.161,94.956-135.767,87.849-142.858
+								c-7.685-7.68-131.384,77.865-144.225,88.827L285.481,281.697L285.481,281.697z"/>
+							<path style="fill:#C64D41;" d="M228.285,228.388c-7.168,7.168-95.278,134.799-89.748,144.609L372.89,138.65
+								C362.092,133.299,235.433,221.24,228.285,228.388z"/>
+							<path style="fill:#E5685E;" d="M229.105,227.661l27.965,26.803L372.89,138.65C362.358,133.432,241.782,216.842,229.105,227.661z"/>
+							<path style="fill:#EFEFEF;" d="M256,240.64c8.484,0,15.36,6.876,15.36,15.36s-6.876,15.36-15.36,15.36s-15.36-6.876-15.36-15.36
+								S247.516,240.64,256,240.64z"/>
+							<path style="fill:#AD3427;" d="M256,271.36c-8.484,0-15.36-6.876-15.36-15.36c0-2.924,0.86-5.632,2.278-7.962
+								c-4.419,2.698-7.398,7.526-7.398,13.082c0,8.484,6.876,15.36,15.36,15.36c5.56,0,10.383-2.98,13.082-7.398
+								C261.632,270.5,258.924,271.36,256,271.36z"/>
+							<path style="fill:#D7D7D7;" d="M256,40.96c-63.288,0-120.187,27.351-159.534,70.866C134.605,77.332,185.165,56.32,240.64,56.32
+								c118.764,0,215.04,96.282,215.04,215.04c0,55.475-21.013,106.035-55.506,144.174C443.689,376.187,471.04,319.288,471.04,256
+								C471.04,137.242,374.764,40.96,256,40.96L256,40.96z"/>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+							<g>
+							</g>
+						</svg> 
+						<span class="siteName">DAWG Google Maps</span>
+          </div>
+          <div class="segment">
+						<button class="btn btn-default dawgButton" id="menuButton" data-modalLink="#dawgMenuModal">
+							<?xml version="1.0" encoding="iso-8859-1"?>
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 73.168 73.168" style="enable-background:new 0 0 73.168 73.168;" xml:space="preserve">
+								<g>
+									<g id="Navigation">
+										<g>
+											<path d="M4.242,14.425h64.684c2.344,0,4.242-1.933,4.242-4.324c0-2.385-1.898-4.325-4.242-4.325H4.242     C1.898,5.776,0,7.716,0,10.101C0,12.493,1.898,14.425,4.242,14.425z M68.926,32.259H4.242C1.898,32.259,0,34.2,0,36.584     c0,2.393,1.898,4.325,4.242,4.325h64.684c2.344,0,4.242-1.933,4.242-4.325C73.168,34.2,71.27,32.259,68.926,32.259z      M68.926,58.742H4.242C1.898,58.742,0,60.683,0,63.067c0,2.393,1.898,4.325,4.242,4.325h64.684c2.344,0,4.242-1.935,4.242-4.325     C73.168,60.683,71.27,58.742,68.926,58.742z" fill="#FFFFFF"/>
+										</g>
+									</g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+								<g>
+								</g>
+							</svg>
+						</button>
+          </div>
+        </div>
+      </nav>
+
+			<div class="dawgModalUnit dawgMenuModal hiddenTransform" id="dawgMenuModal">
+				<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+				<div class="posContainer hiddenTransform">
+					<div class="modalContent">
+						<ul class="list-unstyled mainMenuList">
+							<li class="menuItem">
+								<a href="{{ site.baseurl }}/">
+									<?xml version="1.0" encoding="iso-8859-1"?>
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+										<g>
+											<g>
+												<path d="M256,0C161.896,0,85.333,76.563,85.333,170.667c0,28.25,7.063,56.26,20.49,81.104L246.667,506.5    c1.875,3.396,5.448,5.5,9.333,5.5s7.458-2.104,9.333-5.5l140.896-254.813c13.375-24.76,20.438-52.771,20.438-81.021    C426.667,76.563,350.104,0,256,0z M256,256c-47.052,0-85.333-38.281-85.333-85.333c0-47.052,38.281-85.333,85.333-85.333    s85.333,38.281,85.333,85.333C341.333,217.719,303.052,256,256,256z" fill="#D80027"/>
+											</g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+									</svg>
+									Home
+									<span class="smallText">This is where things all begin. Get a snapshot about what this project is about.</span>
+								</a>
+							</li>
+							<li class="dropdownItem">
+								<?xml version="1.0" encoding="iso-8859-1"?>
+								<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 viewBox="0 0 124 124" style="enable-background:new 0 0 124 124;" xml:space="preserve">
+									<g>
+										<path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
+										<path d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
+										<path d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+									<g>
+									</g>
+								</svg>
+								Embed Style Maps
+                <span class="smallText">Absolutely easy ways that you can place a google map(s) onto your website</span>
+								<ul class="list-unstyled" style="display:none;">
+									<li><a href="{{ site.baseurl }}/embed-maps/">Google Embed Maps API</a></li>
+									<li><a href="{{ site.baseurl }}/static-maps/">Google Static Maps API</a></li>
+									<li><a href="{{ site.baseurl }}/street-view/">Google Street View Image API</a></li>
+								</ul>
+							</li>
+							<li class="menuItem">
+                <a href="{{ site.baseurl }}/google-places-api-js/">
+									<?xml version="1.0" encoding="iso-8859-1"?>
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+										<g>
+											<g>
+												<path d="M256,0C161.896,0,85.333,76.563,85.333,170.667c0,28.25,7.063,56.26,20.49,81.104L246.667,506.5    c1.875,3.396,5.448,5.5,9.333,5.5s7.458-2.104,9.333-5.5l140.896-254.813c13.375-24.76,20.438-52.771,20.438-81.021    C426.667,76.563,350.104,0,256,0z M256,256c-47.052,0-85.333-38.281-85.333-85.333c0-47.052,38.281-85.333,85.333-85.333    s85.333,38.281,85.333,85.333C341.333,217.719,303.052,256,256,256z" fill="#006DF0"/>
+											</g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+									</svg>
+                  Google Places API JS
+                  <span class="smallText">Interested in knowing how to get information about places on your google map?</span>
+                </a>
+              </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
       {{ content }}
       
       <!--Footer Details Starts Here-->
@@ -38,6 +301,7 @@
             <div class="col-xs-12 col-sm-4 segment">
               <ul class="list-unstyled socialList">
                 <li><a href="#" target="_blank"><img src="{{ site.baseurl }}/assets/images/github-mark.png" class="img-responsive" alt="Sricharan Krishnan" title="https://github.com/sricharankrishnan"/></a></li>
+                <li><a href="#" target="_blank"><img src="{{ site.baseurl }}/assets/images/jekyll-icon.png" class="img-responsive" alt="Jekyll" title="Powered By Jekyll"/></a></li>
               </ul>
             </div>
             <div class="clearfix hidden-xs"></div>
