@@ -361,6 +361,10 @@ title: "Dawg-Google-Maps: Javascript Places API"
       <div id="gMap11" class="googleMapHolder"></div>
       <button class="btn btn-default dawgButton loadMoreButton" type="button">Load More</button>
       <div class="errorMessage hide"><span></span></div>
+      <div class="paginationDiv" id="placesDetailedDiv">
+        <div class="bodySegment dawgRow">
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -394,3 +398,33 @@ title: "Dawg-Google-Maps: Javascript Places API"
 </div>
 <!--Border Box Append To Body Segment of Pagination Div-->
 
+<!--Places Details Border Box Clone Starts Here-->
+<div class="borderBox hide" id="placesBorderBoxClone">
+  <div class="content">
+    <div class="contentHeading">
+      <img src="https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png" class="img-responsive headerIcon" alt="Icon" title="Icon"/>
+      <h4 class="establishmentName">Establishment Heading Name</h4>
+      <hr>
+      <p class="openStatus">Closed</p>
+    </div>
+    <div class="contentBody">
+      <p class="address">3570 S Las Vegas Blvd, Las Vegas, NV 89109, United States</p>
+      <p><b>Latitude-Longitude:</b> <span class="latlngValue">36.11616850000001--115.17449899999997</span>
+      <p><b>Categorized As:</b> <span class="typesValue">One, Two, Three</span></p>
+      <p><b>Rating:</b> <span class="ratingValue">4.5</span></p>
+    </div>
+  </div>
+</div>
+<!--Places Details Border Box Clone Ends Here-->
+
+<!--Review Parent Clone Starts Here-->
+<div class="reviewParent hide" id="reviewParentClone">
+  <img src="https://lh3.googleusercontent.com/-7pZ6aYErRrg/AAAAAAAAAAI/AAAAAAAADjs/MYAo5bzvX4I/s128-c0x00000000-cc-rp-mo-ba6/photo.jpg" class="img-responsive center-block profilePhoto"/>
+  <h4>Author Name: <span class="authorName"></span></h4>
+  <hr>
+  <p><b>Language:</b> <span class="authorLanguage"></span></p>
+  <p><b>Author Rating:</b> <span class="authorRating"></span></p>
+  <p><b>When Was This Rating Done?: <br/></b><span class="authorTimeStamp"></span></p>
+  <p><b>Rating Description: <br/></b><span class="authorDescription"></span></p>
+</div>
+<!--Review Parent Clone Ends Here-->

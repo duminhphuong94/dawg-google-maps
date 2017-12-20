@@ -519,6 +519,7 @@
         }
       })();
 
+      */
       (function placesDetailHandling() {
         var location11 = new google.maps.LatLng(19.0760, 72.8777);
         var map11 = new google.maps.Map(document.getElementById("gMap11"), {
@@ -528,6 +529,7 @@
         var requestObject = {
           query: "Taj Mahal Palace and Towers hotel, Mumbai",
         };
+
         var service = new google.maps.places.PlacesService(map11);
         service.textSearch(requestObject, requestCallBack);
         
@@ -540,6 +542,7 @@
               service.getDetails({
                 placeId: locationObj.place_id
               }, processGooglePlaceId);
+              createMarker(locationObj);
             });
           }
           else {
@@ -548,8 +551,59 @@
         }
 
         function processGooglePlaceId(result, status) {
+          var parentElement = $("#placesDetailedDiv");
           if(status === google.maps.places.PlacesServiceStatus.OK) {
-            console.log(result);
+            var borderBoxClone = $("#placesBorderBoxClone").clone();
+            borderBoxClone.find(".establishmentName").text(result.name);
+            borderBoxClone.find(".headearIcon").attr("src", result.icon);
+           
+            if(result.opening_hours) {
+              var openString = (result.opening_hours.open_now) ? "Open" : "Closed";
+              if(openString === "Open") {
+                borderBoxClone.find(".openStatus").text(openString);
+              }
+              else {
+                borderBoxClone.find(".openStatus").addClass("closedStatus").text(openString);
+              }
+            }
+
+            borderBoxClone.find(".address").text(result.formatted_address);
+            borderBoxClone.find(".latlngValue").text(result.geometry.location.lat() + " - " + result.geometry.location.lng());
+            var typeString = "";
+            Array.prototype.forEach.call(result.types, function(typeData, index) {
+              typeString += (typeString === "") ? typeData : " ," + typeData;
+            });
+            borderBoxClone.find(".typesValue").text(typeString);
+            borderBoxClone.find(".ratingValue").text(result.rating);
+            borderBoxClone.find(".intPhoneNumber").text(result.international_phone_number);
+            borderBoxClone.find(".vicinityName").text(result.vicinity);
+            borderBoxClone.find(".websiteUrl").attr("href", result.website);
+            borderBoxClone.find(".utcOffsetData").text(result.utc_offset);
+
+            Array.prototype.forEach.call(result.reviews, function(reviewObj, index) {
+              var reviewClone = $("#reviewParentClone").clone();
+              reviewClone.find(".profilePhoto").attr("src", reviewObj.profile_photo_url);
+              reviewClone.find(".authorName").text(reviewObj.author_name);
+              reviewClone.find(".authorLanguage").text(reviewObj.language);
+              reviewClone.find(".authorRating").text(reviewObj.rating);
+    
+              var monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+              var timeStamp = new Date(reviewObj.time * 1000);
+              var thisDate = timeStamp.getDate();
+              var thisMonth = monthArray[timeStamp.getMonth()];
+              var thisYear = timeStamp.getFullYear();
+              var thisHours = timeStamp.getHours();
+              var thisMinutes = timeStamp.getMinutes();
+              var thisSeconds = timeStamp.getSeconds();
+              var timeString = thisDate + "-" + thisMonth + "-" + thisYear + " @ " + thisHours + ":" + thisMinutes + ":" + thisSeconds + "hrs"; 
+              reviewClone.find(".authorTimeStamp").text(timeString + " " + "(" + reviewObj.relative_time_description + ")");
+              reviewClone.find(".authorDescription").text(reviewObj.text);
+              reviewClone.removeClass("hide").removeAttr("id");
+              reviewClone.appendTo(borderBoxClone.find(".content"));
+            });
+
+            borderBoxClone.removeClass("hide").removeAttr("id");
+            borderBoxClone.appendTo(parentElement.find(".bodySegment"));
           }
           else {
             console.error("Place ID Request Error => ", status);
@@ -563,7 +617,6 @@
           });
         }
       })();
-      */
     }
   }
 
