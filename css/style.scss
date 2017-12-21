@@ -50,7 +50,7 @@ a, a:hover, a:focus {
 }
 
 a.refLink {
-  color: $black;
+  color: $linkBlue;
 }
 
 .positionRelative {
@@ -409,6 +409,14 @@ a.refLink {
               }
             }
           }
+        }
+      }
+      .photosDiv {
+        padding: 0 15px;
+        img {
+          border: 2px solid $white;
+          border-radius: 3px;
+          float: left;
         }
       }
     }

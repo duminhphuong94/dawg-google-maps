@@ -113,7 +113,6 @@
 
   function googlePlacesLibraryFunc() {
     if(document.location.href.indexOf("google-places-api-js") > -1) {
-      /*
       (function nearbySearchRequest1() {
         var location1 = new google.maps.LatLng(35.6895, 139.6917);
         var map1 = new google.maps.Map(document.getElementById("gMap1"), {
@@ -519,7 +518,6 @@
         }
       })();
 
-      */
       (function placesDetailHandling() {
         var location11 = new google.maps.LatLng(19.0760, 72.8777);
         var map11 = new google.maps.Map(document.getElementById("gMap11"), {
@@ -535,7 +533,6 @@
         
         function requestCallBack(resultArray, status) {
           if(status === google.maps.places.PlacesServiceStatus.OK) {
-            console.log(resultArray);
             map11.setZoom(18);
             map11.setCenter(resultArray[0].geometry.location);
             Array.prototype.forEach.call(resultArray, function(locationObj, index) {
@@ -604,6 +601,23 @@
 
             borderBoxClone.removeClass("hide").removeAttr("id");
             borderBoxClone.appendTo(parentElement.find(".bodySegment"));
+
+            var photoArray = result.photos;
+            if(photoArray) {
+              var photoParent = $("#photosDiv");
+              Array.prototype.forEach.call(photoArray, function(photoObj, index) {
+                var photoUrl = photoObj.getUrl({"maxWidth": 400});
+                var imageTag = $('<img class="img-responsive"/>');
+                imageTag.attr("src", photoUrl);
+                imageTag.appendTo(photoParent);
+                if((index + 1) % 2 === 0) {
+                  $('<div class="clearfix"></div>').appendTo(photoParent);
+                }
+              });
+            }
+            else {
+              console.error("Service Request Error, Photos are not available for result");
+            }
           }
           else {
             console.error("Place ID Request Error => ", status);

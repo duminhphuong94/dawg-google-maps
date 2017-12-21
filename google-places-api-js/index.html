@@ -356,6 +356,9 @@ title: "Dawg-Google-Maps: Javascript Places API"
   <div class="dawgRow">
     <div class="segment overviewSegment">
       <h2 class="text-center">Place Details - <span class="subTopic">Details About A Specific Place</span></h2>
+      <p>Other than providing a list of places, the <b>Places Details</b> service is useful for returning information about a specific place. After creating <span class="code">new google.maps.places.PlacesService(map)</span>, the <span class="code">getDetails(request, callback)</span> method is invoked, which takes in a request object bearing the <b>Places Id</b> value and a <b>callback function</b> to handle the necessary response once the API call has been made.</p>
+      <p>After receiving a successful response, there are a list of property/fields from the object result that we can use to display information about a specific place. View the given example below to understand what these fields may be or <a href="https://developers.google.com/maps/documentation/javascript/places#place_details" target="_blank" class="refLink">click here</a> for more infomration.</p>
+      <p>Another interesting part of the <b>Place Details</b> are photos. The individual photo urls can be acquired by sending a <span class="code">photo.getUrl({"maxWidth": <b>x</b>, "maxHeight": <b>y</b>})</span>.</p>
     </div>
     <div class="segment overviewSegment">
       <div id="gMap11" class="googleMapHolder"></div>
@@ -364,6 +367,8 @@ title: "Dawg-Google-Maps: Javascript Places API"
       <div class="paginationDiv" id="placesDetailedDiv">
         <div class="bodySegment dawgRow">
         </div>
+      </div>
+      <div class="photosDiv" id="photosDiv">
       </div>
     </div>
   </div>
