@@ -111,6 +111,18 @@
     }
   }
 
+  function googleMapsJsBasics() {
+    if(document.location.href.indexOf("google-maps-js-basic-concepts") > -1) {
+      (function basicCreation() {
+        var locationCoords = new google.maps.LatLng(55.7558, 37.6173);
+        var map = new google.maps.Map(document.getElementById("gMap1"), {
+          center: locationCoords,
+          zoom: 12
+        });
+      })();
+    }
+  }
+
   function googlePlacesLibraryFunc() {
     if(document.location.href.indexOf("google-places-api-js") > -1) {
       (function nearbySearchRequest1() {
@@ -639,6 +651,7 @@
     siteMenuFunctionality();
     toolTipFunctionality();
     dawgModalFunctionality();
+    googleMapsJsBasics();
     googlePlacesLibraryFunc();
 
     $(window).resize(function() {
