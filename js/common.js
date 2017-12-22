@@ -113,6 +113,7 @@
 
   function googleMapsJsBasics() {
     if(document.location.href.indexOf("google-maps-js-basic-concepts") > -1) {
+      /*
       (function basicCreation() {
         var locationCoords = new google.maps.LatLng(55.7558, 37.6173);
         var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -120,6 +121,55 @@
           zoom: 12
         });
       })();
+
+      (function satelliteMap() {
+        var locationCoords = new google.maps.LatLng(40.4168, -3.7038);
+        var map = new google.maps.Map(document.getElementById("gMap2"), {
+          center: locationCoords,
+          zoom: 15,
+          mapTypeId: "satellite"
+        });
+      })();
+      
+      (function hybridMap() {
+        var locationCoords = new google.maps.LatLng(41.9028, 12.4964);
+        var map = new google.maps.Map(document.getElementById("gMap3"), {
+          center: locationCoords,
+          zoom: 15,
+          mapTypeId: "hybrid"
+        });
+      })();
+      
+      (function terrainMap() {
+        var locationCoords = new google.maps.LatLng(19.4326, -99.1332);
+        var map = new google.maps.Map(document.getElementById("gMap4"), {
+          center: locationCoords,
+          zoom: 11,
+          mapTypeId: "terrain"
+        });
+      })();
+      
+      (function rotatingImagery() {
+        var locationCoords = new google.maps.LatLng(40.7829, -73.9654);
+        var map = new google.maps.Map(document.getElementById("gMap5"), {
+          center: locationCoords,
+          zoom: 18,
+          mapTypeId: "hybrid",
+          tilt: 45,
+          heading: 90
+        });
+
+        console.log(map);
+
+        function autoRotation() {
+          if(map.getTilt !== 0) {
+            var mapCurrentHeading = map.getHeading() || 0;
+            map.setHeading(mapCurrentHeading + 90);
+          }
+        }
+        setInterval(autoRotation, 5000);
+      })();
+      */
     }
   }
 
