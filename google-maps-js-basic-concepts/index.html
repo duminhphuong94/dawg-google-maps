@@ -146,3 +146,36 @@ title: "Dawg Google Maps - Google Maps JS API Basic Concepts"
   </div>
 </div>
 <!--Image Rotatory Details Ends Here-->
+
+<!--Creating Custom Base Map Types Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+      <h2 class="text-center">Google Maps - <span class="subTopic">Creating Custom Base Map Types</span></h2>
+      <p>Creating a custom base map type invloves in understanding certain mandatory requirements. This custom base map type once created, would generate as <b>Grids</b> on to the main parent map holding element, initialzed with the help of creating a <span class="code">Class [Constructor Function]</span> in Javascript. Necessary style attributes can be give to each of these grid as required.</p>
+      <p>Once created, you can <b>console.log</b> the arguments from the <span class="code">getTile()</span> method from the <b>Constructor's prototype object</b>. A sample snippet of what you could get would be: <br/>
+      <span class="code"> 
+				Object { x: 23411, y: 13663 } 15 HTMLDocument http://xxxxxxx/dawg-google-maps/google-maps-js-basic-concepts/
+      </span>
+      <p>For more information about this segment, <a href="https://developers.google.com/maps/documentation/javascript/maptypes#CustomMapTypes" target="_blank" class="refLink">click here</a>.</p>
+    </div>
+    <div class="segment overviewSegment">
+      <div id="gMap6" class="googleMapHolder"></div>
+    </div>
+  </div>
+</div>
+<!--Creating Custom Base Map Types End Here-->
+
+<!--Creating Custom Overlay Base Map Types Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+      <h2 class="text-center">Google Maps - <span class="subTopic">Creating Custom Overlay Map Types</span></h2>
+			<p>The example below is similar to the previous one. Except instead of creating a new <b>Custom Base Map Type</b> altogether, we use the same technique this time to create a <b>Overlay</b> with <span class="code">map.overlayMapTypes.insertAt(0, new CoordMapType(new google.maps.Size(256, 256)))</span> given the result as depicted below.</p>
+    </div>
+    <div class="segment overviewSegment">
+      <div id="gMap7" class="googleMapHolder"></div>
+    </div>
+  </div>
+</div>
+<!--Creating Custom Overal Base Map Types End Here-->

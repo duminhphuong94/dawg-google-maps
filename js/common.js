@@ -169,7 +169,63 @@
         }
         setInterval(autoRotation, 5000);
       })();
+
+      (function customBaseMapType() {
+        var locationCoords = new google.maps.LatLng(28.6139, 77.2090);
+        var map = new google.maps.Map(document.getElementById("gMap6"), {
+          center: locationCoords,
+          zoom: 15,
+          mapTypeId: "terrain"
+        });
+
+        function CustomMapType(tileSize) {
+          this.tileSize = tileSize;
+        }
+        CustomMapType.prototype.maxZoom = 19;
+        CustomMapType.prototype.name = "Example Custom Name";
+        CustomMapType.prototype.alt = "This is an example tutorial map type creation";
+        CustomMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
+          var gridElement = ownerDocument.createElement("div");
+          gridElement.innerHTML = coord;
+          gridElement.style.width = this.tileSize.width + "px";
+          gridElement.style.height = this.tileSize.height + "px";
+          gridElement.style.fontSize = "16px";
+          gridElement.style.fontWeight = "600";
+          gridElement.style.border = "2px solid #ec0000";
+          gridElement.style.background = "#efefef";
+          return gridElement;
+        };
+
+        map.setMapTypeId("gridbox");
+        map.mapTypes.set("gridbox", new CustomMapType(new google.maps.Size(256, 256)));
+      })();
       */
+
+      (function customOverlayMapType() {
+        var locationCoords = new google.maps.LatLng(71.7069, -42.6043);
+        var map = new google.maps.Map(document.getElementById("gMap7"), {
+          center: locationCoords,
+          zoom: 3,
+          mapTypeId: "terrain"
+        });
+
+        function CustomOverlay(tileSize) {
+          this.tileSize = tileSize;
+        }
+        CustomOverlay.prototype.getTile = function(coord, zoom, ownerDocument) {
+          var gridElement = ownerDocument.createElement("div");
+          gridElement.innerHTML = coord;
+          gridElement.style.width = this.tileSize.width + "px";
+          gridElement.style.height = this.tileSize.height + "px";
+          gridElement.style.fontSize = "16px";
+          gridElement.style.fontWeight = "600";
+          gridElement.style.border = "2px solid #ec0000";
+          gridElement.style.background = "transparent";
+          return gridElement;
+        };
+
+        map.overlayMapTypes.insertAt(0, new CustomOverlay(new google.maps.Size(256, 256)));
+      })();
     }
   }
 
