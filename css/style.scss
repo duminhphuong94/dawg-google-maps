@@ -217,6 +217,16 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
 		}
+		.basicsVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/tree-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.localizingVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/greece-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
     .posContainer {
       position: absolute;
       top: 50%;
