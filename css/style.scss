@@ -231,6 +231,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
 		}
+		.stylingVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/artist-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+		}
     .posContainer {
       position: absolute;
       top: 50%;
