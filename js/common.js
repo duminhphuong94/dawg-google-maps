@@ -1792,6 +1792,117 @@ function stylingYourGoogleMaps() {
 			map.mapTypes.set("gAubergine", gAubergineStyledMap);
 			map.setMapTypeId("gAubergine");
     })();
+		
+    (function myCustomStyleMode() {
+      var locationCoords = new google.maps.LatLng(-33.8688, 151.2093);
+      var myStyledMap = new google.maps.StyledMapType(
+				[
+					{
+						"featureType": "landscape.natural",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#6dff7f"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					},
+					{
+						"featureType": "landscape.natural.terrain",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#a73d2a"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					},
+					{
+						"featureType": "road",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#57532b"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					},
+					{
+						"featureType": "road.arterial",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#6aa278"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					},
+					{
+						"featureType": "road.highway",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#ff6300"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					},
+					{
+						"featureType": "road.highway.controlled_access",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#ff0082"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					},
+					{
+						"featureType": "road.local",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#3f3f3f"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					},
+					{
+						"featureType": "water",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#32cadd"
+							},
+							{
+								"visibility": "on"
+							}
+						]
+					}
+				], {name: "myCustomStyleMap"});
+      var map = new google.maps.Map(document.getElementById("gMap7"), {
+        center: locationCoords,
+        zoom: 15,
+        mapTypeId: "roadmap",
+      });
+
+			map.mapTypes.set("myStyle", myStyledMap);
+			map.setMapTypeId("myStyle");
+    })();
   }
 }
 
