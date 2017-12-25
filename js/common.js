@@ -1906,8 +1906,8 @@ function stylingYourGoogleMaps() {
   }
 }
 
-function googleMapControls() {
-  if(document.location.href.indexOf("map-controls") > -1) {
+function googleMapControlsAndEvents() {
+  if(document.location.href.indexOf("map-controls-and-events") > -1) {
     (function disableDefaultUI() {
       var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -2043,6 +2043,64 @@ function googleMapControls() {
       customControlsParent.index = 1;
       map.controls[google.maps.ControlPosition.LEFT_CENTER].push(customControlsParent);
     })();
+
+    (function addListenEvents() {
+      var locationCoords = new google.maps.LatLng(31.2304, 121.4737);
+      var map = new google.maps.Map(document.getElementById("gMap6"), {
+        center: locationCoords,
+        zoom: 14,
+        mapTypeId: "terrain"
+      });
+      map.addListener("click", function(event) {
+        console.log("Map Element Clicked. Location Coords: Lat=" + event.latLng.lat() + " | " + "Lng=" + event.latLng.lng()); 
+      });
+      map.addListener("bounds_changed", function(event) {
+        console.log("Map Viewport bounds have changed");
+      });
+      map.addListener("center_changed", function() {
+        console.log("Map Center has changed. Center Location: Lat=" + this.getCenter().lat() + " | " + "Lng=" + this.getCenter().lng());
+      });
+      map.addListener("dblclick", function(event) {
+        console.log("Map Double Click Triggered. Location Coords: Lat=" + event.latLng.lat() + " | " + "Lng=" + event.latLng.lng());
+      });
+      map.addListener("dragstart", function() {
+        console.log("DRAG STARTED -> You are starting to drag the map");
+      });
+      map.addListener("drag", function() {
+        console.log("DRAG IS GOING ON -> You are dragging the map");
+      });
+      map.addListener("dragend", function() {
+        console.log("DRAG ENDED -> You have finished dragging the map");
+      });
+    })();
+    
+    (function gestureHandlingDefault() {
+      var locationCoords = new google.maps.LatLng(64.1814, -51.6941);
+      var map = new google.maps.Map(document.getElementById("gMap7"), {
+        center: locationCoords,
+        zoom: 12,
+        gestureHandling: "cooperative"
+      });
+    })();
+
+    (function gestureHandlingNone() {
+      var locationCoords = new google.maps.LatLng(64.1814, -51.6941);
+      var map = new google.maps.Map(document.getElementById("gMap8"), {
+        center: locationCoords,
+        zoom: 12,
+        gestureHandling: "none",
+        zoomControl: false
+      });
+    })();
+
+    (function gestureHandlingGreedy() {
+      var locationCoords = new google.maps.LatLng(64.1814, -51.6941);
+      var map = new google.maps.Map(document.getElementById("gMap9"), {
+        center: locationCoords,
+        zoom: 12,
+        gestureHandling: "greedy",
+      });
+    })();
   }
 }
 
@@ -2055,7 +2113,7 @@ function centralProcessor() {
   googleMapsLocalizing();
   googlePlacesLibraryFunc();
   stylingYourGoogleMaps();
-  googleMapControls();
+  googleMapControlsAndEvents();
 
   $(window).resize(function() {
     toolTipFunctionality();
