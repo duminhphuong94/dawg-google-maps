@@ -236,6 +236,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
 		}
+    .controlsVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/birds-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;
@@ -340,6 +345,50 @@ a.refLink {
         -moz-box-shadow: 0px 0px 8px -1px rgba(0,0,0,1);
         box-shadow: 0px 0px 8px -1px rgba(0,0,0,1);
         border-radius: 6px;
+        .customControlButton {
+          background: $white;
+          color: $black;
+          border: 2px solid $black;
+          border-radius: 3px;
+          padding: 8px 15px;
+          cursor: pointer;
+          font-weight: 600;
+          font-family: $headingFont;
+          @include transition(all, 0.25s, linear);
+          z-index: 2;
+        }
+        .customControlButton:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background: $black;
+          z-index: -1;
+          @include transition(all, 0.25s, linear);
+        }
+        .customControlButton:hover {
+          color: $white;
+        }
+        .customControlButton:hover:after {
+          width: 100%;
+        }
+        .customCenter1, .customCenter2 {
+          height: auto;
+          padding: 8px 12px;
+          border-radius: 3px;
+          font-size: 1.2rem;
+          display: block;
+          width: 150px;
+        }
+        .customCenter1 {
+          background: $weldonBlue;
+          border: 2px solid $weldonBlue;
+        }
+        .customCenter2 {
+          background: $roseQuartz;
+        }
       }
       .errorMessage {
         padding: 5px;

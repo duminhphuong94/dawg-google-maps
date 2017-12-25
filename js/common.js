@@ -1906,6 +1906,146 @@ function stylingYourGoogleMaps() {
   }
 }
 
+function googleMapControls() {
+  if(document.location.href.indexOf("map-controls") > -1) {
+    (function disableDefaultUI() {
+      var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 14,
+        disableDefaultUI: true
+      });
+    })();
+
+    (function modifyingMapTypeControls() {
+      var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 14,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+        }
+      });
+    })();
+    
+    (function mapControlsPositioning() {
+      var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 14,
+				zoomControl: true,
+				zoomControlOptions: {
+					position: google.maps.ControlPosition.BOTTOM_LEFT
+				},
+				mapTypeControl: true,
+				mapTypeControlOptions: {
+					style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+					position: google.maps.ControlPosition.TOP_RIGHT,
+				},
+				streetViewControl: true,
+				streetViewControlOptions: {
+					position: google.maps.ControlPosition.LEFT_TOP,
+				},
+				rotateControl: true,
+				rotateControlOptions: {
+					position: google.maps.ControlPosition.LEFT_CENTER
+				},
+				fullscreenControl: true,
+				fullscreenControlOptions: {
+					position: google.maps.ControlPosition.RIGHT_CENTER,
+				},
+      });
+    })();
+    
+    (function createCustomControl() {
+      var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        zoom: 14,
+        mapTypeId: "terrain"
+      });
+
+      function CenterPosControl(customParent) {
+        var centerButton = document.createElement("div");
+        var innerText = document.createTextNode("Reset Center");
+        centerButton.appendChild(innerText);
+        centerButton.setAttribute("class", "customControlButton positionRelative");
+        centerButton.style.marginTop = "10px";
+        centerButton.onclick = function() {
+          map.setOptions({
+            center: locationCoords
+          });
+        };
+
+        customParent.appendChild(centerButton);
+      }
+      var customControlsParent = document.createElement("div");
+      var centerControl = new CenterPosControl(customControlsParent);
+
+      customControlsParent.index = 2;
+      map.controls[google.maps.ControlPosition.TOP_CENTER].push(customControlsParent);
+    })();
+
+    (function createStateWithCustomControl() {
+      var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
+      var map = new google.maps.Map(document.getElementById("gMap5"), {
+        center: locationCoords,
+        zoom: 14,
+        mapTypeId: "terrain"
+      });
+
+      function CenterPosControls(customParent) {
+        var thisObject = this;
+
+        var setCenterButton = document.createElement("button");
+        setCenterButton.setAttribute("class", "dawgButton customCenter1");
+        var text1 = document.createTextNode("Set This Center");
+        setCenterButton.style.margin = "0 0 0 5px";
+        setCenterButton.appendChild(text1);
+
+        var resetPosButton = document.createElement("button");
+        resetPosButton.setAttribute("class", "dawgButton customCenter2");
+        var text2 = document.createTextNode("Reset Position");
+        resetPosButton.style.margin = "5px 0 0 5px";
+        resetPosButton.appendChild(text2);
+
+        customParent.appendChild(setCenterButton);
+        customParent.appendChild(resetPosButton);
+
+        setCenterButton.onclick = function() {
+          var currentPosition = map.getCenter();
+          thisObject.setCenterCoords(currentPosition);
+        };
+
+        resetPosButton.onclick = function() {
+          var toMoveCoords = thisObject.getCenterCoords();
+          if(toMoveCoords) {
+            map.setCenter(toMoveCoords);
+          }
+          else {
+            alert("You need to first set a Center!");
+          }
+        };
+      }
+      CenterPosControls.prototype.centerCoords = null;
+      CenterPosControls.prototype.setCenterCoords = function(coords) {
+        this.centerCoords = coords;
+        console.log(this);
+      };
+      CenterPosControls.prototype.getCenterCoords = function() {
+        return this.centerCoords;
+      };
+
+      var customControlsParent = document.createElement("div");
+      var centerControl = new CenterPosControls(customControlsParent);
+
+      customControlsParent.index = 1;
+      map.controls[google.maps.ControlPosition.LEFT_CENTER].push(customControlsParent);
+    })();
+  }
+}
+
 function centralProcessor() {
   generalBodyFunctionality();
   siteMenuFunctionality();
@@ -1915,6 +2055,7 @@ function centralProcessor() {
   googleMapsLocalizing();
   googlePlacesLibraryFunc();
   stylingYourGoogleMaps();
+  googleMapControls();
 
   $(window).resize(function() {
     toolTipFunctionality();

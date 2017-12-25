@@ -1,0 +1,199 @@
+---
+url: "/map-controls"
+layout: "default-structure"
+title: "Map Controls"
+---
+
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="videoParent controlsVideoParent">
+    <video autoplay="autoplay" loop muted class="hidden-xs">
+      <source src="{{ site.baseurl }}/assets/videos/birds-video.mp4" type="video/mp4"/>
+      <source src="{{ site.baseurl }}/assets/videos/birds-video.webm" type="video/webm"/>
+      <source src="{{ site.baseurl }}/assets/videos/birds-video.ogg" type="video/ogg"/>
+    </video>
+  </div>
+  <div class="posContainer">
+    <div class="frameBorder dawgRow">
+      <div class="segment">
+        <h1>Map Controls</h1>
+        <p>Getting to understand map controls on your google map and what you could do with them. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
+        <p>Please refer to <a href="https://developers.google.com/maps/documentation/javascript/controls" target="_blank"><span class="code">Google Maps Javascript API - Controls</span></a> for more information.</p>
+        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Jumbotron Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal1">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Controls - <span class="subTopic">Disable Default UI</span></h3>
+      <p>All maps created with the Javascript API, will be rendered with certain default controls. If you would like to completely disable all controls from your map, place <span class="code">disableDefaultUI</span> to <b>true</b> in your <b>Map Options Object</b>. This example displays a google map without any controls being displayed on it.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap1"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 1 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal1">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/location-radius-type-places.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 1 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap2"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal2">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Controls - <span class="subTopic">Map Type Controls</span></h3>
+      <p>This particular option set within the <b>Map Options Object</b> comes with three possible values: <span class="code">google.maps.MapTypeControlStyle.HORIZONTAL_BAR</span>, <span class="code">google.maps.MapTypeControlStyle.DROPDOWN_MENU</span> and <span class="code">google.maps.MapTypeControlStyle.DEFAULT</span>.</p>
+      <p>In this particular example, the <b>Map Type Controls</b> have been modified to a dropdown style list.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 2 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal2">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/location-radius-type-places.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 2 Modal Details Ends Here-->
+
+<!--Map Controls Positioning Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment positionRelative">
+			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal3">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
+      <h2 class="text-center">Positioning Map Controls</h2>
+      <p>All google map controls contains a certain <b>position</b> property that would enable you to position these controls at certain parts on your map. While the values pertaining to these positions are not <b>Absolute</b> in nature, they do come with certain pre-defined values. Compare the example below with a regular map being set without making changes to its controls.</p>
+      <p>You would notice that the positions of our map's controls have been changed from their reguar/default position. Depending upon what controls are available at what times (for eg, rotation controls being available at a specific zoom point), making changes in the <b>Map Options Object</b> would have its effects on these controls.</p>
+      <p>Please refer to <a class="refLink" href="https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning" target="_blank">Google Maps API - Control Positioning</a> for more information.</p>
+    </div>
+    <div class="segment overviewSegment">
+      <div class="googleMapHolder" id="gMap3"></div>
+    </div>
+  </div>
+</div>
+<!--Map Controls Positioning Ends Here-->
+
+<!--Example 3 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal3">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/change-map-controls-position.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 3 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal4">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Controls - <span class="subTopic">Creating A Custom Control</span></h3>
+      <p>While we haven't had a look at attaching events to our google maps, the example here showcases the creation of a custom UI. This particular <span class="code">&lt;div&gt;</span> element along with its <b>hover effects</b> and <b>font styles</b> are initially placed in an external css file with a particular <b>class name</b>. This is then set as an attribute when dynamically creating a <span class="code">&lt;div&gt;</span> element with Javascript.</p>
+      <p>Once your custom element is generated as you wanted it, you could then attach an event to it (here we're attaching a Javascript <span class="code">onclick</span> event to reset the ceter of the map to its initial coordinates).</p>
+      <p>Move the map around to a different location and then click the <b>Reset Center</b> button to understand this example.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap4"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 4 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal4">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/create-custom-control.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 4 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap5"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal5">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Controls - <span class="subTopic">Storing a State with Custom Controls</span></h3>
+      <p>This example demonstrates how we could store a certain value on a button click event attachment and then, retrieve those same values with the click of another button. Here, move the map to a different location and click on the <b>Set This Center</b> button. This will now set your current map position as a default position.</p>
+      <p>Move around the map again and then click the <b>Reset Position</b> button, which will then move back the map to the same point where you had initially stored it as the default center location.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 5 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal5">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/create-state-with-custom-controls.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 5 Modal Details Ends Here-->
