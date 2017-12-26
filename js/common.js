@@ -1906,6 +1906,75 @@ function stylingYourGoogleMaps() {
   }
 }
 
+function googleMapMarkers() {
+  if(document.location.href.indexOf("map-markers") > -1) {
+    /*
+    (function createMarker() {
+      var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 7,
+      });
+      var marker = new google.maps.Marker({
+        map: map,
+        position: map.getCenter(),
+        title: "This is an Example Marker"
+      });
+    })();
+
+    (function dynamicMarkerPlacement() {
+      var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 7,
+      });
+      var honolulu = new google.maps.LatLng(21.3069, -157.8583);
+      var kilauea = new google.maps.LatLng(19.4069, -155.2834);
+      var kihei = new google.maps.LatLng(20.7644, -156.4450);
+      var hilo = new google.maps.LatLng(19.7071, -155.0885);
+      var markerArray = [];
+      var marker1 = new google.maps.Marker({
+        position: honolulu,
+      });
+      Array.prototype.push.call(markerArray, marker1);
+      var marker2 = new google.maps.Marker({
+        position: kilauea,
+      });
+      Array.prototype.push.call(markerArray, marker2);
+      var marker3 = new google.maps.Marker({
+        position: kihei,
+      });
+      Array.prototype.push.call(markerArray, marker3);
+      var marker4 = new google.maps.Marker({
+        position: hilo,
+      });
+      Array.prototype.push.call(markerArray, marker4);
+
+      var count = 0;
+      function startMarkerPlacement() {
+        Array.prototype.forEach.call(markerArray, function(markerObj, index) {
+          markerObj.setAnimation(null);
+          markerObj.setMap(null);
+        });
+        if(!markerArray[count].getAnimation() || markerArray[count].getAnimation() === null) {
+          markerArray[count].setAnimation(google.maps.Animation.BOUNCE);
+        }
+        markerArray[count].setMap(map);
+        count += 1;
+        if(count < markerArray.length) {
+          setTimeout(startMarkerPlacement, 3000);
+        }
+        else {
+          count = 0;
+          setTimeout(startMarkerPlacement, 3000);
+        }
+      }
+      startMarkerPlacement();
+    })();
+    */
+  }
+}
+
 function googleMapControlsAndEvents() {
   if(document.location.href.indexOf("map-controls-and-events") > -1) {
     (function disableDefaultUI() {
@@ -2113,6 +2182,7 @@ function centralProcessor() {
   googleMapsLocalizing();
   googlePlacesLibraryFunc();
   stylingYourGoogleMaps();
+  googleMapMarkers();
   googleMapControlsAndEvents();
 
   $(window).resize(function() {
