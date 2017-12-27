@@ -7,11 +7,11 @@ title: "Map Markers"
 <!--Jumbotron Section Details Starts Here-->
 <div class="jumbotronParent positionRelative">
   <div class="curtain"></div>
-  <div class="videoParent">
+  <div class="videoParent markersVideoParent">
     <video autoplay="autoplay" loop muted class="hidden-xs">
-      <source src="{{ site.baseurl }}/assets/videos/earth-rotating-video.mp4" type="video/mp4"/>
-      <source src="{{ site.baseurl }}/assets/videos/earth-rotating-video.ogg" type="video/ogg"/>
-      <source src="{{ site.baseurl }}/assets/videos/earth-rotating-video.webm" type="video/webm"/>
+      <source src="{{ site.baseurl }}/assets/videos/raindrops-video.mp4" type="video/mp4"/>
+      <source src="{{ site.baseurl }}/assets/videos/raindrops-video.webm" type="video/webm"/>
+      <source src="{{ site.baseurl }}/assets/videos/raindrops-video.ogg" type="video/ogg"/>
     </video>
   </div>
   <div class="posContainer">
@@ -67,7 +67,7 @@ title: "Map Markers"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/location-radius-type-places.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/create-a-marker.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -80,7 +80,7 @@ title: "Map Markers"
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
     <div class="segment">
-			<span class="sourceCode" data-modalLink="#exampleModal1">
+			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
 				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
@@ -102,8 +102,107 @@ title: "Map Markers"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/location-radius-type-places.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/marker-animation-map.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
 <!--Example 2 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal3">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Maps Markers: <span class="subTopic">Marker Labels</span></h3>
+      <p>Markers on your map can be customized. In this example over <b>Hawaii</b>, a marker with a label <b>"H"</b> has been placed over <b>Honolulu</b>. Once we initiate a <span class="code">Marker Object</span> with respect to whatever our map would be, you'll need to add a field named <span class="code">label</span> which would then carry a value for the marker label.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap3"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 3 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal3">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/map-marker-label.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 3 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap4"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal4">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Maps Markers: <span class="subTopic">Marker Labels with Simple Icons</span></h3>
+      <p>In this example, the default google maps marker is replaced by our very own custom image (png). This is achieved by adding the <b>icon</b> field to the <span class="code">Marker Object</span>. The animating bounce effect is achieved with the <b>animation</b> which was seen in our earlier example.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 4 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal4">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/map-marker-simple-icon.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 4 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal5">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Maps Markers: <span class="subTopic">Marker Labels - Draggable</span></h3>
+      <p>Continuing with our Hawaiian T-Shirt Icon over <b>Honolulu</b>, the icon is now <b>Draggable</b>. Click and drag the icon to a different location on the map to see how this works.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap5"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 5 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal5">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/map-marker-draggable.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 5 Modal Details Ends Here-->

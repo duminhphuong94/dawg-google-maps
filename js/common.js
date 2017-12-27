@@ -1908,7 +1908,6 @@ function stylingYourGoogleMaps() {
 
 function googleMapMarkers() {
   if(document.location.href.indexOf("map-markers") > -1) {
-    /*
     (function createMarker() {
       var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -1971,12 +1970,64 @@ function googleMapMarkers() {
       }
       startMarkerPlacement();
     })();
-    */
+    
+    (function markerLabel() {
+      var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 7,
+      });
+      var honolulu = new google.maps.LatLng(21.3069, -157.8583);
+      var marker = new google.maps.Marker({
+        position: honolulu,
+        label: "H",
+        map: map,
+      });
+    })();
+
+    (function markerLabelSimpleIcons() {
+      var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        zoom: 7,
+      });
+      var honolulu = new google.maps.LatLng(21.3069, -157.8583);
+      var wLocationOrigin = window.location.origin;
+      var baseUrl = "/dawg-google-maps";
+      var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
+      console.log(imageUrl);
+      var marker = new google.maps.Marker({
+        position: honolulu,
+        map: map,
+        icon: imageUrl,
+        animation: google.maps.Animation.BOUNCE
+      });
+    })();
+    
+    (function markerLabelDraggable() {
+      var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
+      var map = new google.maps.Map(document.getElementById("gMap5"), {
+        center: locationCoords,
+        zoom: 7,
+      });
+      var honolulu = new google.maps.LatLng(21.3069, -157.8583);
+      var wLocationOrigin = window.location.origin;
+      var baseUrl = "/dawg-google-maps";
+      var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
+      console.log(imageUrl);
+      var marker = new google.maps.Marker({
+        position: honolulu,
+        map: map,
+        icon: imageUrl,
+        draggable: true
+      });
+    })();
   }
 }
 
 function googleMapControlsAndEvents() {
   if(document.location.href.indexOf("map-controls-and-events") > -1) {
+    /*
     (function disableDefaultUI() {
       var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -2169,6 +2220,82 @@ function googleMapControlsAndEvents() {
         zoom: 12,
         gestureHandling: "greedy",
       });
+    })();
+    */
+
+    (function markerEvents() {
+      var locationCoords = new google.maps.LatLng(64.1814, -51.6941);
+      var map = new google.maps.Map(document.getElementById("gMap10"), {
+        center: locationCoords,
+        zoom: 12,
+      });
+
+      var animationArray = ["google.maps.Animation.BOUNCE", "google.maps.Animation.DROP"];
+      
+      var wLocationOrigin = window.location.origin;
+      var baseUrl = "/dawg-google-maps";
+      var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
+
+      var marker = new google.maps.Marker({
+        position: locationCoords,
+        map: map,
+      });
+
+      marker.addListener("click", function(event) {
+        console.log("Marker is being clicked now", event);
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      });
+
+      marker.addListener("animation_changed", function() {
+        var $this = this;
+        console.log("Marker Animation has been changed =>", animationArray[$this.getAnimation()]);
+      });
+
+      marker.addListener("cursor_changed", function() {
+        var $this = this;
+        console.log("Marker Cursor has changed =>", $this.getCursor());
+      });
+
+      marker.addListener("dblclick", function(event) {
+        console.log("Marker has been Double Clicked", event);
+        marker.setOptions({
+          cursor: "crosshair",
+          draggable: true
+        });
+      });
+
+      marker.addListener("draggable_changed", function() {
+        console.log("Drag Feature has now been enabled for this marker");
+      });
+
+      marker.addListener("dragstart", function(event) {
+        console.log("The Marker-Drag Event has started", event);
+      });
+
+      marker.addListener("drag", function(event) {
+        console.log("The Marker is being Dragged Now", event);
+      });
+
+      marker.addListener("dragend", function(event) {
+        console.log("The Marker Drag Event has stopped", event);
+        marker.setOptions({
+          icon: imageUrl
+        });
+        getCurrentMarkerPos();
+      });
+
+      marker.addListener("icon_changed", function() {
+        var $this = this;
+        console.log("Marker Icon has been changed", $this.getIcon());
+      });
+
+      function getCurrentMarkerPos() {
+        marker.addListener("position_changed", function() {
+          var $this = this;
+          console.log("Marker position has changed", $this.getPosition());
+        });
+      }
+
     })();
   }
 }

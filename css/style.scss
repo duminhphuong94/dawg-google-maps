@@ -241,6 +241,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
     }
+    .markersVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/hotairballoon-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;
