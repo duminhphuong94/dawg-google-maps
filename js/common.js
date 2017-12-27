@@ -1906,7 +1906,7 @@ function stylingYourGoogleMaps() {
   }
 }
 
-function googleMapMarkers() {
+function googleMapMarkersAndInfoWindow() {
   if(document.location.href.indexOf("map-markers") > -1) {
     (function createMarker() {
       var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
@@ -2020,6 +2020,25 @@ function googleMapMarkers() {
         map: map,
         icon: imageUrl,
         draggable: true
+      });
+    })();
+
+    (function infoWindowBasic() {
+      var locationCoords = new google.maps.LatLng(19.8968, -155.5828);
+      var map = new google.maps.Map(document.getElementById("gMap6"), {
+        center: locationCoords,
+        zoom: 7,
+      });
+      var marker = new google.maps.Marker({
+        position: locationCoords,
+        map: map
+      });
+      var basicInfoWindow = new google.maps.InfoWindow({
+        maxWidth: 300,
+        content: "Hawaii, a U.S. state, is an isolated volcanic archipelago in the Central Pacific. Its islands are renowned for their rugged landscapes of cliffs, waterfalls, tropical foliage and beaches with gold, red, black and even green sands. Of the 6 main islands, Oahu has Hawaii’s biggest city and capital, Honolulu, home to crescent Waikiki Beach and Pearl Harbor's WWII memorials.",
+      });
+      marker.addListener("click", function() {
+        basicInfoWindow.open(map, marker);
       });
     })();
   }
@@ -2343,7 +2362,7 @@ function centralProcessor() {
   googleMapsLocalizing();
   googlePlacesLibraryFunc();
   stylingYourGoogleMaps();
-  googleMapMarkers();
+  googleMapMarkersAndInfoWindow();
   googleMapControlsAndEvents();
 
   $(window).resize(function() {
