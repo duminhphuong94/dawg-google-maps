@@ -2027,7 +2027,6 @@ function googleMapMarkers() {
 
 function googleMapControlsAndEvents() {
   if(document.location.href.indexOf("map-controls-and-events") > -1) {
-    /*
     (function disableDefaultUI() {
       var locationCoords = new google.maps.LatLng(30.2672, -97.7431);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -2221,7 +2220,6 @@ function googleMapControlsAndEvents() {
         gestureHandling: "greedy",
       });
     })();
-    */
 
     (function markerEvents() {
       var locationCoords = new google.maps.LatLng(64.1814, -51.6941);
@@ -2296,6 +2294,42 @@ function googleMapControlsAndEvents() {
         });
       }
 
+      marker.addListener("mouseover", function(event) {
+        console.log("Your Mouse is hovering over the Marker", event);
+        var $this = this;
+        $this.setOptions({
+          title: "Example Map Marker"
+        });
+      });
+
+      marker.addListener("mouseout", function(event) {
+        console.log("Your Mouse has left the Marker", event);
+      });
+
+      marker.addListener("mousedown", function(event) {
+        console.log("Mouse Down Button Pressed", event);
+      });
+
+      marker.addListener("mouseup", function(event) {
+        console.log("Mouse Button is Up", event);
+      });
+
+      function removeMarkerAnimation() {
+        marker.setOptions({
+          animation: null
+        });
+        console.log("Marker Animation has been removed because of mouse right click!!");
+      }
+
+      marker.addListener("rightclick", function(event) {
+        console.log("Mouse Right Click has been triggered");
+        removeMarkerAnimation();
+      });
+
+      marker.addListener("title_changed", function() {
+        var $this = this;
+        console.log("Title for Marker has been changed to =>", $this.getTitle());
+      });
     })();
   }
 }
