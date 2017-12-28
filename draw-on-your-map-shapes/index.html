@@ -27,6 +27,18 @@ title: "Drawing On Your Google Maps - Shapes"
 </div>
 <!--Jumbotron Section Details Ends Here-->
 
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+      <h2 class="text-center">Polylines</h2>
+      <p>This section provides the basic understanding of how to implement simple <b>Polylines</b> on your google map. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
+      <p>Refer to <a href="https://developers.google.com/maps/documentation/javascript/shapes" target="_blank">Google Maps Javascript API - Shapes</a> for more information.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
@@ -98,9 +110,6 @@ title: "Drawing On Your Google Maps - Shapes"
 <div class="infoSection">
   <div class="dawgRow">
     <div class="segment">
-      <div class="googleMapHolder" id="gMap3"></div>
-    </div>
-    <div class="segment">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -109,8 +118,12 @@ title: "Drawing On Your Google Maps - Shapes"
 			</svg>
 			</span>
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
-      <h3>Google Map Shapes - <span class="subTopic">Remove Polyline</span></h3>
-      <p>The simplest way to remove a polyline from a particular map, is to have its <b>map field</b> in its <span class="code">Polyline Options Object</span> set to null. This example depicts the same path with a polyline as the previous one. The difference being that every 2 seconds, the polyline is removed from the map and then placed in again.</p>
+      <h3>Google Map Shapes - <span class="subTopic">Complex Polyline [Dynamic Example]</span></h3>
+      <p>The example here would help generate a <b>Polyline Path</b> on your Google Map when a user clicks on it. Please note that the intial path is created only after two points on the map have been clicked, although every click (including the first one) is being registered.</p>
+      <p>You can interact with this map by first clicking at any point on the map, followed by clicking on another location. By continuing this process, it will help create a trailing <b>Polyline Path</b> on all the places that you have clicked.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
 </div>
@@ -126,3 +139,81 @@ title: "Drawing On Your Google Maps - Shapes"
 	</div>
 </div>
 <!--Example 3 Modal Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+      <h2 class="text-center">Polygons</h2>
+      <p>This section provides the basic understanding of how to implement simple <b>Polygons</b> on your google map. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
+      <p>Refer to <a href="https://developers.google.com/maps/documentation/javascript/shapes" target="_blank">Google Maps Javascript API - Shapes</a> for more information.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap4"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal4">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Basic Polygon</span></h3>
+      <p><b>Polygons</b> in Google Maps are generated with the help of the <span class="code">Polygon Object Options</span>. The object in this example, would take in the neccessary <b>Latitude-Longitude Coordinates</b> which is in the form of an array, followed by <span class="code">strokeWidth, strokeColor, strokeWeight, strokeOpacity, fillColor, fillOpacity</span>. Don't forget to attach the <b>Map</b> to which the polygon needs to be generated upon.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 4 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal4">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/controls-disable-default-ui.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 4 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal5">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Remove Polygon</span></h3>
+      <p>The simplest way to remove a polygon from a particular map, is to have its <b>map field</b> in its <span class="code">Polygon Options Object</span> set to null. This example depicts the same area with a polygon as the previous one. The difference being that every 2 seconds, the polygon  is removed from the map and then placed in again.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap5"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 5 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal5">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/controls-disable-default-ui.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 5 Modal Details Ends Here-->

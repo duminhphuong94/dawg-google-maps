@@ -2418,7 +2418,7 @@ function drawingOnYourMapShapes() {
         setTimeout(removePolyline, 2000);
       }
     })();
-    */
+
     (function drawDynamicPolypath() {
       var locationCoords = new google.maps.LatLng(-23.5505, -46.6333);
       var map = new google.maps.Map(document.getElementById("gMap3"), {
@@ -2450,6 +2450,71 @@ function drawingOnYourMapShapes() {
           animation: google.maps.Animation.DROP
         });
       });
+    })();
+    (function simplePolygon() {
+      var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
+
+      var polygonArray = [
+      {lat: 48.8566, lng: 2.3522},
+      {lat: 51.5074, lng: -0.1278},
+      {lat: 50.1109, lng: 8.6821},
+      {lat: 41.9028, lng: 12.4964},
+      {lat: 41.3851, lng: 2.1734}
+      ];
+
+      var polygonArea = new google.maps.Polygon({
+        map: map,
+        paths: polygonArray,
+        strokeColor: "#0000ff",
+        strokeWeight: 3,
+        strokeOpacity: 0.8,
+        fillColor: "#0000ff",
+        fillOpacity: 0.5
+      });
+    })();
+    
+    */
+    (function polygonRemoveAndPlaceAgain() {
+      var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
+      var map = new google.maps.Map(document.getElementById("gMap5"), {
+        center: locationCoords,
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
+
+      var polygonArray = [
+      {lat: 48.8566, lng: 2.3522},
+      {lat: 51.5074, lng: -0.1278},
+      {lat: 50.1109, lng: 8.6821},
+      {lat: 41.9028, lng: 12.4964},
+      {lat: 41.3851, lng: 2.1734}
+      ];
+
+      var polygonArea = new google.maps.Polygon({
+        paths: polygonArray,
+        strokeColor: "#0000ff",
+        strokeWeight: 3,
+        strokeOpacity: 0.8,
+        fillColor: "#0000ff",
+        fillOpacity: 0.5
+      });
+
+      function setPolygonArea() {
+        polygonArea.setMap(map);
+        setTimeout(removePolygonArea, 2000);
+      }
+
+      function removePolygonArea() {
+        polygonArea.setMap(null);
+        setTimeout(setPolygonArea, 2000);
+      }
+
+      setPolygonArea();
     })();
   }
 }
