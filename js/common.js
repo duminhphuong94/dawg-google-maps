@@ -2353,6 +2353,107 @@ function googleMapControlsAndEvents() {
   }
 }
 
+function drawingOnYourMapShapes() {
+  if(document.location.href.indexOf("draw-on-your-map-shapes") > -1) {
+    /*
+    (function simplePolyline() {
+      var locationCoords = new google.maps.LatLng(-14.2350, -51.9253);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 4,
+        mapTypeId: "terrain"
+      });
+
+      var polyArray = [
+      {lat: -23.5505, lng: -46.6333},
+      {lat: -25.2637, lng: -57.5759},
+      {lat: -31.4201, lng: -64.1888},
+      {lat: -0.1807, lng: -78.4678},
+      {lat: -23.5505, lng: -46.6333},
+      ];
+
+      var polyPath = new google.maps.Polyline({
+        map: map,
+        path: polyArray,
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 4,
+      });
+    })();
+    
+    (function removeAndPlaceAgainPolyline() {
+      var locationCoords = new google.maps.LatLng(-14.2350, -51.9253);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 4,
+        mapTypeId: "terrain"
+      });
+
+      var polyArray = [
+      {lat: -23.5505, lng: -46.6333},
+      {lat: -25.2637, lng: -57.5759},
+      {lat: -31.4201, lng: -64.1888},
+      {lat: -0.1807, lng: -78.4678},
+      {lat: -23.5505, lng: -46.6333},
+      ];
+
+      var polyPath = new google.maps.Polyline({
+        map: map,
+        path: polyArray,
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 4,
+      });
+
+      function removePolyline() {
+        polyPath.setMap(null);
+        setTimeout(placeAgainPolyline, 2000);
+      }
+      removePolyline();
+
+      function placeAgainPolyline() {
+        polyPath.setMap(map);
+        setTimeout(removePolyline, 2000);
+      }
+    })();
+    */
+    (function drawDynamicPolypath() {
+      var locationCoords = new google.maps.LatLng(-23.5505, -46.6333);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 13,
+        mapTypeId: "terrain"
+      });
+      
+      var wLocationOrigin = window.location.origin;
+      var baseUrl = "/dawg-google-maps";
+      var imageUrl = wLocationOrigin + baseUrl + "/assets/images/polymarker.png";
+
+      var polyPath = new google.maps.Polyline({
+        strokeWeight: 3,
+        strokeColor: "#0886da",
+        strokeOpacity: 0.9,
+        map: map
+      });
+
+      map.addListener("click", function(event) {
+        var pathArray = polyPath.getPath();
+        var clickCoords = event.latLng;
+        pathArray.push(clickCoords);
+
+        var marker = new google.maps.Marker({
+          map: map,
+          position: clickCoords,
+          icon: imageUrl,
+          animation: google.maps.Animation.DROP
+        });
+      });
+    })();
+  }
+}
+
 function centralProcessor() {
   generalBodyFunctionality();
   siteMenuFunctionality();
@@ -2364,6 +2465,7 @@ function centralProcessor() {
   stylingYourGoogleMaps();
   googleMapMarkersAndInfoWindow();
   googleMapControlsAndEvents();
+  drawingOnYourMapShapes();
 
   $(window).resize(function() {
     toolTipFunctionality();
