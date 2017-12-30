@@ -2451,6 +2451,7 @@ function drawingOnYourMapShapes() {
         });
       });
     })();
+
     (function simplePolygon() {
       var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
       var map = new google.maps.Map(document.getElementById("gMap4"), {
@@ -2478,7 +2479,6 @@ function drawingOnYourMapShapes() {
       });
     })();
     
-    */
     (function polygonRemoveAndPlaceAgain() {
       var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
       var map = new google.maps.Map(document.getElementById("gMap5"), {
@@ -2516,6 +2516,287 @@ function drawingOnYourMapShapes() {
 
       setPolygonArea();
     })();
+    
+    (function inspectAPolygon() {
+      var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
+      var map = new google.maps.Map(document.getElementById("gMap6"), {
+        center: locationCoords,
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
+
+      var polygonArray = [
+      {lat: 48.8566, lng: 2.3522},
+      {lat: 51.5074, lng: -0.1278},
+      {lat: 50.1109, lng: 8.6821},
+      {lat: 41.9028, lng: 12.4964},
+      {lat: 41.3851, lng: 2.1734}
+      ];
+
+      var polygonArea = new google.maps.Polygon({
+        paths: polygonArray,
+        strokeColor: "#ff0000",
+        strokeWeight: 3,
+        strokeOpacity: 0.8,
+        fillColor: "#ff0000",
+        fillOpacity: 0.5
+      });
+      polygonArea.setMap(map);
+
+      var infoWindow = new google.maps.InfoWindow;
+
+
+      polygonArea.addListener("click", function(event) {
+        var $this = this;
+        var paths = $this.getPath();
+        var pathString = "";
+        for (var i = 0; i < paths.getLength(); i++) {
+          console.log("Lat:-> " + paths.getAt(i).lat(), "Lng:-> " + paths.getAt(i).lng());
+          pathString += (pathString === "") ? ("Lat:-> " + paths.getAt(i).lat() + " Lng:-> " + paths.getAt(i).lng()) : ("<br/>" + "Lat:-> " + paths.getAt(i).lat() + " Lng:-> " + paths.getAt(i).lng());
+        }
+        var infoString = "<b>Example Heading</b>.<br/>You have clicked on the polygon area.<br/>Location Coordinates for click are:<br/><br/><b>Latitude-></b> " + event.latLng.lat() + "<br/><b>Longitude-></b> " + event.latLng.lng() + "<br/><br/>" + "<b>Polygon Area Path Coords</b><br/>" + pathString;
+        infoWindow.setOptions({
+          content: infoString,
+          position: event.latLng
+        });
+        infoWindow.open(map);
+      });
+    })();
+    
+    (function holeInPolygon() {
+      var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
+      var map = new google.maps.Map(document.getElementById("gMap7"), {
+        center: locationCoords,
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
+
+      var polygonArray = [
+      {lat: 48.8566, lng: 2.3522},
+      {lat: 51.5074, lng: -0.1278},
+      {lat: 50.1109, lng: 8.6821},
+      {lat: 41.9028, lng: 12.4964},
+      {lat: 41.3851, lng: 2.1734}
+      ];
+
+      var holeArray1 = [
+      {lat: 48.6687, lng: 5.185},
+      {lat: 47.2563, lng: 4.042},
+      {lat: 45.498, lng: 4.921},
+      {lat: 47.7905, lng: 8.525}
+      ];
+
+      var holeArray2 = [
+      {lat: 45.524, lng: 3.867},
+      {lat: 43.140, lng: 5.756},
+      {lat: 44.315, lng: 8.745},
+      {lat: 45.528, lng: 9.140}
+      ];
+    
+      var holeArray3 = [
+      {lat: 50.603, lng: 2.241},
+      {lat: 49.957, lng: 2.285},
+      {lat: 50.408, lng: 3.427},
+      ];
+
+      var polygonArea = new google.maps.Polygon({
+        paths: [polygonArray, holeArray1, holeArray2, holeArray3],
+        strokeColor: "#ff0000",
+        strokeWeight: 3,
+        strokeOpacity: 0.8,
+        fillColor: "#ff0000",
+        fillOpacity: 0.5
+      });
+      polygonArea.setMap(map);
+    })();
+
+    (function simpleRectangle() {
+      var locationCoords = new google.maps.LatLng(41.8781, -87.6298);
+      var map = new google.maps.Map(document.getElementById("gMap8"), {
+        center: locationCoords,
+        zoom: 16,
+        mapTypeId: "roadmap"
+      });
+
+      var rectBounds = new google.maps.LatLngBounds({lat: 41.878, lng: -87.630}, {lat: 41.879, lng: -87.627});
+      var rectBoundsJson = rectBounds.toJSON();
+      var rectangle = new google.maps.Rectangle({
+        bounds: {
+          north: rectBoundsJson.north,
+          south: rectBoundsJson.south,
+          east: rectBoundsJson.east,
+          west: rectBoundsJson.west
+        },
+        map: map
+      });
+
+      var rectBounds2 = new google.maps.LatLngBounds({lat: 41.878, lng: -87.624}, {lat: 41.875, lng: -87.620});
+      var rectBounds2Json = rectBounds2.toJSON();
+      var rectangle2 = new google.maps.Rectangle({
+        bounds: {
+          north: rectBounds2Json.north,
+          south: rectBounds2Json.south,
+          east: rectBounds2Json.east,
+          west: rectBounds2Json.west
+        },
+        map: map,
+        strokeColor: "#ec0000",
+        strokeWeight: 4,
+        strokeOpacity: 0.5,
+        fillColor: "#ec0000",
+        fillOpacity: 0.3
+      });
+    })();
+
+    (function removeAndPlaceAgainRectangle() {
+      var locationCoords = new google.maps.LatLng(41.8781, -87.6298);
+      var map = new google.maps.Map(document.getElementById("gMap9"), {
+        center: locationCoords,
+        zoom: 16,
+        mapTypeId: "roadmap"
+      });
+
+      var rectBounds = new google.maps.LatLngBounds({lat: 41.878, lng: -87.630}, {lat: 41.879, lng: -87.627});
+      var rectBoundsJson = rectBounds.toJSON();
+      var rectangle = new google.maps.Rectangle({
+        bounds: {
+          north: rectBoundsJson.north,
+          south: rectBoundsJson.south,
+          east: rectBoundsJson.east,
+          west: rectBoundsJson.west
+        },
+        map: map
+      });
+
+      var rectBounds2 = new google.maps.LatLngBounds({lat: 41.878, lng: -87.624}, {lat: 41.875, lng: -87.620});
+      var rectBounds2Json = rectBounds2.toJSON();
+      var rectangle2 = new google.maps.Rectangle({
+        bounds: {
+          north: rectBounds2Json.north,
+          south: rectBounds2Json.south,
+          east: rectBounds2Json.east,
+          west: rectBounds2Json.west
+        },
+        map: map,
+        strokeColor: "#ec0000",
+        strokeWeight: 4,
+        strokeOpacity: 0.5,
+        fillColor: "#ec0000",
+        fillOpacity: 0.3
+      });
+
+      function removeRects() {
+        rectangle.setMap(null);
+        rectangle2.setMap(null);
+        setTimeout(placeAgainRects, 2000);
+      }
+      removeRects();
+
+      function placeAgainRects() {
+        rectangle.setMap(map);
+        rectangle2.setMap(map);
+        setTimeout(removeRects, 2000);
+      }
+    })();
+
+    (function simpleCircle() {
+      var locationCoords = new google.maps.LatLng(55.3781, -3.4360);
+      var map = new google.maps.Map(document.getElementById("gMap10"), {
+        mapTypeId: "terrain",
+        center: locationCoords,
+        zoom: 5
+      });
+
+      var hexArray = ["#ff2a00", "#019d60",  "#0f539a"];
+      var hexCount = 0;
+      var cityLocations = {
+        london: {
+          population: 8.788,
+          coordinates: {lat: 51.5074, lng: -0.1278}
+        },
+        dublin: {
+          population: 1.8,
+          coordinates: {lat: 53.3498, lng: -6.2603}
+        },
+        glasgow: {
+          population: 1.232,
+          coordinates: {lat: 55.8642, lng: -4.2518}
+        }
+      };
+
+      for (var cities in cityLocations) {
+        var circle = new google.maps.Circle({
+          center: cityLocations[cities].coordinates,
+          radius: Math.sqrt(cityLocations[cities].population * 100000) * 200,
+          map: map,
+          strokeColor: hexArray[hexCount],
+          strokeOpacity: 1,
+          strokeWeight: 3,
+          fillColor: hexArray[hexCount],
+          fillOpacity: 0.3
+        });
+        hexCount += 1;
+      }
+    })();
+
+    (function removeAndPlaceAgainCircles() {
+      var locationCoords = new google.maps.LatLng(55.3781, -3.4360);
+      var map = new google.maps.Map(document.getElementById("gMap11"), {
+        mapTypeId: "terrain",
+        center: locationCoords,
+        zoom: 5
+      });
+
+      var hexArray = ["#ff2a00", "#019d60",  "#0f539a"];
+      var hexCount = 0;
+      var cityLocations = {
+        london: {
+          population: 8.788,
+          coordinates: {lat: 51.5074, lng: -0.1278}
+        },
+        dublin: {
+          population: 1.8,
+          coordinates: {lat: 53.3498, lng: -6.2603}
+        },
+        glasgow: {
+          population: 1.232,
+          coordinates: {lat: 55.8642, lng: -4.2518}
+        }
+      };
+
+      var circlesArray = [];
+
+      for (var cities in cityLocations) {
+        var circle = new google.maps.Circle({
+          center: cityLocations[cities].coordinates,
+          radius: Math.sqrt(cityLocations[cities].population * 100000) * 200,
+          map: map,
+          strokeColor: hexArray[hexCount],
+          strokeOpacity: 1,
+          strokeWeight: 3,
+          fillColor: hexArray[hexCount],
+          fillOpacity: 0.3
+        });
+        Array.prototype.push.call(circlesArray, circle);
+        hexCount += 1;
+      }
+
+      function removeCircles() {
+        Array.prototype.forEach.call(circlesArray, function(circleObj, index) {
+          circleObj.setMap(null);
+        });
+        setTimeout(placeCircles, 2000);
+      }
+      removeCircles();
+
+      function placeCircles() {
+        Array.prototype.forEach.call(circlesArray, function(circleObj, index) {
+          circleObj.setMap(map);
+        });
+        setTimeout(removeCircles, 2000);
+      }
+    })();
+    */ 
   }
 }
 
