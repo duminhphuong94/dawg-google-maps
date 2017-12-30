@@ -2350,6 +2350,286 @@ function googleMapControlsAndEvents() {
         console.log("Title for Marker has been changed to =>", $this.getTitle());
       });
     })();
+    
+    (function polylineClassEvents() {
+      var locationCoords = new google.maps.LatLng(21.3069, -157.8583);
+      var map = new google.maps.Map(document.getElementById("gMap11"), {
+        center: locationCoords,
+        zoom: 15,
+      });
+
+      var polyArray = [
+      {lat: 21.308581398038793, lng: -157.86765575408936},
+      {lat: 21.30406341742832, lng: -157.860746383667},
+      {lat: 21.309780838575993, lng: -157.85220623016357},
+      ];
+
+      var polyPath = new google.maps.Polyline({
+        map: map,
+        path: polyArray,
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 8,
+        editable: true,
+        draggable: true
+      });
+
+      polyPath.addListener("click", function(event) {
+        console.log("Polyline Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyPath.addListener("dblclick", function(event) {
+        console.log("Polyline Double Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      polyPath.addListener("dragstart", function() {
+        console.log("Polyline Drag Event Started");
+      });
+
+      polyPath.addListener("drag", function() {
+        console.log("Polyline Drag Continues On Map...");
+      });
+
+      polyPath.addListener("dragend", function() {
+        console.log("Polyline Drag Event has Stopped");
+      });
+
+      polyPath.addListener("mousedown", function(event) {
+        console.log("Polyline Mouse Down Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyPath.addListener("mouseup", function(event) {
+        console.log("Polyline Mouse Up Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      polyPath.addListener("mouseover", function(event) {
+        console.log("Polyline Mouse Over Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyPath.addListener("mousemove", function(event) {
+        console.log("Polyline Mouse Move Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyPath.addListener("mouseout", function(event) {
+        console.log("Polyline Mouse Out Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyPath.addListener("rightclick", function(event) {
+        console.log("Polyline Right Click Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+    })();
+
+    (function polygonClassEvents() {
+      var locationCoords = new google.maps.LatLng(21.3069, -157.8583);
+      var map = new google.maps.Map(document.getElementById("gMap12"), {
+        center: locationCoords,
+        zoom: 15,
+      });
+
+      var polyArray = [
+      {lat: 21.308581398038793, lng: -157.86765575408936},
+      {lat: 21.30406341742832, lng: -157.860746383667},
+      {lat: 21.309780838575993, lng: -157.85220623016357},
+      ];
+
+      var polyGon = new google.maps.Polygon({
+        map: map,
+        path: polyArray,
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 8,
+        editable: true,
+        draggable: true
+      });
+      
+      polyGon.addListener("click", function(event) {
+        console.log("Polygon Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyGon.addListener("dblclick", function(event) {
+        console.log("Polygon Double Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      polyGon.addListener("dragstart", function() {
+        console.log("Polygon Drag Event Started");
+      });
+
+      polyGon.addListener("drag", function() {
+        console.log("Polygon Drag Continues On Map...");
+      });
+
+      polyGon.addListener("dragend", function() {
+        console.log("Polygon Drag Event has Stopped");
+      });
+
+      polyGon.addListener("mousedown", function(event) {
+        console.log("Polygon Mouse Down Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyGon.addListener("mouseup", function(event) {
+        console.log("Polygon Mouse Up Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      polyGon.addListener("mouseover", function(event) {
+        console.log("Polygon Mouse Over Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyGon.addListener("mousemove", function(event) {
+        console.log("Polygon Mouse Move Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyGon.addListener("mouseout", function(event) {
+        console.log("Polygon Mouse Out Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      polyGon.addListener("rightclick", function(event) {
+        console.log("Polygon Right Click Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+    })();
+    
+    (function rectangleClassEvents() {
+      var locationCoords = new google.maps.LatLng(21.3069, -157.8583);
+      var map = new google.maps.Map(document.getElementById("gMap13"), {
+        center: locationCoords,
+        zoom: 15,
+      });
+      
+      var latLngBounds = new google.maps.LatLngBounds({lat: 21.309021194039655, lng: -157.8576135635376},{lat: 21.30654232664826, lng: -157.85387992858887});
+      var latLngBoundsJson = latLngBounds.toJSON();
+      var rect = new google.maps.Rectangle({
+        map: map,
+        bounds: {
+          north: latLngBoundsJson.north,
+          south: latLngBoundsJson.south,
+          east: latLngBoundsJson.east,
+          west: latLngBoundsJson.west
+        },
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 8,
+        editable: true,
+        draggable: true
+      });
+     
+      rect.addListener("bounds_changed", function() {
+        console.log("Rectangle Bounds Have Now Changed");
+      });
+
+      rect.addListener("click", function(event) {
+        console.log("Rectangle Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      rect.addListener("dblclick", function(event) {
+        console.log("Rectangle Double Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      rect.addListener("dragstart", function() {
+        console.log("Rectangle Drag Event Started");
+      });
+
+      rect.addListener("drag", function() {
+        console.log("Rectangle Drag Continues On Map...");
+      });
+
+      rect.addListener("dragend", function() {
+        console.log("Rectangle Drag Event has Stopped");
+      });
+
+      rect.addListener("mousedown", function(event) {
+        console.log("Rectangle Mouse Down Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      rect.addListener("mouseup", function(event) {
+        console.log("Rectangle Mouse Up Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      rect.addListener("mouseover", function(event) {
+        console.log("Rectangle Mouse Over Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      rect.addListener("mousemove", function(event) {
+        console.log("Rectangle Mouse Move Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      rect.addListener("mouseout", function(event) {
+        console.log("Rectangle Mouse Out Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      rect.addListener("rightclick", function(event) {
+        console.log("Rectangle Right Click Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+    })();
+    
+    (function circleClassEvents() {
+      var locationCoords = new google.maps.LatLng(21.3069, -157.8583);
+      var map = new google.maps.Map(document.getElementById("gMap14"), {
+        center: locationCoords,
+        zoom: 15,
+      });
+      
+      var circleShape = new google.maps.Circle({
+        map: map,
+        center: {lat: 21.309021194039655, lng: -157.8576135635376},
+        radius: 150,
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 8,
+        editable: true,
+        draggable: true
+      });
+    
+      circleShape.addListener("bounds_changed", function() {
+        console.log("Circle Bounds Have Now Changed");
+      });
+
+      circleShape.addListener("click", function(event) {
+        console.log("Circle Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      circleShape.addListener("dblclick", function(event) {
+        console.log("Circle Double Clicked", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      circleShape.addListener("dragstart", function() {
+        console.log("Circle Drag Event Started");
+      });
+
+      circleShape.addListener("drag", function() {
+        console.log("Circle Drag Continues On Map...");
+      });
+
+      circleShape.addListener("dragend", function() {
+        console.log("Circle Drag Event has Stopped");
+      });
+
+      circleShape.addListener("mousedown", function(event) {
+        console.log("Circle Mouse Down Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      circleShape.addListener("mouseup", function(event) {
+        console.log("Circle Mouse Up Event Triggered", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      circleShape.addListener("mouseover", function(event) {
+        console.log("Circle Mouse Over Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      circleShape.addListener("mousemove", function(event) {
+        console.log("Circle Mouse Move Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      circleShape.addListener("mouseout", function(event) {
+        console.log("Circle Mouse Out Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+      
+      circleShape.addListener("rightclick", function(event) {
+        console.log("Circle Right Click Event Trigger", "Lat => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+    })();
   }
 }
 
