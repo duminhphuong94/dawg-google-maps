@@ -444,4 +444,283 @@ title: "Drawing On Your Google Maps - Shapes"
 		</div>
 	</div>
 </div>
-<!--Example 10 Modal Details Ends Here-->
+<!--Example 11 Modal Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+      <h2 class="text-center">Making Shapes Editable/Draggable</h2>
+      <p>Any shape in Google Maps Javascript API can be set to an <span class="code">Editable</span> status, allowing users to interact with the map and any shapes that have been drawn as an overlay. This is applicable for <b>Polylines, Polygons, Rectangles and Circles</b>.</p>
+      <p>Have a look at the examples below and click the <span class="code"><b>{ }</b> Example Code Icon</span> to understand this concept.</p>
+      <p>Refer to <a href="https://developers.google.com/maps/documentation/javascript/shapes" target="_blank">Google Maps Javascript API - Shapes</a> for more information.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap12"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal12">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Editable Polyline</span></h3>
+      <p>An example where an initially constructed polyline over a map is set to <span class="code">editable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then edit the polyline. You would notice that the line takes a certain curve. This is becuase the <span class="code">geodesic</span> field in its options object is set to <b>true</b>.</p>
+      <p>Create your own map without this field option and notice the difference.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 12 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal12">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/editable-polyline.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 12 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal13">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Draggable Polyline</span></h3>
+      <p>An example where an initially constructed polyline over a map is set to <span class="code">draggable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then drag the polyline.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap13"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 13 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal13">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/draggable-polyline.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 13 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap14"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal14">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Editable Polygon</span></h3>
+      <p>An example where an initially constructed polygon over a map is set to <span class="code">editable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then edit the polyline. You would notice that the line takes a certain curve. This is becuase the <span class="code">geodesic</span> field in its options object is set to <b>true</b>.</p>
+      <p>Create your own map without this field option and notice the difference.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 14 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal14">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/editable-polygon.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 14 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal15">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Draggable Polygon</span></h3>
+      <p>An example where an initially constructed polygon over a map is set to <span class="code">draggable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then drag the polygon.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap15"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 15 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal15">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/draggable-polygon.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 15 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap16"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal16">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Editable Rectangle</span></h3>
+      <p>An example where an initially constructed rectangle over a map is set to <span class="code">editable: true</span> in its options object.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 16 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal16">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/editable-rectangle.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 16 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal17">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Draggable Rectangle</span></h3>
+      <p>An example where an initially constructed rectangle over a map is set to <span class="code">draggable: true</span> in its options object.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap17"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 17 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal17">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/draggable-rectangle.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 17 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap18"></div>
+    </div>
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal18">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Editable Circle</span></h3>
+      <p>An example where an initially constructed circle over a map is set to <span class="code">editable: true</span> in its options object.</p>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 18 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal18">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/editable-circle.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 18 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal19">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Shapes - <span class="subTopic">Draggable Circle</span></h3>
+      <p>An example where an initially constructed circle over a map is set to <span class="code">draggable: true</span> in its options object.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap19"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 19 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal19">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/draggable-circle.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 19 Modal Details Ends Here-->

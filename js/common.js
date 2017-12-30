@@ -2355,7 +2355,6 @@ function googleMapControlsAndEvents() {
 
 function drawingOnYourMapShapes() {
   if(document.location.href.indexOf("draw-on-your-map-shapes") > -1) {
-    /*
     (function simplePolyline() {
       var locationCoords = new google.maps.LatLng(-14.2350, -51.9253);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -2796,7 +2795,280 @@ function drawingOnYourMapShapes() {
         setTimeout(removeCircles, 2000);
       }
     })();
-    */ 
+    
+    (function editablePolyline() {
+      var locationCoords = new google.maps.LatLng(-14.2350, -51.9253);
+      var map = new google.maps.Map(document.getElementById("gMap12"), {
+        center: locationCoords,
+        zoom: 4,
+        mapTypeId: "terrain"
+      });
+
+      var polyArray = [
+      {lat: -23.5505, lng: -46.6333},
+      {lat: -25.2637, lng: -57.5759},
+      {lat: -31.4201, lng: -64.1888},
+      {lat: -0.1807, lng: -78.4678},
+      {lat: -23.5505, lng: -46.6333},
+      ];
+
+      var polyPath = new google.maps.Polyline({
+        map: map,
+        path: polyArray,
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 4,
+        editable: true
+      });
+    })();
+    
+    (function draggablePolyline() {
+      var locationCoords = new google.maps.LatLng(-14.2350, -51.9253);
+      var map = new google.maps.Map(document.getElementById("gMap13"), {
+        center: locationCoords,
+        zoom: 4,
+        mapTypeId: "terrain"
+      });
+
+      var polyArray = [
+      {lat: -23.5505, lng: -46.6333},
+      {lat: -25.2637, lng: -57.5759},
+      {lat: -31.4201, lng: -64.1888},
+      {lat: -0.1807, lng: -78.4678},
+      {lat: -23.5505, lng: -46.6333},
+      ];
+
+      var polyPath = new google.maps.Polyline({
+        map: map,
+        path: polyArray,
+        geodesic: true,
+        strokeColor: "#ff0000",
+        strokeOpacity: 0.7,
+        strokeWeight: 4,
+        draggable: true
+      });
+    })();
+    
+    (function editablePolygon() {
+      var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
+      var map = new google.maps.Map(document.getElementById("gMap14"), {
+        center: locationCoords,
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
+
+      var polygonArray = [
+      {lat: 48.8566, lng: 2.3522},
+      {lat: 51.5074, lng: -0.1278},
+      {lat: 50.1109, lng: 8.6821},
+      {lat: 41.9028, lng: 12.4964},
+      {lat: 41.3851, lng: 2.1734}
+      ];
+
+      var polygonArea = new google.maps.Polygon({
+        map: map,
+        paths: polygonArray,
+        strokeColor: "#0000ff",
+        strokeWeight: 3,
+        strokeOpacity: 0.8,
+        fillColor: "#0000ff",
+        fillOpacity: 0.5,
+        editable: true,
+        geodesic: true,
+      });
+    })();
+    
+    (function draggablePolygon() {
+      var locationCoords = new google.maps.LatLng(46.2276, 2.2137);
+      var map = new google.maps.Map(document.getElementById("gMap15"), {
+        center: locationCoords,
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
+
+      var polygonArray = [
+      {lat: 48.8566, lng: 2.3522},
+      {lat: 51.5074, lng: -0.1278},
+      {lat: 50.1109, lng: 8.6821},
+      {lat: 41.9028, lng: 12.4964},
+      {lat: 41.3851, lng: 2.1734}
+      ];
+
+      var polygonArea = new google.maps.Polygon({
+        map: map,
+        paths: polygonArray,
+        strokeColor: "#0000ff",
+        strokeWeight: 3,
+        strokeOpacity: 0.8,
+        fillColor: "#0000ff",
+        fillOpacity: 0.5,
+        draggable: true,
+        geodesic: true,
+      });
+    })();
+    
+    (function editableRectangle() {
+      var locationCoords = new google.maps.LatLng(41.8781, -87.6298);
+      var map = new google.maps.Map(document.getElementById("gMap16"), {
+        center: locationCoords,
+        zoom: 16,
+        mapTypeId: "roadmap"
+      });
+
+      var rectBounds = new google.maps.LatLngBounds({lat: 41.878, lng: -87.630}, {lat: 41.879, lng: -87.627});
+      var rectBoundsJson = rectBounds.toJSON();
+      var rectangle = new google.maps.Rectangle({
+        bounds: {
+          north: rectBoundsJson.north,
+          south: rectBoundsJson.south,
+          east: rectBoundsJson.east,
+          west: rectBoundsJson.west
+        },
+        map: map,
+        editable: true,
+      });
+
+      var rectBounds2 = new google.maps.LatLngBounds({lat: 41.878, lng: -87.624}, {lat: 41.875, lng: -87.620});
+      var rectBounds2Json = rectBounds2.toJSON();
+      var rectangle2 = new google.maps.Rectangle({
+        bounds: {
+          north: rectBounds2Json.north,
+          south: rectBounds2Json.south,
+          east: rectBounds2Json.east,
+          west: rectBounds2Json.west
+        },
+        map: map,
+        strokeColor: "#ec0000",
+        strokeWeight: 4,
+        strokeOpacity: 0.5,
+        fillColor: "#ec0000",
+        fillOpacity: 0.3,
+        editable: true,
+      });
+    })();
+    
+    (function draggableRectangle() {
+      var locationCoords = new google.maps.LatLng(41.8781, -87.6298);
+      var map = new google.maps.Map(document.getElementById("gMap17"), {
+        center: locationCoords,
+        zoom: 16,
+        mapTypeId: "roadmap"
+      });
+
+      var rectBounds = new google.maps.LatLngBounds({lat: 41.878, lng: -87.630}, {lat: 41.879, lng: -87.627});
+      var rectBoundsJson = rectBounds.toJSON();
+      var rectangle = new google.maps.Rectangle({
+        bounds: {
+          north: rectBoundsJson.north,
+          south: rectBoundsJson.south,
+          east: rectBoundsJson.east,
+          west: rectBoundsJson.west
+        },
+        map: map,
+        draggable: true,
+      });
+
+      var rectBounds2 = new google.maps.LatLngBounds({lat: 41.878, lng: -87.624}, {lat: 41.875, lng: -87.620});
+      var rectBounds2Json = rectBounds2.toJSON();
+      var rectangle2 = new google.maps.Rectangle({
+        bounds: {
+          north: rectBounds2Json.north,
+          south: rectBounds2Json.south,
+          east: rectBounds2Json.east,
+          west: rectBounds2Json.west
+        },
+        map: map,
+        strokeColor: "#ec0000",
+        strokeWeight: 4,
+        strokeOpacity: 0.5,
+        fillColor: "#ec0000",
+        fillOpacity: 0.3,
+        draggable: true,
+      });
+    })();
+    
+    (function editableCircle() {
+      var locationCoords = new google.maps.LatLng(55.3781, -3.4360);
+      var map = new google.maps.Map(document.getElementById("gMap18"), {
+        mapTypeId: "terrain",
+        center: locationCoords,
+        zoom: 5
+      });
+
+      var hexArray = ["#ff2a00", "#019d60",  "#0f539a"];
+      var hexCount = 0;
+      var cityLocations = {
+        london: {
+          population: 8.788,
+          coordinates: {lat: 51.5074, lng: -0.1278}
+        },
+        dublin: {
+          population: 1.8,
+          coordinates: {lat: 53.3498, lng: -6.2603}
+        },
+        glasgow: {
+          population: 1.232,
+          coordinates: {lat: 55.8642, lng: -4.2518}
+        }
+      };
+
+      for (var cities in cityLocations) {
+        var circle = new google.maps.Circle({
+          center: cityLocations[cities].coordinates,
+          radius: Math.sqrt(cityLocations[cities].population * 100000) * 200,
+          map: map,
+          strokeColor: hexArray[hexCount],
+          strokeOpacity: 1,
+          strokeWeight: 3,
+          fillColor: hexArray[hexCount],
+          fillOpacity: 0.3,
+          editable: true,
+        });
+        hexCount += 1;
+      }
+    })();
+    
+    (function draggableCircle() {
+      var locationCoords = new google.maps.LatLng(55.3781, -3.4360);
+      var map = new google.maps.Map(document.getElementById("gMap19"), {
+        mapTypeId: "terrain",
+        center: locationCoords,
+        zoom: 5
+      });
+
+      var hexArray = ["#ff2a00", "#019d60",  "#0f539a"];
+      var hexCount = 0;
+      var cityLocations = {
+        london: {
+          population: 8.788,
+          coordinates: {lat: 51.5074, lng: -0.1278}
+        },
+        dublin: {
+          population: 1.8,
+          coordinates: {lat: 53.3498, lng: -6.2603}
+        },
+        glasgow: {
+          population: 1.232,
+          coordinates: {lat: 55.8642, lng: -4.2518}
+        }
+      };
+
+      for (var cities in cityLocations) {
+        var circle = new google.maps.Circle({
+          center: cityLocations[cities].coordinates,
+          radius: Math.sqrt(cityLocations[cities].population * 100000) * 200,
+          map: map,
+          strokeColor: hexArray[hexCount],
+          strokeOpacity: 1,
+          strokeWeight: 3,
+          fillColor: hexArray[hexCount],
+          fillOpacity: 0.3,
+          draggable: true,
+        });
+        hexCount += 1;
+      }
+    })();
   }
 }
 
