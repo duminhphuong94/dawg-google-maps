@@ -1,7 +1,7 @@
 ---
 url: "/draw-on-your-map-shapes"
 layout: "default-structure"
-title: "Drawing On Your Google Maps - Shapes"
+title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 ---
 
 <!--Jumbotron Section Details Starts Here-->
@@ -28,7 +28,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection overviewParentSection">
   <div class="dawgRow">
     <div class="segment overviewSegment">
       <h2 class="text-center">Polylines</h2>
@@ -76,10 +76,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap2"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -90,6 +87,9 @@ title: "Drawing On Your Google Maps - Shapes"
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
       <h3>Google Map Shapes - <span class="subTopic">Remove Polyline</span></h3>
       <p>The simplest way to remove a polyline from a particular map, is to have its <b>map field</b> in its <span class="code">Polyline Options Object</span> set to null. This example depicts the same path with a polyline as the previous one. The difference being that every 2 seconds, the polyline is removed from the map and then placed in again.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
 </div>
@@ -141,7 +141,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection overviewParentSection">
   <div class="dawgRow">
     <div class="segment overviewSegment">
       <h2 class="text-center">Polygons</h2>
@@ -156,10 +156,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap4"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -170,6 +167,9 @@ title: "Drawing On Your Google Maps - Shapes"
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
       <h3>Google Map Shapes - <span class="subTopic">Basic Polygon</span></h3>
       <p><b>Polygons</b> in Google Maps are generated with the help of the <span class="code">Polygon Object Options</span>. The object in this example, would take in the neccessary <b>Latitude-Longitude Coordinates</b> which is in the form of an array, followed by <span class="code">strokeWidth, strokeColor, strokeWeight, strokeOpacity, fillColor, fillOpacity</span>. Don't forget to attach the <b>Map</b> to which the polygon needs to be generated upon.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
 </div>
@@ -222,10 +222,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap6"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -237,6 +234,9 @@ title: "Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Inspecting A Polygon</span></h3>
       <p>In this example, we will be examing the various <b>Latitude-Longitude Coordinates</b> that have been used to setup the Polygon Shape. To inspect/retrieve the polygon Lat-Lng coordinates with which it was built, a <b>Click Event</b> has been attached to the polygon area here. Then the <span class="code">getPath()</span> method is used to retrieve all the paths in the polygon array. You could at this stage iterate through using a <b>for-loop</b> to get each single point using the <span class="code">getAt()</span> method.</p>
       <p>Interact with this example, you'll notice that the click event not only specifies the specific <b>Latitude-Longitude</b> coordinates for the click but also provides <b>5 Coordinate Points</b> which are responsible for creating this polygon shape.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap6"></div>
     </div>
   </div>
 </div>
@@ -288,7 +288,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Example 7 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection overviewParentSection">
   <div class="dawgRow">
     <div class="segment overviewSegment">
       <h2 class="text-center">Rectangle</h2>
@@ -304,10 +304,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap8"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal8">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -318,6 +315,9 @@ title: "Drawing On Your Google Maps - Shapes"
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
       <h3>Google Map Shapes - <span class="subTopic">Basic Rectangle</span></h3>
       <p>In this example, there are two areas on the map which are overlayed with <b>Rectangle Shapes</b>. In terms of styling, the Rectangle <b>Options Object</b> similar to that of polygons, accepts fields like <b>strokeColor, strokeWeight, fillColor</b> etc.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap8"></div>
     </div>
   </div>
 </div>
@@ -368,7 +368,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Example 9 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection overviewParentSection">
   <div class="dawgRow">
     <div class="segment overviewSegment">
       <h2 class="text-center">Circle</h2>
@@ -383,10 +383,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap10"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal10">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -397,6 +394,9 @@ title: "Drawing On Your Google Maps - Shapes"
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
       <h3>Google Map Shapes - <span class="subTopic">Basic Circle</span></h3>
       <p>Our example here showcases three cities in this part of the world. Radius of the circles are generated based upon the <b>Square Root</b> values of the populations of these three cities, each of which is further mulitplied into 200. The <b>Radius Field</b> value can be given as per your requirements to finally generate the circle shape.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap10"></div>
     </div>
   </div>
 </div>
@@ -447,7 +447,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Example 11 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection overviewParentSection">
   <div class="dawgRow">
     <div class="segment overviewSegment">
       <h2 class="text-center">Making Shapes Editable/Draggable</h2>
@@ -462,10 +462,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap12"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal12">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -477,6 +474,9 @@ title: "Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Editable Polyline</span></h3>
       <p>An example where an initially constructed polyline over a map is set to <span class="code">editable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then edit the polyline. You would notice that the line takes a certain curve. This is becuase the <span class="code">geodesic</span> field in its options object is set to <b>true</b>.</p>
       <p>Create your own map without this field option and notice the difference.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap12"></div>
     </div>
   </div>
 </div>
@@ -529,10 +529,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap14"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal14">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -544,6 +541,9 @@ title: "Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Editable Polygon</span></h3>
       <p>An example where an initially constructed polygon over a map is set to <span class="code">editable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then edit the polyline. You would notice that the line takes a certain curve. This is becuase the <span class="code">geodesic</span> field in its options object is set to <b>true</b>.</p>
       <p>Create your own map without this field option and notice the difference.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap14"></div>
     </div>
   </div>
 </div>
@@ -596,10 +596,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap16"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal16">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -610,6 +607,9 @@ title: "Drawing On Your Google Maps - Shapes"
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
       <h3>Google Map Shapes - <span class="subTopic">Editable Rectangle</span></h3>
       <p>An example where an initially constructed rectangle over a map is set to <span class="code">editable: true</span> in its options object.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap16"></div>
     </div>
   </div>
 </div>
@@ -662,10 +662,7 @@ title: "Drawing On Your Google Maps - Shapes"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap18"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal18">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -676,6 +673,9 @@ title: "Drawing On Your Google Maps - Shapes"
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
       <h3>Google Map Shapes - <span class="subTopic">Editable Circle</span></h3>
       <p>An example where an initially constructed circle over a map is set to <span class="code">editable: true</span> in its options object.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap18"></div>
     </div>
   </div>
 </div>

@@ -7,6 +7,16 @@
 @import "variables.scss";
 
 @media only screen and (max-width: 1199px) {
+	body {
+		font-size: 1.5rem;
+	}
+
+  .jumbotronParent {
+    .videoParent {
+      background-attachment: scroll;
+    }
+  }
+
   .dawgGoogleMaps {
     .dawgModalUnit {
       cursor: pointer;
@@ -14,11 +24,44 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
-	body {
-		font-size: 1.5rem;
-	}
+@media only screen and (max-width: 991px) {
+  .dawgGoogleMaps {
+    .jumbotronParent {
+      height: 600px;
+      .posContainer {
+        .frameBorder {
+          .segment {
+            float: none;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .infoSection {
+      .segment {
+        float: none;
+        width: 100%;
+        padding: 15px 45px;
+      }
+    }
+    .overviewParentSection:before, .overviewParentSection:after {
+      content: "";
+      position: absolute;
+      left: 5%;
+      width: 90%;
+      height: 1px;
+      background: $paleSilver;
+    }
+    .overviewParentSection:before {
+      top: 0;
+    }
+    .overviewParentSection:after {
+      bottom: 0;
+    }
+  }
+}
 
+@media only screen and (max-width: 767px) {
  	h1 {
     font-size: 2.3rem;
   }
@@ -33,6 +76,22 @@
   }
 
   .dawgGoogleMaps {
+    .mainSiteBorder {
+      border-width: 0;
+    }
+    .dawgNavParent {
+      left: 0;
+      transform: none;
+      -webkit-transform: none;
+      max-width: 100%;
+      .segment {
+        height: 45px;
+        padding: 10px;
+        .dawgButton {
+          margin-right: 0;
+        }
+      }
+    }
     .jumbotronParent {
       height: auto;
       .posContainer {
@@ -41,12 +100,40 @@
         left: auto;
         transform: none;
         -webkit-transform: none;
+        padding: 85px 15px 15px;
         .frameBorder {
           .segment {
             width: 100%;
             float: none;
+            .dawgButton {
+              margin-top: 15px;
+              width: 100%;
+              height: 45px;
+              padding: 12px;
+            }
           }
         }
+      }
+    }
+    .infoSection {
+      .segment {
+        padding: 0 15px;
+        .paginationDiv {
+          .headingSegment {
+            padding-left: 0;
+          }
+          .bodySegment {
+            .borderBox {
+              float: none;
+              width: 100%;
+              margin-bottom: 0;
+              padding: 5px 0;
+            }
+          }
+        }
+      }
+      .segment:last-child {
+        margin-top: 15px;
       }
     }
   }

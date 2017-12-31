@@ -1,7 +1,7 @@
 ---
 url: "/map-markers-and-info-windows/"
 layout: "default-structure"
-title: "Map Markers And Info Windows"
+title: "DAWG Google Maps | Map Markers And Info Windows"
 ---
 
 <!--Jumbotron Section Details Starts Here-->
@@ -76,10 +76,7 @@ title: "Map Markers And Info Windows"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap2"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -92,6 +89,9 @@ title: "Map Markers And Info Windows"
       <p>Markers on a set <b>Lat-Lng</b> point on your google map can be removed by using the <span class="code">marker.setMap(null)</span> method. This however, does not delete the marker itself. If you do have multiple markers to manage, you could place them in an <b>Array</b> and empty the array should you wish to disassociate all markers from your map.</p>
       <p>Animation options are also availabe for markers, available in two options provided by google maps api - <span class="code">google.maps.Animation.BOUNCE</span> &amp; <span class="code">google.maps.Animation.DROP</span>. This example demonstrates markers being set on the map with an animation and then remove from the map, only to be placed at a different location.</p>
       <p>Marker location changed every 3 seconds.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
 </div>
@@ -144,10 +144,7 @@ title: "Map Markers And Info Windows"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap4"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -158,6 +155,9 @@ title: "Map Markers And Info Windows"
 			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
       <h3>Google Maps Markers: <span class="subTopic">Marker Labels with Simple Icons</span></h3>
       <p>In this example, the default google maps marker is replaced by our very own custom image (png). This is achieved by adding the <b>icon</b> field to the <span class="code">Marker Object</span>. The animating bounce effect is achieved with the <b>animation</b> which was seen in our earlier example.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
 </div>
@@ -210,10 +210,7 @@ title: "Map Markers And Info Windows"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <div class="googleMapHolder" id="gMap6"></div>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
 			<span class="sourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -225,6 +222,9 @@ title: "Map Markers And Info Windows"
       <h3>Google Maps Info Windows: <span class="subTopic">Basic</span></h3>
       <p>As the name suggests, <b>Info Windows</b> are elements that are used in Google Maps to display some form of information about a specific geolocation on the map. Its normally seen hanging over a marker, which has a <span class="code">click event</span> attached to it to help open the respective Info Window. The info window <span class="code">Options Object</span> carries a field named <b>content</b> which can either carry simple text to custom made <b>HTML Elements</b> to provide a certain sense of customization.</p>
       <p>In our example, click on the marker over <b>Hawaii</b> an a small <b>Info Window</b> would open up providing you some information. [@ Text is courtesy of Google Search - merely being depected for understanding].</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap6"></div>
     </div>
   </div>
 </div>

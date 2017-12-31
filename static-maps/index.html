@@ -1,7 +1,7 @@
 ---
 url: "/static-maps"
 layout: "default-structure"
-title: "Dawg-Google-Maps: Google Static Maps API"
+title: "DAWG Google Maps | Google Static Maps API"
 ---
 
 <!--Jumbotron Section Details Starts Here-->
@@ -55,13 +55,13 @@ title: "Dawg-Google-Maps: Google Static Maps API"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=grand+canyon+usa&zoom=12&size=1920x450&scale=2"/>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
       <h3>Static Maps: <span class="subTopic">Scale Parameter</span></h3>
       <p>Applied in default value of <span class="code">1</span>, other accepted values for this parameters are <b>2></b> and <b>4 [Available for Google Maps APIs Premium Plan Customers]</b>. This parameter is responsible for developing higher resolution images.</p>
       <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=grand+canyon+usa&zoom=12&amp;size=1920x450&amp;scale=2</span>
+    </div>
+    <div class="segment col-md-pull-6">
+      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=grand+canyon+usa&zoom=12&size=1920x450&scale=2"/>
     </div>
   </div>
 </div>
@@ -85,14 +85,14 @@ title: "Dawg-Google-Maps: Google Static Maps API"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&size=1920x450&markers=color:blue|label:A|cape+town+south+africa&markers=color:black|label:D|durban+south+africa&markers=color:purple|label:B|mossel+bay+south+africa&markers=color:yellow|label:C|port+elizabeth+south+africa"/>
-    </div>
-    <div class="segment">
+    <div class="segment col-md-push-6">
       <h3>Static Maps: <span class="subTopic">Map Markers</span></h3>
       <p>Markers refers to one or more parameters that defines map pins at set locations. A marker parameter has a set of key-value pairings which could be used, namely <b>size</b>, <b>color</b> and <b>label</b>. Markers also have the capacity to taken in location details.</p>
       <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;size=1920x450&amp;markers=color:blue|label:A|cape+town+south+africa&amp;markers=color:black|label:D|durban+south+africa&amp;markers=color:purple|label:B|mossel+bay+south+africa&amp;markers=color:yellow|label:C|port+elizabeth+south+africa</span></p>
       <p>Google Static Maps has an option to help insert custom markers, but over serveral attempts to even have images placed on Google Drive, it doesn't seem to be a reliable feature.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&size=1920x450&markers=color:blue|label:A|cape+town+south+africa&markers=color:black|label:D|durban+south+africa&markers=color:purple|label:B|mossel+bay+south+africa&markers=color:yellow|label:C|port+elizabeth+south+africa"/>
     </div>
   </div>
 </div>
