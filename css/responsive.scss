@@ -58,6 +58,13 @@
     .overviewParentSection:after {
       bottom: 0;
     }
+    .footerParent {
+      .segment {
+        .socialList {
+          text-align: center;
+        }
+      }
+    }
   }
 }
 
