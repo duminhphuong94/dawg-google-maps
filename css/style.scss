@@ -251,6 +251,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
     }
+    .dataLayerVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/brick-layer-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;
@@ -716,6 +721,19 @@ a.refLink {
           margin-right: 0;
         }
       }
+    }
+  }
+  .siteScrollParent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    .scrollBarEl {
+      width: 0;
+      height: 3px;
+      background: $errorRed;
+      @include transition(width, 0.25s, ease-out);
     }
   }
 }

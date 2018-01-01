@@ -40,6 +40,16 @@ function generalBodyFunctionality() {
   });
 }
 
+function documentScrollPercent() {
+  if($("#scrollBarEl").length > 0) {
+    var scrollBarEl = $("#scrollBarEl");
+    var percentScrolled = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100;
+    scrollBarEl.css({
+      width: percentScrolled + "%"
+    });
+  }
+}
+
 function siteMenuFunctionality() {
   var menuParent = $("#dawgNavParent");
   var menuButton = menuParent.find("#menuButton");
@@ -3451,6 +3461,7 @@ function googleMapsDataLayers() {
 
 function centralProcessor() {
   generalBodyFunctionality();
+  documentScrollPercent();
   siteMenuFunctionality();
   toolTipFunctionality();
   dawgModalFunctionality();
@@ -3465,6 +3476,10 @@ function centralProcessor() {
 
   $(window).resize(function() {
     toolTipFunctionality();
+  });
+
+  $(window).on("scroll", function() {
+    documentScrollPercent();
   });
 }
 
