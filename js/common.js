@@ -167,8 +167,6 @@ function googleMapsJsBasics() {
         heading: 90
       });
 
-      console.log(map);
-
       function autoRotation() {
         if(map.getTilt !== 0) {
           var mapCurrentHeading = map.getHeading() || 0;
@@ -599,8 +597,6 @@ function googlePlacesLibraryFunc() {
       var pageNumber = 1;
       function resultCallback(result, status, pagination) {
         if(status === google.maps.places.PlacesServiceStatus.OK) {
-          console.log(result);
-          console.log(pagination);
           var toBeClonedParent = $("#paginationClone");
           var cloneParent = toBeClonedParent.clone();
           cloneParent.find(".headingSegment").text("Page Number: " + pageNumber);
@@ -634,7 +630,6 @@ function googlePlacesLibraryFunc() {
           pageNumber += 1;
           if(pagination.hasNextPage) {
             $("#gMap10").parent().find(".loadMoreButton").on("click", function() {
-              console.log("next page");
               $("#gMap10").parent().find(".errorMessage").addClass("hide");
               pagination.nextPage();
             });
@@ -2177,7 +2172,6 @@ function googleMapControlsAndEvents() {
       CenterPosControls.prototype.centerCoords = null;
       CenterPosControls.prototype.setCenterCoords = function(coords) {
         this.centerCoords = coords;
-        console.log(this);
       };
       CenterPosControls.prototype.getCenterCoords = function() {
         return this.centerCoords;
@@ -3370,10 +3364,6 @@ function googleMapsDataLayers() {
         mapTypeId: "terrain"
       });
 
-      map.addListener("click", function(event) {
-        console.log(event.latLng.lat(), event.latLng.lng());
-      });
-
       var polyOuter = [
       {lat: -33.91928949902838, lng: 18.419265747070312},
       {lat: -33.92220964959485, lng: 18.415746688842773},
@@ -3388,9 +3378,6 @@ function googleMapsDataLayers() {
       ];
 
       map.data.add({geometry: new google.maps.Data.Polygon([polyOuter, polyInner])});
-      map.data.addListener("click", function(event) {
-        console.log(event.latLng.lat(), event.latLng.lng());
-      });
     })();
 
     (function dataLayerLoaderGeoJson() {
@@ -3459,6 +3446,40 @@ function googleMapsDataLayers() {
   }
 }
 
+function googleMapsHeatLayers() {
+  if(document.location.href.indexOf("google-maps-heat-layers") > -1) {
+    (function basicHeatMapExample() {
+      var locationCoords = new google.maps.LatLng(35.9940, -78.8986);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        mapTypeId: "roadmap",
+        center: locationCoords,
+        zoom: 10
+      });
+
+      var crimeArray = [];
+
+      $.ajax({
+        url: "https://opendurham.nc.gov/api/records/1.0/search/?dataset=durham-police-crime-reports&facet=date_rept&facet=dow1&facet=reportedas&facet=chrgdesc&facet=big_zone",
+        success: function(successResult) {
+          $.each(successResult.records, function(index, dataset) {
+            var latloc = dataset.geometry.coordinates[1];
+            var lngloc = dataset.geometry.coordinates[0];
+            var loccoords = new google.maps.LatLng(latloc, lngloc);
+            crimeArray.push(loccoords);
+          });
+          var heatDisplay = new google.maps.visualization.HeatmapLayer({
+            map: map,
+            data: crimeArray
+          });
+        },
+        error: function(errorResult) {
+          console.log(errorResult);
+        },
+      });
+    })();
+  }
+}
+
 function centralProcessor() {
   generalBodyFunctionality();
   documentScrollPercent();
@@ -3473,6 +3494,7 @@ function centralProcessor() {
   googleMapControlsAndEvents();
   drawingOnYourMapShapes();
   googleMapsDataLayers();
+  googleMapsHeatLayers();
 
   $(window).resize(function() {
     toolTipFunctionality();
@@ -3492,10 +3514,10 @@ function googleAPIInit() {
     var setLangString = "el";
     var setRegionString = "GR";
     if(document.location.href.indexOf("map-localizing") === -1) {
-      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places");
+      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization");
     }
     else {
-      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places&language=" + setLangString + "&region=" + setRegionString);
+      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization&language=" + setLangString + "&region=" + setRegionString);
     }
     gScriptTag.setAttribute("async", true)
     gScriptTag.setAttribute("defer", true);

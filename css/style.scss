@@ -180,7 +180,7 @@ a.refLink {
       top: 0;
       left: 0;
       z-index: 80;
-      background: rgba(49, 62, 70, 0.9);
+      background: rgba(49, 62, 70, 0.7);
     }
     .videoParent {
       position: absolute;
@@ -253,6 +253,11 @@ a.refLink {
     }
     .dataLayerVideoParent {
 			background: url("{{ site.baseurl }}/assets/images/brick-layer-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
+    .heatLayerVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/heat-bg.jpg") no-repeat center center;
 			background-size: cover;
 			background-attachment: fixed;
     }
