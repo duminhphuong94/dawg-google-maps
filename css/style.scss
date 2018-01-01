@@ -732,7 +732,7 @@ a.refLink {
     .scrollBarEl {
       width: 0;
       height: 3px;
-      background: $errorRed;
+      background: $weldonBlue;
       @include transition(width, 0.25s, ease-out);
     }
   }
