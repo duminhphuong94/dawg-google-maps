@@ -1,0 +1,131 @@
+---
+url: "/google-maps-data-layers"
+layout: "default-structure"
+title: "DAWG Google Maps | Data Layers"
+---
+
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="videoParent">
+    <video autoplay="autoplay" loop muted class="hidden-xs">
+      <source src="{{ site.baseurl }}/assets/videos/hologram-video.mp4" type="video/mp4"/>
+      <source src="{{ site.baseurl }}/assets/videos/hologram-video.ogg" type="video/ogg"/>
+      <source src="{{ site.baseurl }}/assets/videos/hologram-video.webm" type="video/webm"/>
+    </video>
+  </div>
+  <div class="posContainer">
+    <div class="frameBorder dawgRow">
+      <div class="segment">
+        <h1>Google Maps Javascript API - Data Layers</h1>
+        <p>Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
+        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Jumbotron Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal1">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Data Layer - <span class="subTopic">Draw Polygon</span></h3>
+      <p>Unlike a regular <b>Polygon Class</b>, the Google Map <b>Data Layer's</b> method for handling Polygon coordinates is more effective especially when more than one set of coordinates are given in the the coordinates array. These are situations when a pattern similar to creating a <b>Hole Effect</b> inside your polygon comes about. The Google Map Data method helps in effectively creating this effect.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap1"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 1 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal1">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/data-layer-create-polygon.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 1 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment col-md-push-6">
+			<span class="sourceCode" data-modalLink="#exampleModal1">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h3>Google Map Data Layer - <span class="subTopic">Load GeoJson and Styling</span></h3>
+      <p>Google Maps Data Layer's <span class="code">loadGeoJson()</span> method helps create a map based representation of any file which contains arbitrary <b>GeoJson Data</b>. The GeoJson format is currently a standard format for sharing Geospatial Data over the internet. <b>Styling</b> for these geospatial representaion over Google Maps can be done with the help of the <span class="code">setStyle()</span> method. While you may be able to apply different style options all together, they will only bring about an effect for the required element on the map.</p>
+      <p>Our example here, brings in data from a <b>GeoJson Endpoint</b>, <a href="https://phl.carto.com/api/v2/sql?q=SELECT+*+FROM+li_demolitions&filename=li_demolitions&format=geojson&skipfields=car" target="_blank"><span class="code">https://phl.carto.com/api/v2/sql?q=SELECT+*+FROM+li_demolitions&filename=li_demolitions&format=geojson&skipfields=car</span></a>, post its representation on the map, each marker is changed from the default Google Maps Marker to our customized marker icon.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap2"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 2 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal2">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/data-layer-load-geojson.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 2 Modal Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal3">
+        <?xml version="1.0" encoding="utf-8"?>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+          <path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+          <path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+        </svg>
+			</span>
+      <h2 class="text-center">Google Maps Data Layer Events</h2>
+      <p>Continuing from our previous example, we are representing <b>GeoJson Data</b> about Building Demolitions that have happened in the city of Philadelphia. Google Map's <span class="code">map.data</span> object can be bound with events with <span class="code">.addListener('event_name', callback)</span> method. Here we have bound a <span class="code">click</span> event to the <b>map.data</b> object, which is responsible for triggering the respective <b>Info Window</b> and providing a <b>Bounce Animation</b> to the marker on the map.</p>
+      <p>Additionaly, the <b>Map</b> itself is also bound with a click event which removes any <b>Info Window</b> associations with it and also helps remove any <b>map.data.overrideStyle() method</b> details. Similarly, the <b>Info Windows</b> also have events that have been bounds to event, with a <b>closeclick</b> event to dissassociate itself from the map and also remove styling options rendered by <b> map.data.overrideStyle() method</b>.</p>
+      <p>The <span class="code">map.data.revertStyle();</span> method is responsible for removing any styling options that have been set by the map.data.overrideStyle() method.</p>
+    </div>
+    <div class="segment overviewSegment">
+      <div class="googleMapHolder" id="gMap3"></div>
+    </div>
+    <div class="segment overviewSegment">
+      <p class="text-center">Please refer to <a href="https://developers.google.com/maps/documentation/javascript/datalayer" target="_blank">Google Maps Javascript API - Data Layers</a> for more information about this particular page.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Example 3 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal3">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/data-layer-event-handling.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 3 Modal Details Ends Here-->

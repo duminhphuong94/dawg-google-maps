@@ -1995,7 +1995,6 @@ function googleMapMarkersAndInfoWindow() {
       var wLocationOrigin = window.location.origin;
       var baseUrl = "/dawg-google-maps";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
-      console.log(imageUrl);
       var marker = new google.maps.Marker({
         position: honolulu,
         map: map,
@@ -2014,7 +2013,6 @@ function googleMapMarkersAndInfoWindow() {
       var wLocationOrigin = window.location.origin;
       var baseUrl = "/dawg-google-maps";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
-      console.log(imageUrl);
       var marker = new google.maps.Marker({
         position: honolulu,
         map: map,
@@ -3352,6 +3350,105 @@ function drawingOnYourMapShapes() {
   }
 }
 
+function googleMapsDataLayers() {
+  if(document.location.href.indexOf("google-maps-data-layers") > -1) {
+    (function dataLayerDrawPolygon() {
+      var locationCoords = new google.maps.LatLng(-33.9249, 18.4241);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 14,
+        mapTypeId: "terrain"
+      });
+
+      map.addListener("click", function(event) {
+        console.log(event.latLng.lat(), event.latLng.lng());
+      });
+
+      var polyOuter = [
+      {lat: -33.91928949902838, lng: 18.419265747070312},
+      {lat: -33.92220964959485, lng: 18.415746688842773},
+      {lat: -33.924987260907464, lng: 18.420381546020508},
+      {lat: -33.92235209340369, lng: 18.423128128051758}
+      ];
+
+      var polyInner = [
+      {lat: -33.92327797235584, lng: 18.42106819152832},
+      {lat: -33.921283759032086, lng: 18.41806411743164},
+      {lat: -33.922708201883815, lng: 18.418235778808594},
+      ];
+
+      map.data.add({geometry: new google.maps.Data.Polygon([polyOuter, polyInner])});
+      map.data.addListener("click", function(event) {
+        console.log(event.latLng.lat(), event.latLng.lng());
+      });
+    })();
+
+    (function dataLayerLoaderGeoJson() {
+      var locationCoords = new google.maps.LatLng(39.9526, -75.1652);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 14,
+        mapTypeId: "terrain",
+      });
+  
+      map.data.loadGeoJson("https://phl.carto.com/api/v2/sql?q=SELECT+*+FROM+li_demolitions&filename=li_demolitions&format=geojson&skipfields=cartodb_id", null, function(features){
+        console.log(features);
+      });
+
+      var wLocationOrigin = window.location.origin;
+      var baseUrl = "/dawg-google-maps";
+      var imageUrl = wLocationOrigin + baseUrl + "/assets/images/polymarker.png";
+      map.data.setStyle({
+        icon: imageUrl
+      });
+    })();
+
+    (function dataLayerEvents() {
+      var locationCoords = new google.maps.LatLng(39.9526, -75.1652);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 14,
+        mapTypeId: "terrain",
+      });
+  
+      var infoWindow = new google.maps.InfoWindow();
+
+      map.data.loadGeoJson("https://phl.carto.com/api/v2/sql?q=SELECT+*+FROM+li_demolitions&filename=li_demolitions&format=geojson&skipfields=cartodb_id", null, function(features){
+        console.log(features);
+      });
+
+      var wLocationOrigin = window.location.origin;
+      var baseUrl = "/dawg-google-maps";
+      var imageUrl = wLocationOrigin + baseUrl + "/assets/images/polymarker.png";
+      map.data.setStyle({
+        icon: imageUrl
+      });
+
+      map.data.addListener("click", function(event) {
+        var infoset = event.feature;
+        var contentString = "<b>Owner Name: </b>" + infoset.getProperty("ownername") + "<br/>" + "<b>Address Details: </b>" + infoset.getProperty("address") + "<br/><br/>" + "<b>Record Type: </b>" + infoset.getProperty("record_type") + "<br/>" + "<b>Case/Permit Number: </b>" + infoset.getProperty("caseorpermitnumber") + "<br/><br/>" + "<b>Demo-Contractor Name: </b>" + infoset.getProperty("contractorname") + "<br/>" + "<b>Demo-Contractor Address: </b>" + infoset.getProperty("contractoraddress1") + "<br/>" + "<b>Demo-Contractor Location: </b>" + infoset.getProperty("contractorcity") + ", " + infoset.getProperty("contractorstate") + "<br/>"; 
+        infoWindow.setOptions({
+          content: contentString,
+          position: {lat: event.latLng.lat(), lng: event.latLng.lng()},
+        });
+        infoWindow.open(map);
+        map.data.revertStyle();
+        map.data.overrideStyle(event.feature, {animation: google.maps.Animation.BOUNCE});
+      });
+      
+      map.addListener("click", function(event) {
+        infoWindow.setMap(null);
+        map.data.revertStyle();
+      });
+
+      infoWindow.addListener("closeclick", function(event) {
+        map.data.revertStyle();
+        infoWindow.setMap(null);
+      });
+    })();
+  }
+}
+
 function centralProcessor() {
   generalBodyFunctionality();
   siteMenuFunctionality();
@@ -3364,6 +3461,7 @@ function centralProcessor() {
   googleMapMarkersAndInfoWindow();
   googleMapControlsAndEvents();
   drawingOnYourMapShapes();
+  googleMapsDataLayers();
 
   $(window).resize(function() {
     toolTipFunctionality();
