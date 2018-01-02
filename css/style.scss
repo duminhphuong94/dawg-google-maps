@@ -261,6 +261,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
     }
+    .ttbLayerVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/traffic-arrow-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;

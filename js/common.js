@@ -3480,6 +3480,43 @@ function googleMapsHeatLayers() {
   }
 }
 
+function trafficTransitBicycleLayers() {
+  if(document.location.href.indexOf("traffic-transit-bicycle-layer") > -1) {
+    (function trafficLayer() {
+      var locationCoords =  new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 10
+      });
+
+      var trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
+    })();
+
+    (function transitLayer() {
+      var locationCoords =  new google.maps.LatLng(34.0522, -118.2437);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 10
+      });
+
+      var transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+    })();
+
+    (function bicycleLayer() {
+      var locationCoords =  new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 10
+      });
+
+      var bicycleLayer = new google.maps.BicyclingLayer();
+      bicycleLayer.setMap(map);
+    })();
+  }
+}
+
 function centralProcessor() {
   generalBodyFunctionality();
   documentScrollPercent();
@@ -3495,6 +3532,7 @@ function centralProcessor() {
   drawingOnYourMapShapes();
   googleMapsDataLayers();
   googleMapsHeatLayers();
+  trafficTransitBicycleLayers();
 
   $(window).resize(function() {
     toolTipFunctionality();
