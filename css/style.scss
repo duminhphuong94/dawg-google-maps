@@ -266,6 +266,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
     }
+    .directionsVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/airplane-weindow-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;
@@ -566,6 +571,110 @@ a.refLink {
         position: absolute;
         bottom: -4px;
         left: 0;
+      }
+      .directionsInfoParent {
+        .directionsHeader {
+          .locationSection {
+            float: left;
+            width: calc(100% / 3);
+            padding: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            svg {
+              width: 25px;
+              height: 25px;
+            }
+            .title {
+              color: $paleSilver;
+              font-size: 1.2rem;
+              margin-right: 5px;
+            }
+          }
+          .locationSection:first-child {
+            padding-right: 5px;
+          }
+          .locationSection:last-child {
+            padding-left: 5px;
+          }
+        }
+        .directionsBody {
+          padding: 0 10px;
+          .arrDepDetails {
+            ul {
+              li {
+                font-size: 1.2rem;
+                span {
+                  color: $weldonBlue;
+                }
+                .departureTimeValue, .arrivalTimeValue {
+                  margin-left: 5px;
+                }
+              }
+            }
+          }
+          .durationInTraffic {
+            font-size: 1.2rem;
+            span {
+              margin-left: 5px;
+              color: $weldonBlue;
+            }
+          }
+          .dataInfo {
+            padding: 0 10px;
+            border-left: 3px solid $paleSilver;
+            margin-bottom: 15px;
+            p {
+              margin: 0;
+            }
+            .travelModeInfo {
+              font-size: 1.2rem;
+              font-weight: 700;
+              text-transform: uppercase;
+              color: $roseQuartz;
+            }
+            .maneuverInfo {
+              font-family: $headingFont;
+              font-weight: 700;
+              font-size: 1.4rem;
+              position: relative;
+              margin-bottom: 10px;
+            }
+            .maneuverInfo:after {
+              content: "";
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 50px;
+              height: 2px;
+              background: #ec0000;
+            }
+            .instructionsInfo {
+              font-size: 1.4rem;
+            }
+            .distDirInfo {
+              font-size: 1.2rem;
+              font-weight: 700;
+              color: $linkBlue;
+            }
+          }
+          .dataInfo:first-child {
+            margin-top: 10px;
+          }
+        }
+        .copyrightInfo {
+          padding: 15px 0 15px 15px;
+          font-size: 1.2rem;
+          text-align: right;
+          .copyrightValue {
+            color: $roseQuartz;
+          }
+          .warningMessage {
+            color: $errorRed;
+            font-size: 1.2rem;
+            text-align: right;
+          }
+        }
       }
     }
   }

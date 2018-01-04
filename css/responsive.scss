@@ -142,6 +142,22 @@
       .segment:last-child {
         margin-top: 15px;
       }
+      .overviewSegment {
+        .directionsInfoParent {
+          .directionsHeader {
+            .locationSection {
+              float: none;
+              width: 100%;
+            }
+            .locationSection:first-child {
+              padding-right: 10px;
+            }
+            .locationSection:last-child {
+              padding-left: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }

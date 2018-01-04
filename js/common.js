@@ -3517,6 +3517,396 @@ function trafficTransitBicycleLayers() {
   }
 }
 
+function googleMapsDirectionsAPI() {
+  if(document.location.href.indexOf("directions-service") > -1) {
+    /*
+    (function simpleDirectionServiceRequest() {
+      var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 12
+      });
+
+      var directionsObj = {
+        origin: "New York City, USA",
+        destination: "Philadelphia, USA",
+        travelMode: "DRIVING"
+      };
+
+      var directionService = new google.maps.DirectionsService();
+      var directionDisplay = new google.maps.DirectionsRenderer();
+      directionDisplay.setMap(map);
+      directionService.route(directionsObj, function(results, status) {
+        if(status === "OK") {
+          //Do Not Delete This
+          console.log(results);
+          directionDisplay.setDirections(results);
+          var routesArray = results.routes;
+          var parentResultHolder = $("#gMap1ResultHolder");
+          $.each(routesArray, function(index, dataObj) {
+            var resultClone = $("#directionResultClone").clone();
+            resultClone.find(".copyrightValue").text(dataObj.copyrights);
+      
+            var legsArray = dataObj.legs;
+            $.each(legsArray, function(q, thisLegObj) {
+              var distanceText = thisLegObj.distance.text;
+              var durationText = thisLegObj.duration.text;
+              resultClone.find(".distanceDurationValue").text(distanceText + ", " + durationText);
+              resultClone.find(".originLocationValue").text(thisLegObj.start_address);
+              resultClone.find(".destinationLocationValue").text(thisLegObj.end_address);
+              $.each(thisLegObj.steps, function(w, thisStepObj) {
+                var dataInfoEl = $("#dataInfoClone").clone();
+                dataInfoEl.find(".travelModeInfo").text(thisStepObj.travel_mode);
+                if(thisStepObj.maneuver !== "" || !!thisStepObj.maneuver) {
+                  var maneuverText = thisStepObj.maneuver;
+                  dataInfoEl.find(".maneuverInfo").text(maneuverText).removeClass("hide");
+                }
+                dataInfoEl.find(".distDirInfo").text(thisStepObj.distance.text + ", " + thisStepObj.duration.text);
+                dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
+                dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
+              });
+            });
+            
+            resultClone.removeAttr("id").removeClass("hide");
+            resultClone.appendTo(parentResultHolder);
+          });
+        }
+        else {
+          console.error("ERROR Directions Service Request, ->", status);
+        }
+      });
+    })();
+
+    (function directionTransitOption() {
+      var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 12
+      });
+
+      var directionsObj = {
+        origin: "Empire State Building, New York, USA",
+        destination: "Long Island City, New York, USA",
+        travelMode: "TRANSIT",
+        transitOptions: {
+          departureTime: new Date(),
+          modes: ["TRAIN", "SUBWAY"],
+          routingPreference: "LESS_WALKING"
+        }
+      };
+
+      var directionService = new google.maps.DirectionsService();
+      var directionDisplay = new google.maps.DirectionsRenderer();
+      directionDisplay.setMap(map);
+      directionService.route(directionsObj, function(results, status) {
+        if(status === "OK") {
+          //Do Not Delete This
+          console.log(results);
+          directionDisplay.setDirections(results);
+          var routesArray = results.routes;
+          var parentResultHolder = $("#gMap2ResultHolder");
+          $.each(routesArray, function(index, dataObj) {
+            var resultClone = $("#directionResultClone").clone();
+            resultClone.find(".copyrightValue").text(dataObj.copyrights);
+            
+            var legsArray = dataObj.legs;
+            $.each(legsArray, function(q, thisLegObj) {
+              var distanceText = thisLegObj.distance.text;
+              var durationText = thisLegObj.duration.text;
+              resultClone.find(".distanceDurationValue").text(distanceText + ", " + durationText);
+              resultClone.find(".originLocationValue").text(thisLegObj.start_address);
+              resultClone.find(".destinationLocationValue").text(thisLegObj.end_address);
+              $.each(thisLegObj.steps, function(w, thisStepObj) {
+                var dataInfoEl = $("#dataInfoClone").clone();
+                dataInfoEl.find(".travelModeInfo").text(thisStepObj.travel_mode);
+                if(thisStepObj.maneuver !== "" || !!thisStepObj.maneuver) {
+                  var maneuverText = thisStepObj.maneuver;
+                  dataInfoEl.find(".maneuverInfo").text(maneuverText).removeClass("hide");
+                }
+                dataInfoEl.find(".distDirInfo").text(thisStepObj.distance.text + ", " + thisStepObj.duration.text);
+                dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
+                dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
+              });
+              if(thisLegObj.arrival_time && thisLegObj.departure_time) {
+                console.log("calling");
+                var departureTimeText = thisLegObj.departure_time.text;
+                var departureTimeZoneText = thisLegObj.departure_time.time_zone;
+                var arrivalTimeText = thisLegObj.arrival_time.text;
+                var arrivalTimeZoneText = thisLegObj.arrival_time.time_zone;
+                resultClone.find(".departureTimeValue").text(departureTimeText).addBack().find(".depTimeZoneValue").text(departureTimeZoneText);
+                resultClone.find(".arrivalTimeValue").text(arrivalTimeText).addBack().find(".arrTimeZoneValue").text(arrivalTimeZoneText);4
+                resultClone.find(".arrDepDetails").removeClass("hide");
+              }
+            });
+
+            if(dataObj.warnings.length > 0) {
+              var warningMessage = "";
+              $.each(dataObj.warnings, function(e, warningString) {
+                warningMessage += (warningMessage === "") ? (warningString) : (" " + warningString);
+              });
+              resultClone.find(".warningMessage").text(warningMessage).removeClass("hide");
+            }
+
+            resultClone.removeAttr("id").removeClass("hide");
+            resultClone.appendTo(parentResultHolder);
+          });
+        }
+        else {
+          console.error("ERROR Directions Service Request, ->", status);
+        }
+      });
+    })();
+    
+    (function directionTransitOption() {
+      var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 12
+      });
+
+      var directionsObj = {
+        origin: "Empire State Building, New York, USA",
+        destination: "New York Hall of Science, New York, USA",
+        travelMode: "DRIVING",
+        drivingOptions: {
+          departureTime: new Date(),
+          trafficModel: "bestguess"
+        }
+      };
+
+      var directionService = new google.maps.DirectionsService();
+      var directionDisplay = new google.maps.DirectionsRenderer();
+      directionDisplay.setMap(map);
+      directionService.route(directionsObj, function(results, status) {
+        if(status === "OK") {
+          //Do Not Delete This
+          console.log(results);
+          directionDisplay.setDirections(results);
+          var routesArray = results.routes;
+          var parentResultHolder = $("#gMap3ResultHolder");
+          $.each(routesArray, function(index, dataObj) {
+            var resultClone = $("#directionResultClone").clone();
+            resultClone.find(".copyrightValue").text(dataObj.copyrights);
+            
+            var legsArray = dataObj.legs;
+            $.each(legsArray, function(q, thisLegObj) {
+              var distanceText = thisLegObj.distance.text;
+              var durationText = thisLegObj.duration.text;
+              resultClone.find(".distanceDurationValue").text(distanceText + ", " + durationText);
+              resultClone.find(".originLocationValue").text(thisLegObj.start_address);
+              resultClone.find(".destinationLocationValue").text(thisLegObj.end_address);
+              $.each(thisLegObj.steps, function(w, thisStepObj) {
+                var dataInfoEl = $("#dataInfoClone").clone();
+                dataInfoEl.find(".travelModeInfo").text(thisStepObj.travel_mode);
+                if(thisStepObj.maneuver !== "" || !!thisStepObj.maneuver) {
+                  var maneuverText = thisStepObj.maneuver;
+                  dataInfoEl.find(".maneuverInfo").text(maneuverText).removeClass("hide");
+                }
+                dataInfoEl.find(".distDirInfo").text(thisStepObj.distance.text + ", " + thisStepObj.duration.text);
+                dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
+                dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
+              });
+              if(thisLegObj.duration_in_traffic) {
+                resultClone.find(".durationInTraffic").find(".durationInTrafficValue").text(thisLegObj.duration_in_traffic.text).addBack().removeClass("hide");
+              }
+            });
+
+            if(dataObj.warnings.length > 0) {
+              var warningMessage = "";
+              $.each(dataObj.warnings, function(e, warningString) {
+                warningMessage += (warningMessage === "") ? (warningString) : (" " + warningString);
+              });
+              resultClone.find(".warningMessage").text(warningMessage).removeClass("hide");
+            }
+
+            resultClone.removeAttr("id").removeClass("hide");
+            resultClone.appendTo(parentResultHolder);
+          });
+        }
+        else {
+          console.error("ERROR Directions Service Request, ->", status);
+        }
+      });
+    })();
+    
+    (function unitSystemMetric() {
+      var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        zoom: 12
+      });
+
+      var directionsObj = {
+        origin: "Empire State Building, NYC, USA",
+        destination: "Queens Zoom NYC, USA",
+        travelMode: "DRIVING",
+        unitSystem: google.maps.UnitSystem.METRIC
+      };
+
+      var directionService = new google.maps.DirectionsService();
+      var directionDisplay = new google.maps.DirectionsRenderer();
+      directionDisplay.setMap(map);
+      directionService.route(directionsObj, function(results, status) {
+        if(status === "OK") {
+          //Do Not Delete This
+          console.log(results);
+          directionDisplay.setDirections(results);
+          var routesArray = results.routes;
+          var parentResultHolder = $("#gMap4ResultHolder");
+          $.each(routesArray, function(index, dataObj) {
+            var resultClone = $("#directionResultClone").clone();
+            resultClone.find(".copyrightValue").text(dataObj.copyrights);
+      
+            var legsArray = dataObj.legs;
+            $.each(legsArray, function(q, thisLegObj) {
+              var distanceText = thisLegObj.distance.text;
+              var durationText = thisLegObj.duration.text;
+              resultClone.find(".distanceDurationValue").text(distanceText + ", " + durationText);
+              resultClone.find(".originLocationValue").text(thisLegObj.start_address);
+              resultClone.find(".destinationLocationValue").text(thisLegObj.end_address);
+              $.each(thisLegObj.steps, function(w, thisStepObj) {
+                var dataInfoEl = $("#dataInfoClone").clone();
+                dataInfoEl.find(".travelModeInfo").text(thisStepObj.travel_mode);
+                if(thisStepObj.maneuver !== "" || !!thisStepObj.maneuver) {
+                  var maneuverText = thisStepObj.maneuver;
+                  dataInfoEl.find(".maneuverInfo").text(maneuverText).removeClass("hide");
+                }
+                dataInfoEl.find(".distDirInfo").text(thisStepObj.distance.text + ", " + thisStepObj.duration.text);
+                dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
+                dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
+              });
+            });
+            
+            resultClone.removeAttr("id").removeClass("hide");
+            resultClone.appendTo(parentResultHolder);
+          });
+        }
+        else {
+          console.error("ERROR Directions Service Request, ->", status);
+        }
+      });
+    })();
+    
+    (function usingWaypoints() {
+      var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap5"), {
+        center: locationCoords,
+        zoom: 12
+      });
+
+      var directionsObj = {
+        origin: "Brooklyn Bridge, NYC, USA",
+        destination: "Robert F Kennedy Bridge, NYC, USA",
+        travelMode: "DRIVING",
+        waypoints: [
+        {location: "Williamsburg Bridge,NYC", stopover: false},
+        {location: "Pulaski Bridge, NYC", stopover: true}
+        ],
+        optimizeWaypoints: true
+      };
+
+      var directionService = new google.maps.DirectionsService();
+      var directionDisplay = new google.maps.DirectionsRenderer();
+      directionDisplay.setMap(map);
+      directionService.route(directionsObj, function(results, status) {
+        if(status === "OK") {
+          //Do Not Delete This
+          console.log(results);
+          directionDisplay.setDirections(results);
+          var routesArray = results.routes;
+          var parentResultHolder = $("#gMap5ResultHolder");
+          $.each(routesArray, function(index, dataObj) {
+      
+            var legsArray = dataObj.legs;
+            $.each(legsArray, function(q, thisLegObj) {
+              var resultClone = $("#directionResultClone").clone();
+              resultClone.find(".copyrightValue").text(dataObj.copyrights);
+              var distanceText = thisLegObj.distance.text;
+              var durationText = thisLegObj.duration.text;
+              resultClone.find(".distanceDurationValue").text(distanceText + ", " + durationText);
+              resultClone.find(".originLocationValue").text(thisLegObj.start_address);
+              resultClone.find(".destinationLocationValue").text(thisLegObj.end_address);
+              $.each(thisLegObj.steps, function(w, thisStepObj) {
+                var dataInfoEl = $("#dataInfoClone").clone();
+                dataInfoEl.find(".travelModeInfo").text(thisStepObj.travel_mode);
+                if(thisStepObj.maneuver !== "" || !!thisStepObj.maneuver) {
+                  var maneuverText = thisStepObj.maneuver;
+                  dataInfoEl.find(".maneuverInfo").text(maneuverText).removeClass("hide");
+                }
+                dataInfoEl.find(".distDirInfo").text(thisStepObj.distance.text + ", " + thisStepObj.duration.text);
+                dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
+                dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
+              });
+              resultClone.removeAttr("id").removeClass("hide");
+              resultClone.appendTo(parentResultHolder);
+            });
+            
+          });
+        }
+        else {
+          console.error("ERROR Directions Service Request, ->", status);
+        }
+      });
+    })();
+    */
+    (function providingRouteAlternatives() {
+      var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap6"), {
+        center: locationCoords,
+        zoom: 12
+      });
+
+      var directionsObj = {
+        origin: "Empire State Building, NYC, USA",
+        destination: "Central Park Zoo, NYC, USA",
+        travelMode: "WALKING",
+        provideRouteAlternatives: true
+      };
+
+      var directionService = new google.maps.DirectionsService();
+      var directionDisplay = new google.maps.DirectionsRenderer();
+      directionDisplay.setMap(map);
+      directionService.route(directionsObj, function(results, status) {
+        if(status === "OK") {
+          var routesArray = results.routes;
+          console.log(routesArray);
+          var parentResultHolder = $("#gMap6ResultHolder");
+          /*
+          $.each(routesArray, function(index, dataObj) {
+            var legsArray = dataObj.legs;
+            $.each(legsArray, function(q, thisLegObj) {
+              var resultClone = $("#directionResultClone").clone();
+              resultClone.find(".copyrightValue").text(dataObj.copyrights);
+              var distanceText = thisLegObj.distance.text;
+              var durationText = thisLegObj.duration.text;
+              resultClone.find(".distanceDurationValue").text(distanceText + ", " + durationText);
+              resultClone.find(".originLocationValue").text(thisLegObj.start_address);
+              resultClone.find(".destinationLocationValue").text(thisLegObj.end_address);
+              $.each(thisLegObj.steps, function(w, thisStepObj) {
+                var dataInfoEl = $("#dataInfoClone").clone();
+                dataInfoEl.find(".travelModeInfo").text(thisStepObj.travel_mode);
+                if(thisStepObj.maneuver !== "" || !!thisStepObj.maneuver) {
+                  var maneuverText = thisStepObj.maneuver;
+                  dataInfoEl.find(".maneuverInfo").text(maneuverText).removeClass("hide");
+                }
+                dataInfoEl.find(".distDirInfo").text(thisStepObj.distance.text + ", " + thisStepObj.duration.text);
+                dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
+                dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
+              });
+              resultClone.removeAttr("id").removeClass("hide");
+              resultClone.appendTo(parentResultHolder);
+            });
+          });
+          */
+        }
+        else {
+          console.error("ERROR Directions Service Request, ->", status);
+        }
+      });
+    })();
+  }
+}
+
 function centralProcessor() {
   generalBodyFunctionality();
   documentScrollPercent();
@@ -3533,6 +3923,7 @@ function centralProcessor() {
   googleMapsDataLayers();
   googleMapsHeatLayers();
   trafficTransitBicycleLayers();
+  googleMapsDirectionsAPI();
 
   $(window).resize(function() {
     toolTipFunctionality();
