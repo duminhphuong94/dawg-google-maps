@@ -57,7 +57,7 @@ title: "DAWG Google Maps | Directions Service"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/heatmap-layer.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/simple-direction-service-request.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -93,7 +93,7 @@ title: "DAWG Google Maps | Directions Service"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/heatmap-layer.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/directions-transit-option.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -129,7 +129,7 @@ title: "DAWG Google Maps | Directions Service"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/heatmap-layer.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/directions-driving-options.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -165,7 +165,7 @@ title: "DAWG Google Maps | Directions Service"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/heatmap-layer.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/directions-unit-metric-system.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -205,7 +205,7 @@ title: "DAWG Google Maps | Directions Service"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/heatmap-layer.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/directions-using-waypoints.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -215,7 +215,7 @@ title: "DAWG Google Maps | Directions Service"
 <div class="infoSection">
   <div class="dawgRow">
     <div class="segment overviewSegment">
-			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal5">
+			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
 				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
@@ -224,10 +224,14 @@ title: "DAWG Google Maps | Directions Service"
 			</span>
 			<div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps Directions Service - <span class="subTopic">Providing Route Alternatives</span></h2>
+      <p>The <span class="code">provideRouteAlternatives</span> field in the directions request object, if set to <b>True</b>, would then help provide more than 1 possible route to a particular destination. You can notice this with the help of your browser console. <b>Console.Log</b> the result from the final API call made and look our for the <b>routes</b> property in your API result, which would be an array containing atleast 2 route objects.</p>
       <p>To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Providing Route Alternatives</b>.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap6"></div>
+    </div>
+    <div class="segment overviewSegment">
+      <p>Our example above shows 2 routes from the Empire State Building to Central Park Zoo in New York City. The first route information is highlighted with an active <b>blue</b> color, indicating that this is the route detail you are presently viewing. To get information about the other route, click on the <b>faded grey</b> polyline path on the map and you'll see a new set of route instructions.</p>
     </div>
     <div class="segment overviewSegment" id="gMap6ResultHolder">
     </div>
@@ -240,11 +244,48 @@ title: "DAWG Google Maps | Directions Service"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/heatmap-layer.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/directions-providing-route-alternatives.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
 <!--Example 6 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal7">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
+      <h2 class="text-center">Google Maps Directions Service - <span class="subTopic">Draggable Directions</span></h2>
+      <p>Google Maps Direction Service provides us an option to change/edit a path that has been generated post making a direction service request. This is possible by passing the <span class="code">draggable: true</span> in the Directions Renderer Object. To actually detect any changes that have happened on your map, you would need to attach an event handler with <b>directions_changed</b> as the Event Listener. After acquiring a successful result from this event, you could then go about making changes to the routes instructions.</p>
+      <p>In our example below, initially, a Directions Service request is made from <b>Empire State Building, NYC</b> to the <b>Bellevue Hospital Center, NYC</b>, with <span class="code">travelMode: "WALKING"</span>. As we have an Event Listener for <b>directions_changed</b>, a new set of route instructions are generated when the event gets triggered. Please note that this particular event gets finally triggered post a regular <b>mousedown</b> event.</p>
+      <p>To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Draggable Directions</b>.</p>
+    </div>
+    <div class="segment overviewSegment">
+      <div class="googleMapHolder" id="gMap7"></div>
+    </div>
+    <div class="segment overviewSegment" id="gMap7ResultHolder">
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 7 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal7">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/directions-draggable-routes.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 7 Modal Details Ends Here-->
 
 <!--Directions Results Clone Element Details Starts Here-->
 <div class="directionsInfoParent hide" id="directionResultClone">

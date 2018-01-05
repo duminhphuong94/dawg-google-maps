@@ -3519,7 +3519,6 @@ function trafficTransitBicycleLayers() {
 
 function googleMapsDirectionsAPI() {
   if(document.location.href.indexOf("directions-service") > -1) {
-    /*
     (function simpleDirectionServiceRequest() {
       var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -3657,7 +3656,7 @@ function googleMapsDirectionsAPI() {
       });
     })();
     
-    (function directionTransitOption() {
+    (function directionDrivingOptions() {
       var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
       var map = new google.maps.Map(document.getElementById("gMap3"), {
         center: locationCoords,
@@ -3848,7 +3847,7 @@ function googleMapsDirectionsAPI() {
         }
       });
     })();
-    */
+    
     (function providingRouteAlternatives() {
       var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
       var map = new google.maps.Map(document.getElementById("gMap6"), {
@@ -3869,10 +3868,18 @@ function googleMapsDirectionsAPI() {
       directionService.route(directionsObj, function(results, status) {
         if(status === "OK") {
           var routesArray = results.routes;
+          var polylineRoutesArray = [];
+          var routeInstructionsArray = [];
           console.log(routesArray);
           var parentResultHolder = $("#gMap6ResultHolder");
-          /*
           $.each(routesArray, function(index, dataObj) {
+            var polylineRoutePath = new google.maps.Polyline({
+              path: dataObj.overview_path,
+              geodesic: true,
+              map: map,
+              strokeWeight: 4
+            });
+            Array.prototype.push.call(polylineRoutesArray, polylineRoutePath);
             var legsArray = dataObj.legs;
             $.each(legsArray, function(q, thisLegObj) {
               var resultClone = $("#directionResultClone").clone();
@@ -3893,11 +3900,132 @@ function googleMapsDirectionsAPI() {
                 dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
                 dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
               });
-              resultClone.removeAttr("id").removeClass("hide");
+              resultClone.removeAttr("id");
               resultClone.appendTo(parentResultHolder);
+              Array.prototype.push.call(routeInstructionsArray, resultClone);
+            });
+            if(index === 0) {
+              polylineRoutePath.setOptions({
+                strokeColor: "#0000ff",
+                strokeOpacity: 0.7
+              });
+              map.setOptions({
+                center: dataObj.overview_path[0],
+                zoom: 14
+              });
+
+              var startMarker = new google.maps.Marker({
+                position: dataObj.overview_path[0],
+                map: map,
+                animation: google.maps.Animation.BOUNCE
+              });
+
+              var endMarker = new google.maps.Marker({
+                position: dataObj.overview_path[dataObj.overview_path.length - 1],
+                map: map,
+                animation: google.maps.Animation.BOUNCE
+              });
+              $(routeInstructionsArray[0]).removeClass("hide");
+            }
+            else {
+              polylineRoutePath.setOptions({
+                strokeColor: "#000000",
+                strokeOpacity: 0.3
+              });
+            }
+          });
+          function resetPolylineColor() {
+            $.each(polylineRoutesArray, function(q, polylinePath) {
+              polylinePath.setOptions({
+                strokeColor: "#000000",
+                strokeOpacity: 0.3
+              });
+            });
+          }
+          function resetRoutesInstructions() {
+            $.each(routeInstructionsArray, function(q, routesElement) {
+              $(routesElement).addClass("hide");
+            });
+          }
+          $.each(polylineRoutesArray, function(q, polylinePath) {
+            polylinePath.addListener("click", function(event) {
+              resetPolylineColor();
+              resetRoutesInstructions();
+              polylinePath.setOptions({
+                strokeColor: "#0000ff",
+                strokeOpacity: 0.7
+              });
+              $(routeInstructionsArray[q]).removeClass("hide");
             });
           });
-          */
+        }
+        else {
+          console.error("ERROR Directions Service Request, ->", status);
+        }
+      });
+    })();
+    
+    (function draggableRoutes() {
+      var locationCoords = new google.maps.LatLng(40.7128, -74.0060);
+      var map = new google.maps.Map(document.getElementById("gMap7"), {
+        center: locationCoords,
+        zoom: 12
+      });
+
+
+      var directionsObj = {
+        origin: "Empire State Building, NYC, USA",
+        destination: "Belleuve Hospital Center, NYC, USA",
+        travelMode: "WALKING",
+      };
+
+      var directionService = new google.maps.DirectionsService();
+      var directionDisplay = new google.maps.DirectionsRenderer({
+        draggable: true
+      });
+      directionDisplay.setMap(map);
+      
+      directionDisplay.addListener("directions_changed", function() {
+        console.log(directionDisplay.getDirections());
+        placeRouteInstructions(directionDisplay.getDirections());
+      });
+
+      function placeRouteInstructions(results) {
+        var routesArray = results.routes;
+        var parentResultHolder = $("#gMap7ResultHolder");
+        parentResultHolder.empty();
+        $.each(routesArray, function(index, dataObj) {
+          var resultClone = $("#directionResultClone").clone();
+          resultClone.find(".copyrightValue").text(dataObj.copyrights);
+    
+          var legsArray = dataObj.legs;
+          $.each(legsArray, function(q, thisLegObj) {
+            var distanceText = thisLegObj.distance.text;
+            var durationText = thisLegObj.duration.text;
+            resultClone.find(".distanceDurationValue").text(distanceText + ", " + durationText);
+            resultClone.find(".originLocationValue").text(thisLegObj.start_address);
+            resultClone.find(".destinationLocationValue").text(thisLegObj.end_address);
+            $.each(thisLegObj.steps, function(w, thisStepObj) {
+              var dataInfoEl = $("#dataInfoClone").clone();
+              dataInfoEl.find(".travelModeInfo").text(thisStepObj.travel_mode);
+              if(thisStepObj.maneuver !== "" || !!thisStepObj.maneuver) {
+                var maneuverText = thisStepObj.maneuver;
+                dataInfoEl.find(".maneuverInfo").text(maneuverText).removeClass("hide");
+              }
+              dataInfoEl.find(".distDirInfo").text(thisStepObj.distance.text + ", " + thisStepObj.duration.text);
+              dataInfoEl.find(".instructionsInfo").html(thisStepObj.instructions);
+              dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
+            });
+          });
+          
+          resultClone.removeAttr("id").removeClass("hide");
+          resultClone.appendTo(parentResultHolder);
+        });
+      }
+      directionService.route(directionsObj, function(results, status) {
+        if(status === "OK") {
+          directionDisplay.setDirections(results);
+          placeRouteInstructions(results);
         }
         else {
           console.error("ERROR Directions Service Request, ->", status);
