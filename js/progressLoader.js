@@ -16,7 +16,7 @@
       loaderText.appendChild(textNode);
       if(iterateCount === docImageCount) {
         setTimeout(function() {
-          var finaleText = document.createTextNode("Let' Go!");
+          var finaleText = document.createTextNode("Let's Go!");
           loaderText.innerHTML = "";
           loaderText.appendChild(finaleText);
           loaderParent.className += " hiddenTransform";

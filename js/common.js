@@ -12,7 +12,7 @@ function bubbleLoader() {
     }
     setTimeout(function() {
       startBubbleAni();
-    }, 200);
+    }, 100);
   }
   startBubbleAni();
 }
@@ -4053,6 +4053,159 @@ function googleMapsDirectionsAPI() {
   }
 }
 
+function googleMapsDistanceAPI() {
+  if(document.location.href.indexOf("distance-matrix-service") > -1) {
+    (function distanceMatrixBasic() {
+      var locationCoords = new google.maps.LatLng(55.7558, 37.6173);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var distanceObj = {
+        origins: ["Red Square, Moscow"],
+        destinations: ["Moscow Zoo, Moscow"],
+        travelMode: "DRIVING"
+      }
+
+      var distanceService = new google.maps.DistanceMatrixService();
+      distanceService.getDistanceMatrix(distanceObj, function(response, status) {
+        if(status === "OK") {
+          console.log(response);
+          var originAddress = response.originAddresses[0];
+          var destinationAddress = response.destinationAddresses[0];
+          var distanceText = response.rows[0].elements[0].distance.text;
+          var durationText = response.rows[0].elements[0].duration.text;
+          console.log(originAddress, destinationAddress, distanceText, durationText);
+          
+          var infoContent = "<b>Origin Address: </b>" + originAddress + "<br/>" + 
+            "<b>Destination Address: </b>" + destinationAddress + "<br/>" + 
+            "<b>Distance/Duration: </b>" + distanceText + "/" + durationText;
+          var infoWindow = new google.maps.InfoWindow({
+            content: infoContent,
+            position: map.getCenter()
+          });
+          infoWindow.open(map);
+        }
+      });
+    })();
+
+    (function distanceMatrixTransit() {
+      var locationCoords = new google.maps.LatLng(55.7558, 37.6173);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var distanceObj = {
+        origins: ["Red Square, Moscow"],
+        destinations: ["Moscow Zoo, Moscow"],
+        travelMode: "TRANSIT",
+        transitOptions: {
+          departureTime: new Date(),
+          modes: ["SUBWAY"]
+        }
+      }
+
+      var distanceService = new google.maps.DistanceMatrixService();
+      distanceService.getDistanceMatrix(distanceObj, function(response, status) {
+        if(status === "OK") {
+          console.log(response);
+          var resultHolderParent = $("#gMap2ResultHolder");
+          var infoClone = $("#durationInfoClone");
+
+          var originText = response.originAddresses[0];
+          infoClone.find(".originLocationValue").text(originText);
+
+          var destinationText = response.destinationAddresses[0];
+          infoClone.find(".destinationLocationValue").text(destinationText);
+
+          var distanceDurationText = response.rows[0].elements[0].distance.text + "/" + response.rows[0].elements[0].duration.text;
+          infoClone.find(".distanceDurationValue").text(distanceDurationText);
+
+          var fareAmount = response.rows[0].elements[0].fare.value + response.rows[0].elements[0].fare.currency;
+          infoClone.find(".expectedTravelFareValue").text(fareAmount);
+          infoClone.removeAttr("id").removeClass("hide").appendTo(resultHolderParent);
+        }
+      });
+    })();
+
+    (function distanceMatrixDriving() {
+      var locationCoords = new google.maps.LatLng(55.7558, 37.6173);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var distanceObj = {
+        origins: ["Red Square, Moscow"],
+        destinations: ["Moscow Zoo, Moscow"],
+        travelMode: "DRIVING",
+        drivingOptions: {
+          departureTime: new Date(),
+          trafficModel: "pessimistic"
+        }
+      }
+
+      var distanceService = new google.maps.DistanceMatrixService();
+      distanceService.getDistanceMatrix(distanceObj, function(response, status) {
+        if(status === "OK") {
+          console.log(response);
+          var resultHolderParent = $("#gMap3ResultHolder");
+          var infoClone = $("#durationInfoClone");
+
+          var originText = response.originAddresses[0];
+          infoClone.find(".originLocationValue").text(originText);
+
+          var destinationText = response.destinationAddresses[0];
+          infoClone.find(".destinationLocationValue").text(destinationText);
+
+          var distanceDurationText = response.rows[0].elements[0].distance.text + "/" + response.rows[0].elements[0].duration.text;
+          infoClone.find(".distanceDurationValue").text(distanceDurationText);
+          infoClone.find(".expectedTravelFare").html('<b>Expected Duration In Traffic: </b> <span class="durationInTraffic">' + response.rows[0].elements[0].duration_in_traffic.text + '</span>');
+          infoClone.removeAttr("id").removeClass("hide").appendTo(resultHolderParent);
+        }
+      });
+    })();
+    
+    (function distanceMatrixUnitSytem() {
+      var locationCoords = new google.maps.LatLng(55.7558, 37.6173);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var distanceObj = {
+        origins: ["Red Square, Moscow"],
+        destinations: ["Moscow Zoo, Moscow"],
+        travelMode: "DRIVING",
+        unitSystem: google.maps.UnitSystem.IMPERIAL
+      }
+
+      var distanceService = new google.maps.DistanceMatrixService();
+      distanceService.getDistanceMatrix(distanceObj, function(response, status) {
+        if(status === "OK") {
+          console.log(response);
+          var originAddress = response.originAddresses[0];
+          var destinationAddress = response.destinationAddresses[0];
+          var distanceText = response.rows[0].elements[0].distance.text;
+          var durationText = response.rows[0].elements[0].duration.text;
+          console.log(originAddress, destinationAddress, distanceText, durationText);
+          
+          var infoContent = "<b>Origin Address: </b>" + originAddress + "<br/>" + 
+            "<b>Destination Address: </b>" + destinationAddress + "<br/>" + 
+            "<b>Distance/Duration: </b>" + distanceText + "/" + durationText;
+          var infoWindow = new google.maps.InfoWindow({
+            content: infoContent,
+            position: map.getCenter()
+          });
+          infoWindow.open(map);
+        }
+      });
+    })();
+  }
+}
+
 function centralProcessor() {
   bubbleLoader();
   generalBodyFunctionality();
@@ -4071,6 +4224,7 @@ function centralProcessor() {
   googleMapsHeatLayers();
   trafficTransitBicycleLayers();
   googleMapsDirectionsAPI();
+  googleMapsDistanceAPI();
 
   $(window).resize(function() {
     toolTipFunctionality();

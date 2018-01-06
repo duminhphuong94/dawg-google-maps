@@ -207,7 +207,7 @@ a.refLink {
             margin: 0 8px;
           }
           .bubbleAnimate {
-            animation: bubbleAnimation 0.2s linear;
+            animation: bubbleAnimation 0.1s linear;
           }
           @keyframes bubbleAnimation {
             0% {
@@ -345,6 +345,11 @@ a.refLink {
     }
     .directionsVideoParent {
 			background: url("{{ site.baseurl }}/assets/images/airplane-weindow-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
+    .distanceVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/distance-bg.jpg") no-repeat center center;
 			background-size: cover;
 			background-attachment: fixed;
     }
@@ -690,7 +695,7 @@ a.refLink {
               }
             }
           }
-          .durationInTraffic {
+          .durationInTraffic, .expectedTravelFare {
             font-size: 1.2rem;
             span {
               margin-left: 5px;
