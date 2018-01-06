@@ -171,6 +171,83 @@ a.refLink {
       }
     }
   }
+  .pageLoaderParent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $paleSilver;
+    z-index: 2000;
+    overflow: hidden;
+    @include transition(all, 3s, ease-out);
+    .posContainer {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      left: 0;
+      width: 100%;
+      height: auto;
+      .loaderContent {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        .bubbleContainer {
+          margin: 0 auto;
+          width: 46px;
+          .bubble {
+            width: 10px;
+            height: 10px;
+            background: $black;
+            border-radius: 50%;
+            float: left;
+          }
+          .bubble:nth-child(2) {
+            margin: 0 8px;
+          }
+          .bubbleAnimate {
+            animation: bubbleAnimation 0.2s linear;
+          }
+          @keyframes bubbleAnimation {
+            0% {
+              transform: translateY(0) scale(1);
+              background: $black;
+            }
+            50% {
+              transform: translateY(-2px) scale(1.2);
+              background: rgba(0, 0, 0, 0.7);
+            }
+            100% {
+              transform: translateY(0) scale(1);
+              background: $black;
+            }
+          }
+        }
+        .loaderBarParent {
+          margin-top: 10px;
+          .loaderBar {
+            width: 0;
+            height: 2px;
+            background: $roseQuartz;
+            @include transition(width, 0.25s, linear);
+          }
+          .percentValue {
+            margin-top: 5px;
+            display: block;
+            font-family: $headingFont;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  .pageLoaderParent.hiddenTransform {
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+  }
   .jumbotronParent {
     height: 100vh;
     .curtain {

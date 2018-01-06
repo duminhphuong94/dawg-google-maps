@@ -17,6 +17,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="{{ site.baseurl }}/js/progressLoader.js" asyc></script>
 		<link href="{{ site.baseurl }}/css/style.css" rel="stylesheet" type="text/css"/>
 		<link href="{{ site.baseurl }}/css/responsive.css" rel="stylesheet" type="text/css"/>
   </head>
@@ -401,6 +402,22 @@
 					</div>
 				</div>
 			</div>
+
+      <div class="pageLoaderParent" id="pageLoaderParent">
+        <div class="posContainer">
+          <div class="loaderContent">
+            <div class="bubbleContainer dawgRow">
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+              <div class="bubble"></div>
+            </div>
+            <div class="loaderBarParent">
+              <div class="loaderBar" id="loaderBar"></div>
+              <span class="percentValue text-center" id="loadPercentValue">0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {{ content }}
       

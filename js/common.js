@@ -1,3 +1,22 @@
+function bubbleLoader() {
+  var loaderParent = $("#pageLoaderParent");
+  var bubbles = loaderParent.find(".bubble");
+  var bubbleCount = bubbles.length;
+  var intervalCount = 0;
+  function startBubbleAni() {
+    bubbles.removeClass("bubbleAnimate");
+    bubbles.eq(intervalCount).addClass("bubbleAnimate");
+    intervalCount += 1;
+    if(intervalCount >= bubbleCount) {
+      intervalCount = 0;
+    }
+    setTimeout(function() {
+      startBubbleAni();
+    }, 200);
+  }
+  startBubbleAni();
+}
+
 function restrictSiteScroll() {
   var siteContainer = $("#mainSiteBorder");
   var currentScrollPos = 0;
@@ -3627,7 +3646,6 @@ function googleMapsDirectionsAPI() {
                 dataInfoEl.removeClass("hide").removeAttr("id").appendTo(resultClone.find(".directionsBody"));
               });
               if(thisLegObj.arrival_time && thisLegObj.departure_time) {
-                console.log("calling");
                 var departureTimeText = thisLegObj.departure_time.text;
                 var departureTimeZoneText = thisLegObj.departure_time.time_zone;
                 var arrivalTimeText = thisLegObj.arrival_time.text;
@@ -4036,6 +4054,7 @@ function googleMapsDirectionsAPI() {
 }
 
 function centralProcessor() {
+  bubbleLoader();
   generalBodyFunctionality();
   documentScrollPercent();
   siteMenuFunctionality();
