@@ -4206,6 +4206,117 @@ function googleMapsDistanceAPI() {
   }
 }
 
+function googleMapsElevationServiceAPI() {
+  if(document.location.href.indexOf("elevation-service") > -1) {
+    (function locationElevationRequest1() {
+      var locationCoords = new google.maps.LatLng(35.3606, 138.7278);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 12,
+        mapTypeId: "terrain"
+      });
+
+      var elevationRequest = new google.maps.ElevationService();
+      elevationRequest.getElevationForLocations({locations: [locationCoords]}, function (results, status) {
+        if(status === "OK") {
+          console.log(results);
+          var marker = new google.maps.Marker({
+            position: locationCoords,
+            map: map
+          });
+
+          var contentString = "<b>Elevation of Location: </b>" + results[0].elevation + " mts" + "<br/>" + 
+            "<b>Lat-Lng Coordinates: </b>" + results[0].location.lat() + "/" + results[0].location.lng();
+          var infoWindow = new google.maps.InfoWindow({
+            content: contentString,
+          });
+          infoWindow.open(map, marker);
+        }
+      });
+    })();
+    
+    (function locationElevationRequest2() {
+      var locationCoords = new google.maps.LatLng(17.7500, 142.5000);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 4,
+        mapTypeId: "terrain"
+      });
+
+      var elevationRequest = new google.maps.ElevationService();
+      elevationRequest.getElevationForLocations({locations: [locationCoords]}, function (results, status) {
+        if(status === "OK") {
+          console.log(results);
+          var marker = new google.maps.Marker({
+            position: locationCoords,
+            map: map
+          });
+
+          var contentString = "<b>Elevation of Location: </b>" + results[0].elevation + " mts" + "<br/>" + 
+            "<b>Lat-Lng Coordinates: </b>" + results[0].location.lat() + "/" + results[0].location.lng();
+          var infoWindow = new google.maps.InfoWindow({
+            content: contentString,
+          });
+          infoWindow.open(map, marker);
+        }
+      });
+    })();
+    
+    (function pathElevationRequest() {
+      var locationCoords = new google.maps.LatLng(28.5983, 83.9311);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 9,
+      });
+
+      var latLngArray = [
+        new google.maps.LatLng(28.7458, 83.5592),
+        new google.maps.LatLng(28.490419194161678, 84.188232421875),
+        new google.maps.LatLng(28.55075099675815, 84.55902099609375),
+        new google.maps.LatLng(28.897588157944504,84.25689697265625)
+      ];
+
+      var elevationRequest = new google.maps.ElevationService();
+      elevationRequest.getElevationAlongPath({
+        path: latLngArray,
+        samples: 8,
+      }, function(result, status) {
+        if(status === "OK") {
+          var polyPath = new google.maps.Polyline({
+            map: map,
+            path: latLngArray,
+            strokeColor: "#0000ff",
+            strokeWeight: 4,
+            strokeOpacity: 0.8,
+          });
+
+          $.each(result, function(index, resultObj) {
+            var latCoords = resultObj.location.lat();
+            var lngCoords = resultObj.location.lng();
+            var elevationVal = resultObj.elevation;
+
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(latCoords, lngCoords),
+              map: map,
+              animation: google.maps.Animation.BOUNCE
+            });
+
+            var contentString = "<b>Elevation(mts): </b>" + elevationVal + "<br/>"
+               + "<b>Lat-Lng Coordinates: </b>" + latCoords + "/" + lngCoords;
+            var infoWindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 250
+            });
+            marker.addListener("click", function() {
+              infoWindow.open(map, marker);
+            });
+          });
+        }
+      });
+    })();
+  }
+}
+
 function centralProcessor() {
   bubbleLoader();
   generalBodyFunctionality();
@@ -4225,6 +4336,7 @@ function centralProcessor() {
   trafficTransitBicycleLayers();
   googleMapsDirectionsAPI();
   googleMapsDistanceAPI();
+  googleMapsElevationServiceAPI();
 
   $(window).resize(function() {
     toolTipFunctionality();

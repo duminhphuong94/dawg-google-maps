@@ -1,0 +1,140 @@
+---
+url: "/elevation-service"
+layout: "default-structure"
+title: "DAWG Google Maps | Elevation Service"
+---
+
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="videoParent elevationVideoParent">
+    <video autoplay="autoplay" loop muted class="hidden-xs">
+      <source src="{{ site.baseurl }}/assets/videos/elevation-video.mp4" type="video/mp4"/>
+      <source src="{{ site.baseurl }}/assets/videos/elevation-video.ogg" type="video/ogg"/>
+      <source src="{{ site.baseurl }}/assets/videos/elevation-video.webm" type="video/webm"/>
+    </video>
+  </div>
+  <div class="posContainer">
+    <div class="frameBorder dawgRow">
+      <div class="segment">
+        <h1>Google Maps Javascript API - Elevation Service</h1>
+        <p>Please ensure to have <span class="code">Google Maps JavaScript API and the Google Maps Elevation API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
+        <p>To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/elevation" target="_blank" class="refLink">Google Maps Javasript API - Elevation Service</a> for more information.</p>
+        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Jumbotron Section Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment positionRelative">
+      <h2 class="text-center">Overview</h2>
+      <p>The Google Maps Javascript API - Elevation Service helps provide information about the Elevation of a particular location or a group of location from their respective Lattitude and Longitude Coordinates. The initial step is to create an <b>Elevation Service Object</b> with <span class="code">new google.maps.ElevationSerivce()</span>. You would also need an Array of Lat-Lng Coordinates which would then be used as reference points upon which the API call needs to be made.</p>
+      <p>Our first two examples demonstrate merely acquring elevation values for the locations. This is done using the <span class="code">getElevationForLocations()</span> method to which the Lat-Lng Array and a callback function to handle the final API response, are passed as arguments.</p>
+      <p>The last example is about acquiring Elevation Details along a path from an origin point to a final point along the path line. Here the <span class="code">getElevationAlongPath()</span> method is used, an object containing the <b>Path Array</b> and <b>Sample Numbers</b> along with a callback function to handle the API response, are passed as arguments.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal1">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h2>Google Maps Elevation Service - <span class="subTopic">Basics I</span></h2>
+      <p>In this example, our Google Maps location over Mount Fuji - Japan, is displaying its <b>Elevation (Mts)</b> and <b>Latittude Longitude Coordinates</b> with the help of an Info Window.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap1"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 1 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal1">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/elevation-service-1.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 1 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment col-md-push-6">
+			<span class="sourceCode" data-modalLink="#exampleModal2">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h2>Google Maps Elevation Service - <span class="subTopic">Basics II</span></h2>
+      <p>Here, we have our Google Maps location over the Mariana Trench. If you do notice this example, the Elevation value is being displayed as a <b>Negative</b> number. This negative value indicates the depth of the location.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap2"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 2 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal2">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/elevation-service-2.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 2 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal3">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h2>Google Maps Elevation Service - <span class="subTopic">Elevation Along A Path</span></h2>
+      <p>Elevation Services can also be requested for acquiring information along a path on your map. Interact with the map by clicking on the markers placed on it to get information pertaining to the location's elevation.</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap3"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 3 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal3">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/elevation-along-path.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 3 Modal Details Ends Here-->
