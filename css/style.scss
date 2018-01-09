@@ -358,6 +358,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
     }
+    .geocodingVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/mailbox-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;

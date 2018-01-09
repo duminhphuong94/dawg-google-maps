@@ -4317,6 +4317,263 @@ function googleMapsElevationServiceAPI() {
   }
 }
 
+function googleMapsGeocodingServiceAPI() {
+  if(document.location.href.indexOf("geocoding-service") > -1) {
+    (function geocodingSearchByAddress() {
+      var locationCoords = new google.maps.LatLng(19.0760, 72.8777);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var geocodeService = new google.maps.Geocoder();
+      geocodeService.geocode({
+        address: "Gateway of India, Mumbai"
+      }, function(result, status) {
+        if(status === "OK") {
+          Array.prototype.forEach.call(result, function(thisResultObj, index) {
+            var viewportToSet = thisResultObj.geometry.viewport;
+            var newView = new google.maps.LatLngBounds({lat: viewportToSet.f.b, lng: viewportToSet.b.b}, {lat: viewportToSet.f.f, lng: viewportToSet.b.f});
+            map.fitBounds(newView);
+            map.setZoom(map.getZoom() - 1);
+
+            var markerPos = new google.maps.LatLng(thisResultObj.geometry.location.lat(), thisResultObj.geometry.location.lng());
+
+            var marker = new google.maps.Marker({
+              map: map,
+              position: markerPos,
+              animation: google.maps.Animation.BOUNCE
+            });
+
+            var typeString = "";
+            Array.prototype.forEach.call(thisResultObj.types, function(typeStringVal, q) {
+              typeString += (typeString === "") ? (typeStringVal) : ", " + (typeStringVal);
+            });
+
+            var contentString = "<b>Formatted Address Details: </b>" + thisResultObj.formatted_address + "<br/><br/>" + 
+              "<b>Location Type: </b>" + thisResultObj.geometry.location_type + "<br/><br/>" + 
+              "<b>Place Id Value: </b>" + thisResultObj.place_id + "<br/><br/>" + 
+              "<b>Type String: </b>" + typeString;
+
+            var infoWindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 250
+            });
+
+            marker.addListener("click", function() {
+              infoWindow.open(map, marker);
+            });
+          });
+        }
+      });
+    })();
+
+    (function geocodingSearchByLocation() {
+      var locationCoords = new google.maps.LatLng(19.0760, 72.8777);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var geocodeService = new google.maps.Geocoder();
+      geocodeService.geocode({
+        location: {lat: 18.925753088421104, lng: 72.81907796859741}
+      }, function(result, status) {
+        if(status === "OK") {
+          Array.prototype.forEach.call(result, function(thisResultObj, index) {
+            if(thisResultObj.geometry.location_type !== "APPROXIMATE") {
+              var viewportToSet = thisResultObj.geometry.viewport;
+              var newView = new google.maps.LatLngBounds({lat: viewportToSet.f.b, lng: viewportToSet.b.b}, {lat: viewportToSet.f.f, lng: viewportToSet.b.f});
+              map.fitBounds(newView);
+              map.setZoom(map.getZoom() - 1);
+
+              var markerPos = new google.maps.LatLng(thisResultObj.geometry.location.lat(), thisResultObj.geometry.location.lng());
+
+              var marker = new google.maps.Marker({
+                map: map,
+                position: markerPos,
+                animation: google.maps.Animation.BOUNCE
+              });
+
+              var typeString = "";
+              Array.prototype.forEach.call(thisResultObj.types, function(typeStringVal, q) {
+                typeString += (typeString === "") ? (typeStringVal) : ", " + (typeStringVal);
+              });
+
+              var contentString = "<b>Formatted Address Details: </b>" + thisResultObj.formatted_address + "<br/><br/>" + 
+                "<b>Location Type: </b>" + thisResultObj.geometry.location_type + "<br/><br/>" + 
+                "<b>Place Id Value: </b>" + thisResultObj.place_id + "<br/><br/>" + 
+                "<b>Type String: </b>" + typeString;
+
+              var infoWindow = new google.maps.InfoWindow({
+                content: contentString,
+                maxWidth: 250
+              });
+
+              marker.addListener("click", function() {
+                infoWindow.open(map, marker);
+              });
+            }
+          });
+        }
+      });      
+    })();
+
+    (function geocodingSearchByPlaceId() {
+      var locationCoords = new google.maps.LatLng(19.0760, 72.8777);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var geocodeService = new google.maps.Geocoder();
+      geocodeService.geocode({
+        placeId: "ChIJcaKto-7R5zsRIXL2witf0x8"
+      }, function(result, status) {
+        if(status === "OK") {
+          Array.prototype.forEach.call(result, function(thisResultObj, index) {
+            var viewportToSet = thisResultObj.geometry.viewport;
+            var newView = new google.maps.LatLngBounds({lat: viewportToSet.f.b, lng: viewportToSet.b.b}, {lat: viewportToSet.f.f, lng: viewportToSet.b.f});
+            map.fitBounds(newView);
+            map.setZoom(map.getZoom() - 1);
+
+            var markerPos = new google.maps.LatLng(thisResultObj.geometry.location.lat(), thisResultObj.geometry.location.lng());
+
+            var marker = new google.maps.Marker({
+              map: map,
+              position: markerPos,
+              animation: google.maps.Animation.BOUNCE
+            });
+
+            var typeString = "";
+            Array.prototype.forEach.call(thisResultObj.types, function(typeStringVal, q) {
+              typeString += (typeString === "") ? (typeStringVal) : ", " + (typeStringVal);
+            });
+
+            var contentString = "<b>Formatted Address Details: </b>" + thisResultObj.formatted_address + "<br/><br/>" + 
+              "<b>Location Type: </b>" + thisResultObj.geometry.location_type + "<br/><br/>" + 
+              "<b>Place Id Value: </b>" + thisResultObj.place_id + "<br/><br/>" + 
+              "<b>Type String: </b>" + typeString;
+
+            var infoWindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 250
+            });
+
+            marker.addListener("click", function() {
+              infoWindow.open(map, marker);
+            });
+          });
+        }
+      });      
+    })();
+    
+    (function viewportBiasBounds() {
+      var locationCoords = new google.maps.LatLng(19.0435385, 72.8194558);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var geoBounds = new google.maps.LatLngBounds({lat: 19.025282514598818, lng: 72.79224747175294}, {lat: 19.061792477774144, lng: 72.84666412824708});
+      var geocodeService = new google.maps.Geocoder();
+      geocodeService.geocode({
+        address: "Taj Hotels",
+        bounds: geoBounds
+      }, function(result, status) {
+        if(status === "OK") {
+          Array.prototype.forEach.call(result, function(thisResultObj, index) {
+            var viewportToSet = thisResultObj.geometry.viewport;
+            var newView = new google.maps.LatLngBounds({lat: viewportToSet.f.b, lng: viewportToSet.b.b}, {lat: viewportToSet.f.f, lng: viewportToSet.b.f});
+            map.fitBounds(newView);
+            map.setZoom(map.getZoom() - 1);
+
+            var markerPos = new google.maps.LatLng(thisResultObj.geometry.location.lat(), thisResultObj.geometry.location.lng());
+
+            var marker = new google.maps.Marker({
+              map: map,
+              position: markerPos,
+              animation: google.maps.Animation.BOUNCE
+            });
+
+            var typeString = "";
+            Array.prototype.forEach.call(thisResultObj.types, function(typeStringVal, q) {
+              typeString += (typeString === "") ? (typeStringVal) : ", " + (typeStringVal);
+            });
+
+            var contentString = "<b>Formatted Address Details: </b>" + thisResultObj.formatted_address + "<br/><br/>" + 
+              "<b>Location Type: </b>" + thisResultObj.geometry.location_type + "<br/><br/>" + 
+              "<b>Place Id Value: </b>" + thisResultObj.place_id + "<br/><br/>" + 
+              "<b>Type String: </b>" + typeString;
+
+            var infoWindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 250
+            });
+
+            marker.addListener("click", function() {
+              infoWindow.open(map, marker);
+            });
+          });
+        }
+      });      
+    })();
+    
+    (function componentRestrictions() {
+      var locationCoords = new google.maps.LatLng(19.0435385, 72.8194558);
+      var map = new google.maps.Map(document.getElementById("gMap5"), {
+        center: locationCoords,
+        zoom: 14,
+      });
+
+      var geocodeService = new google.maps.Geocoder();
+      geocodeService.geocode({
+        address: "Mahatma Gandhi Road",
+        componentRestrictions: {
+          locality: "Bangalore"
+        }
+      }, function(result, status) {
+        if(status === "OK") {
+          console.log(result);
+          Array.prototype.forEach.call(result, function(thisResultObj, index) {
+            var viewportToSet = thisResultObj.geometry.viewport;
+            var newView = new google.maps.LatLngBounds({lat: viewportToSet.f.b, lng: viewportToSet.b.b}, {lat: viewportToSet.f.f, lng: viewportToSet.b.f});
+            map.fitBounds(newView);
+            map.setZoom(map.getZoom() - 1);
+
+            var markerPos = new google.maps.LatLng(thisResultObj.geometry.location.lat(), thisResultObj.geometry.location.lng());
+
+            var marker = new google.maps.Marker({
+              map: map,
+              position: markerPos,
+              animation: google.maps.Animation.BOUNCE
+            });
+
+            var typeString = "";
+            Array.prototype.forEach.call(thisResultObj.types, function(typeStringVal, q) {
+              typeString += (typeString === "") ? (typeStringVal) : ", " + (typeStringVal);
+            });
+
+            var contentString = "<b>Formatted Address Details: </b>" + thisResultObj.formatted_address + "<br/><br/>" + 
+              "<b>Location Type: </b>" + thisResultObj.geometry.location_type + "<br/><br/>" + 
+              "<b>Place Id Value: </b>" + thisResultObj.place_id + "<br/><br/>" + 
+              "<b>Type String: </b>" + typeString;
+
+            var infoWindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 250
+            });
+
+            marker.addListener("click", function() {
+              infoWindow.open(map, marker);
+            });
+          });
+        }
+      });      
+    })();
+  }
+}
+
 function centralProcessor() {
   bubbleLoader();
   generalBodyFunctionality();
@@ -4337,6 +4594,7 @@ function centralProcessor() {
   googleMapsDirectionsAPI();
   googleMapsDistanceAPI();
   googleMapsElevationServiceAPI();
+  googleMapsGeocodingServiceAPI();
 
   $(window).resize(function() {
     toolTipFunctionality();
