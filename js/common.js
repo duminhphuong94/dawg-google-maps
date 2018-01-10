@@ -4574,6 +4574,37 @@ function googleMapsGeocodingServiceAPI() {
   }
 }
 
+function drawingLayerLibrary() {
+  if(document.location.href.indexOf("google-maps-drawing-library") > -1) {
+    var baseUrl = window.location.origin + "/dawg-google-maps";
+    var imagesSrc = baseUrl + "/assets/images/";
+    (function createBasicDrawingLib() {
+      var locationCoords = new google.maps.LatLng(30.0444, 31.2357);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 14
+      });
+
+      map.addListener("click", function(event) {
+        console.log("Lat: => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      });
+
+      var drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingControl: true,
+        drawingOptions: {
+          position: google.maps.ControlPosition.LEFT_CENTER,
+          drawingModes: ["marker", "circle", "polygon", "polyline", "rectangle"]
+        },
+        markerOptions: {
+          icon: imagesSrc + "polymarker.png"
+        }
+      });
+      drawingManager.setMap(map);
+    })();
+  }
+}
+
 function centralProcessor() {
   bubbleLoader();
   generalBodyFunctionality();
@@ -4595,6 +4626,7 @@ function centralProcessor() {
   googleMapsDistanceAPI();
   googleMapsElevationServiceAPI();
   googleMapsGeocodingServiceAPI();
+  drawingLayerLibrary();
 
   $(window).resize(function() {
     toolTipFunctionality();
@@ -4614,10 +4646,10 @@ function googleAPIInit() {
     var setLangString = "el";
     var setRegionString = "GR";
     if(document.location.href.indexOf("map-localizing") === -1) {
-      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization");
+      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization,drawing");
     }
     else {
-      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization&language=" + setLangString + "&region=" + setRegionString);
+      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization,drawing&language=" + setLangString + "&region=" + setRegionString);
     }
     gScriptTag.setAttribute("async", true)
     gScriptTag.setAttribute("defer", true);

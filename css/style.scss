@@ -159,6 +159,7 @@ a.refLink {
       height: 60px;
       svg {
         width: 25px;
+        height: 25px;
       }
       .dawgButton {
         background: transparent;
@@ -360,6 +361,11 @@ a.refLink {
     }
     .geocodingVideoParent {
 			background: url("{{ site.baseurl }}/assets/images/mailbox-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
+    .drawingVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/blackpencil-bg.jpg") no-repeat center center;
 			background-size: cover;
 			background-attachment: fixed;
     }
