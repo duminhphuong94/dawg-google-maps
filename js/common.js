@@ -4585,8 +4585,25 @@ function drawingLayerLibrary() {
         zoom: 14
       });
 
-      map.addListener("click", function(event) {
-        console.log("Lat: => " + event.latLng.lat(), "Lng => " + event.latLng.lng());
+      var drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: null,
+        drawingControl: true,
+        drawingOptions: {
+          position: google.maps.ControlPosition.LEFT_CENTER,
+          drawingModes: ["marker", "circle", "polygon", "polyline", "rectangle"]
+        },
+        markerOptions: {
+          icon: imagesSrc + "polymarker.png"
+        }
+      });
+      drawingManager.setMap(map);
+    })();
+    
+    (function hideShowDrawingManager() {
+      var locationCoords = new google.maps.LatLng(30.0444, 31.2357);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 14
       });
 
       var drawingManager = new google.maps.drawing.DrawingManager({
@@ -4601,6 +4618,85 @@ function drawingLayerLibrary() {
         }
       });
       drawingManager.setMap(map);
+
+      function hideDrawingManager() {
+        drawingManager.setOptions({
+          drawingControl: false
+        });
+        setTimeout(function() {
+          showDrawingManager();
+        }, 2000);
+      }
+      hideDrawingManager();
+
+      function showDrawingManager() {
+        drawingManager.setOptions({
+          drawingControl: true
+        });
+        setTimeout(function() {
+          hideDrawingManager();
+        }, 2000);
+      }
+    })();
+    
+    (function enableDisableDrawingManager() {
+      var locationCoords = new google.maps.LatLng(30.0444, 31.2357);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 14
+      });
+
+      var drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingControl: true,
+        drawingOptions: {
+          position: google.maps.ControlPosition.LEFT_CENTER,
+          drawingModes: ["marker", "circle", "polygon", "polyline", "rectangle"]
+        },
+        markerOptions: {
+          icon: imagesSrc + "polymarker.png"
+        }
+      });
+
+      function enableDrawingManager() {
+        drawingManager.setMap(map);
+        setTimeout(function() {
+          disableDrawingManager();
+        }, 6000);
+      }
+      enableDrawingManager();
+
+      function disableDrawingManager() {
+        drawingManager.setMap(null);
+        setTimeout(function() {
+          enableDrawingManager();
+        }, 6000);
+      }
+    })();
+    
+    (function drawingManagerEvents() {
+      var locationCoords = new google.maps.LatLng(30.0444, 31.2357);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        zoom: 14
+      });
+
+      var drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingControl: true,
+        drawingOptions: {
+          position: google.maps.ControlPosition.LEFT_CENTER,
+          drawingModes: ["marker", "circle", "polygon", "polyline", "rectangle"]
+        },
+        markerOptions: {
+          icon: imagesSrc + "polymarker.png"
+        }
+      });
+      drawingManager.setMap(map);
+
+      google.maps.event.addListener(drawingManager, "overlaycomplete", function(event) {
+        console.log(event.type, event.overlay);
+      });
     })();
   }
 }
