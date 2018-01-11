@@ -1,0 +1,119 @@
+---
+url: "/google-maps-geometry-library"
+layout: "default-structure"
+title: "DAWG Google Maps | Google Maps Geometry Library"
+---
+
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="videoParent geometryVideoParent">
+    <video autoplay="autoplay" loop muted class="hidden-xs">
+      <source src="{{ site.baseurl }}/assets/videos/vintage-map-video.mp4" type="video/mp4"/>
+      <source src="{{ site.baseurl }}/assets/videos/vintage-map-video.ogg" type="video/ogg"/>
+      <source src="{{ site.baseurl }}/assets/videos/vintage-map-video.webm" type="video/webm"/>
+    </video>
+  </div>
+  <div class="posContainer">
+    <div class="frameBorder dawgRow">
+      <div class="segment">
+        <h1>Google Maps Javascript API - Geometry Library</h1>
+        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Jumbotron Section Details Ends Here-->
+
+<!--Overview Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment overviewSegment">
+      <h2 class="text-center">Spherical Geometry Concepts</h2>
+      <p>
+        <span class="code">
+					&lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;<b>libraries=geometry</b>"&gt;&lt;/script&gt;
+        </span>
+      </p>
+      <p>Checkout the examples below and refer to the example codes attached to each of them to get started. To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/geometry" target="_blank" class="refLink">Google Maps Javasript API - Geometry Library</a> for more information.</p>
+    </div>
+  </div>
+</div>
+<!--Overview Section Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal1">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h2>Google Maps Geometry - <span class="subTopic">Compute Length</span></h2>
+      <p>To start off with the Geometry Library, we'll calcualte the distance between two points that have been preset on a map just like the example. To get the distance covered between atleast 2 points, use the <span class="code">google.maps.geometry.spherical.computeLength(pathMVCArray)</span> method with its argument being either a Polyline Path Array or an MVC Array containing <b>Lat Lng Objects</b> created with <span class="code">new google.maps.LatLng()</span> class.</p>
+      <p>The <b>Compute Length</b> method is suitable for calculating distance being 2 or more Latitude-Longitude points on a map, unlike a similar method <span class="code">computeDistanceBetween()</span> for only two points.</p>
+      <p>In this example, you are given the distance between 2 points on a map. Interact with the map by editing/adding an additional Lat-Lng Coordinate by clicking at the editable links on the Polyline Path. Once set, you would be updated with the total distance between all new points that have been set and also given any new Latitude-Longitude Coordinates that have been set as well.</p>
+      <div class="geometryParentDiv" id="geometryResults1">
+        <h4>Total Distance Covered By Path: <span class="distanceValue"></span></h4>
+        <ul class="pointList"></ul>
+      </div>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap1"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 1 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal1">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 1 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment col-md-push-6">
+			<span class="sourceCode" data-modalLink="#exampleModal2">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h2>Google Maps Geometry - <span class="subTopic">Compute Area</span></h2>
+      <p>Similar to the <span class="code">Compute Length</span> method, the <span class="code">google.maps.geometry.spherical.computeArea(pathMVCArray)</span> method is used to acquire the area that has been covered by a <b>Polygon Shape</b> over a specific region on your map.</p>
+      <p>In this example, the map loads with a Polygon Shape and returns the value of the area that is covered within its space. You can interact with the map by editing the polygon shape by setting additional marker points by dragging on the editable points, results of which are updated below.</p>
+      <div class="geometryParentDiv" id="geometryResults2">
+        <h4>Total Area Covered By Polygon: <span class="areaValue"></span></h4>
+        <ul class="pointList"></ul>
+      </div>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap2"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 2 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal2">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 2 Modal Details Ends Here-->

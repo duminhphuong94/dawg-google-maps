@@ -369,6 +369,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
     }
+    .geometryVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/geometry-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;
@@ -624,6 +629,19 @@ a.refLink {
           border: 2px solid $white;
           border-radius: 3px;
           float: left;
+        }
+      }
+      .geometryParentDiv {
+        h4 {
+          font-size: 1.4rem;
+          span {
+            color: $weldonBlue;
+          }
+        }
+        ul {
+          font-size: 1.4rem;
+          margin: 0;
+          padding-left: 15px;
         }
       }
     }

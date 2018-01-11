@@ -4701,6 +4701,133 @@ function drawingLayerLibrary() {
   }
 }
 
+function geometryLibrary() {
+  if(document.location.href.indexOf("google-maps-geometry-library") > -1) {
+    var baseUrl = window.location.origin;
+    var markerIcon = baseUrl + "/dawg-google-maps/assets/images/polymarker.png";
+    (function geometryComputeLength() {
+      var locationCoords = new google.maps.LatLng(60.4720, 8.4689);
+      var map = new google.maps.Map(document.getElementById("gMap1"), {
+        center: locationCoords,
+        zoom: 6
+      });
+
+      var polyPathArray = new google.maps.MVCArray([
+        new google.maps.LatLng(59.9139, 10.7522),
+        new google.maps.LatLng(58.9700, 5.7331)
+      ]);
+
+      var polylinePath = new google.maps.Polyline({
+        map: map,
+        path: polyPathArray,
+        geodesic: true,
+        editable: true,
+        draggable: false
+      });
+
+      var markerArray = [];
+
+      function acquireDistanceAndPlaceMarkers(pathMVCArray) {
+        $.each(markerArray, function(index, markerElement) {
+          markerElement.setMap(null);
+        });
+        markerArray = [];
+        var geoResultsParent = $("#geometryResults1");
+        geoResultsParent.find(".distanceValue").empty().addBack().find(".pointList").empty();
+        $.each(pathMVCArray.getArray(), function(index, thisElement) {
+          var marker = new google.maps.Marker({
+            position: thisElement,
+            icon: markerIcon
+          });
+          marker.setMap(map);
+          markerArray.push(marker);
+          var liInnerHTML = '<b>Location#' + (index + 1) + '</b>: Lat Coords is ' + thisElement.lat() + ' and Lng Coords is ' + thisElement.lng();
+          var li = $("<li></li>");
+          li.html(liInnerHTML);
+          li.appendTo(geoResultsParent.find(".pointList"));
+        });
+        var distanceReading = google.maps.geometry.spherical.computeLength(pathMVCArray);
+        distanceReading = (distanceReading / 1000).toFixed(2);
+        geoResultsParent.find(".distanceValue").text(distanceReading + " Kms");
+      }
+      acquireDistanceAndPlaceMarkers(polyPathArray);
+
+      polyPathArray.addListener("insert_at", function() {
+        var $this = this;
+        acquireDistanceAndPlaceMarkers($this);
+      });
+
+      polyPathArray.addListener("set_at", function() {
+        var $this = this;
+        acquireDistanceAndPlaceMarkers($this);
+      });
+    })();
+
+    (function geometryComputeArea() {
+      var locationCoords = new google.maps.LatLng(59.9139, 10.7522);
+      var map = new google.maps.Map(document.getElementById("gMap2"), {
+        center: locationCoords,
+        zoom: 14
+      });
+
+      map.addListener("click", function(event) {
+        console.log(event.latLng.lat(), event.latLng.lng());
+      });
+
+      var polyPathArray = new google.maps.MVCArray([
+        new google.maps.LatLng(59.91312744037748, 10.739736557006836),
+        new google.maps.LatLng(59.90749029415917, 10.75312614440918),
+        new google.maps.LatLng(59.92224812255498, 10.752010345458984)
+      ]);
+
+      var polylinePath = new google.maps.Polygon({
+        map: map,
+        paths: polyPathArray,
+        geodesic: true,
+        editable: true,
+        draggable: false
+      });
+
+      var markersArray = [];
+
+      function acquireAreaAndPlaceMarkers(pathMVCArray) {
+        var areaCovered = google.maps.geometry.spherical.computeArea(pathMVCArray);
+        var resultsParent = $("#geometryResults2");
+        resultsParent.find(".areaValue").empty().addBack().find(".pointList").empty();
+        if(markersArray.length > 0) {
+          $.each(markersArray, function(index, thisMarker) {
+            thisMarker.setMap(null);
+          });
+          markersArray = [];
+        }
+        $.each(pathMVCArray.getArray(), function(index, thisElement) {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: thisElement,
+            icon: markerIcon,
+            animation: google.maps.Animation.BOUNCE
+          });
+          markersArray.push(marker);
+          var liInnerHTML = '<b>Location#' + (index + 1) + '</b> Latitude is: ' + thisElement.lat() + ' and Longitude is: ' + thisElement.lng();
+          $("<li></li>").html(liInnerHTML).appendTo(resultsParent.find(".pointList"));
+        });
+        resultsParent.find(".areaValue").text((areaCovered * 0.000001).toFixed(5) + " sq.Kms");
+      }
+      acquireAreaAndPlaceMarkers(polyPathArray);
+
+      polyPathArray.addListener("insert_at", function() {
+        var $this = this;
+        acquireAreaAndPlaceMarkers(this);
+      });
+      
+      polyPathArray.addListener("set_at", function() {
+        var $this = this;
+        acquireAreaAndPlaceMarkers(this);
+      });
+    })();
+  }
+}
+
 function centralProcessor() {
   bubbleLoader();
   generalBodyFunctionality();
@@ -4723,6 +4850,7 @@ function centralProcessor() {
   googleMapsElevationServiceAPI();
   googleMapsGeocodingServiceAPI();
   drawingLayerLibrary();
+  geometryLibrary();
 
   $(window).resize(function() {
     toolTipFunctionality();
@@ -4742,10 +4870,10 @@ function googleAPIInit() {
     var setLangString = "el";
     var setRegionString = "GR";
     if(document.location.href.indexOf("map-localizing") === -1) {
-      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization,drawing");
+      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization,drawing,geometry");
     }
     else {
-      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization,drawing&language=" + setLangString + "&region=" + setRegionString);
+      gScriptTag.setAttribute("src", baseUrl + "?key=" + apiPass + "&libraries=places,visualization,drawing,geometry&language=" + setLangString + "&region=" + setRegionString);
     }
     gScriptTag.setAttribute("async", true)
     gScriptTag.setAttribute("defer", true);
