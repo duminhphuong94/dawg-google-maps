@@ -4825,6 +4825,92 @@ function geometryLibrary() {
         acquireAreaAndPlaceMarkers(this);
       });
     })();
+
+    (function computeHeading() {
+      var locationCoords = new google.maps.LatLng(60.4720, 8.4689);
+      var map = new google.maps.Map(document.getElementById("gMap3"), {
+        center: locationCoords,
+        zoom: 6
+      });
+      
+      var polyPathArray = [
+        new google.maps.LatLng(59.9139, 10.7522),
+        new google.maps.LatLng(58.9700, 5.7331)
+      ];
+
+      var marker1 = new google.maps.Marker({
+        map: map,
+        position: polyPathArray[0],
+        icon: markerIcon,
+        draggable: true
+      });
+
+      var marker2 = new google.maps.Marker({
+        map: map,
+        position: polyPathArray[1],
+        icon: markerIcon,
+        draggable: true
+      });
+
+      var polylinePath = new google.maps.Polyline({
+        map: map,
+        geodesic: true,
+      });
+
+      function placePolyPath() {
+        var currentPositions = [marker1.getPosition(), marker2.getPosition()];
+        polylinePath.setPath(currentPositions);
+        var resultsParent = $("#geometryResults3");
+        resultsParent.find(".headingValue").empty().addBack().find(".pointList").empty();
+        resultsParent.find(".headingValue").text(google.maps.geometry.spherical.computeHeading(currentPositions[0], currentPositions[1]));
+        $.each(currentPositions, function(index, posObj) {
+          $("<li></li>").html('<b>Location#' + (index + 1) + '</b>: Latitude: ' + posObj.lat() + ' and Longitude: ' + posObj.lng()).appendTo(resultsParent.find(".pointList"));
+        });
+      }
+      placePolyPath();
+
+      marker1.addListener("position_changed", function() {
+        placePolyPath();
+      });
+
+      marker2.addListener("position_changed", function() {
+        placePolyPath();
+      });
+    })();
+
+    (function encodeDecode() {
+      var locationCoords = new google.maps.LatLng(59.9139, 10.7522);
+      var map = new google.maps.Map(document.getElementById("gMap4"), {
+        center: locationCoords,
+        mapTypeId: "terrain",
+        zoom: 12
+      });
+
+      var paths = [];
+
+      var polylinePath = new google.maps.Polygon({
+        map: map,
+        geodesic: true,
+        strokeWeight: 3,
+        strokeColor: "#ff0000",
+      });
+
+      map.addListener("click", function(event) {
+        createBorder(event.latLng, polylinePath);
+      });
+
+      function createBorder(latLngObj, mapPath) {
+        var addedLat = latLngObj.lat();
+        var addedLng = latLngObj.lng();
+        paths.push(new google.maps.LatLng(addedLat, addedLng));
+        mapPath.setPaths(paths);
+        var encodedString = google.maps.geometry.encoding.encodePath(paths);
+
+        var resultsParent = $("#geometryResults4");
+        var liInnerHTML = "<b>Encoded String #" + (paths.length) + "</b>: " + encodedString;
+        $("<li></li>").html(liInnerHTML).appendTo(resultsParent.find(".pointList"));
+      }
+    })();
   }
 }
 
