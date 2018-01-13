@@ -29,7 +29,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <div class="infoSection">
   <div class="dawgRow">
     <div class="segment overviewSegment">
-      <h2 class="text-center">Spherical Geometry Concepts</h2>
+      <h2 class="text-center">Overview</h2>
+      <p>The Google Maps Geometry Library comprises of a set number of static methods provided to calculate or determine geometric data on the surface of your Google Map. The methods includes computing values based on the <b>Spherical Namespace</b>, <b>Encoding Namespace</b> and <b>Poly Namespace</b>.</p>
+      <p>To be able to use this library, please ensure to have the <b>Google Maps Javascript API</b> activated on your API Dashboard post creating your API Key as well as passing the library parameter like the script tag shown below:</p>
       <p>
         <span class="code">
 					&lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;<b>libraries=geometry</b>"&gt;&lt;/script&gt;
@@ -74,7 +76,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/geometry-compute-length.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -112,7 +114,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/geometry-compute-area.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -149,7 +151,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/geometry-compute-heading.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -158,8 +160,8 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Section Details Starts Here-->
 <div class="infoSection">
   <div class="dawgRow">
-    <div class="segment">
-			<span class="sourceCode" data-modalLink="#exampleModal3">
+    <div class="segment col-md-push-6">
+			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
 				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
@@ -175,7 +177,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
         <ul class="pointList"></ul>
       </div>
     </div>
-    <div class="segment">
+    <div class="segment col-md-pull-6">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -187,8 +189,76 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/geometry-encode-decode.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
 <!--Example 4 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment">
+			<span class="sourceCode" data-modalLink="#exampleModal5">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h2>Google Maps Geometry - <span class="subTopic">Contains Location</span></h2>
+      <p>The <b>Contains Location()</b> Geometry Method is used to find out if a specific location on a map, is within an area that is covered by an overlay like a polygon. The return type value for this method is <b>Boolean</b>. In this example, there is a specfic area that is covered on the map (but not visibly placed on it) with a Polygon. If you were to click within the specified covered area, the <b>containsLocation()</b> method is fired and an animated bouncing marker would be placed on it.</p>
+      <p>Please note that this method requires two arguments to be passed into it, one being the <b>event.latLng</b> object and another is the actual overlay shape(<span class="code">new google.maps.Polygon()</span> for this example).</p>
+    </div>
+    <div class="segment">
+      <div class="googleMapHolder" id="gMap5"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 5 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal5">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/geometry-isWithinLocation.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 5 Modal Details Ends Here-->
+
+<!--Section Details Starts Here-->
+<div class="infoSection">
+  <div class="dawgRow">
+    <div class="segment col-md-push-6">
+			<span class="sourceCode" data-modalLink="#exampleModal6">
+			<?xml version="1.0" encoding="utf-8"?>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
+				<path fill="#FFFFFF" d="M2.1 3.1c0.2 1.3 0.4 1.6 0.4 2.9 0 0.8-1.5 1.5-1.5 1.5v1c0 0 1.5 0.7 1.5 1.5 0 1.3-0.2 1.6-0.4 2.9-0.3 2.1 0.8 3.1 1.8 3.1s2.1 0 2.1 0v-2c0 0-1.8 0.2-1.8-1 0-0.9 0.2-0.9 0.4-2.9 0.1-0.9-0.5-1.6-1.1-2.1 0.6-0.5 1.2-1.1 1.1-2-0.3-2-0.4-2-0.4-2.9 0-1.2 1.8-1.1 1.8-1.1v-2c0 0-1 0-2.1 0s-2.1 1-1.8 3.1z"/>
+				<path fill="#FFFFFF" d="M13.9 3.1c-0.2 1.3-0.4 1.6-0.4 2.9 0 0.8 1.5 1.5 1.5 1.5v1c0 0-1.5 0.7-1.5 1.5 0 1.3 0.2 1.6 0.4 2.9 0.3 2.1-0.8 3.1-1.8 3.1s-2.1 0-2.1 0v-2c0 0 1.8 0.2 1.8-1 0-0.9-0.2-0.9-0.4-2.9-0.1-0.9 0.5-1.6 1.1-2.1-0.6-0.5-1.2-1.1-1.1-2 0.2-2 0.4-2 0.4-2.9 0-1.2-1.8-1.1-1.8-1.1v-2c0 0 1 0 2.1 0s2.1 1 1.8 3.1z"/>
+			</svg>
+			</span>
+			<div class="toolTipMessage hiddenTransform">Click To View Example Code</div>
+      <h2>Google Maps Geometry - <span class="subTopic">Is Location On Edge</span></h2>
+      <p>The <b>isLocationOnEdge()</b> method is used to determine if a specific Latitude-Longitude Coordinate is falling at the edge or near the edge of a kind of overlay, like a polygon. This particular method accepts 3 arguments, the <b>event.latLng Object</b>, the <b>overlay object</b> which would be specified (for example, <span class="code">new google.maps.Polygon()</span>) and a <b>tolerance</b> number value. The return value of this method is a Boolean data type.</p>
+      <p>In this example, interact with the map by clicking on it, if the click event happens to be close to the edge of the polygon area (specified also with a tolerance value), then a bouncing marker would appear on the map.</p>
+    </div>
+    <div class="segment col-md-pull-6">
+      <div class="googleMapHolder" id="gMap6"></div>
+    </div>
+  </div>
+</div>
+<!--Section Details Ends Here-->
+
+<!--Example 6 Modal Details Starts Here-->
+<div class="dawgModalUnit hiddenTransform" id="exampleModal6">
+	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
+	<div class="posContainer hiddenTransform">
+		<div class="modalContent">
+      <img src="{{ site.baseurl }}/assets/images/example-code/geometry-is-location-on-edge.png" class="img-responsive center-block"/>
+		</div>
+	</div>
+</div>
+<!--Example 6 Modal Details Ends Here-->

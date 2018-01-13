@@ -4911,6 +4911,82 @@ function geometryLibrary() {
         $("<li></li>").html(liInnerHTML).appendTo(resultsParent.find(".pointList"));
       }
     })();
+
+    (function geometryIsWithinLocation() {
+			var locationCoords = new google.maps.LatLng(60.4720, 8.4689);
+      var map = new google.maps.Map(document.getElementById("gMap5"), {
+        center: locationCoords,
+        zoom: 5
+      });
+			
+			var areaCover = [
+				new google.maps.LatLng(61.92723383745902, 5.25146484375),
+				new google.maps.LatLng(61.43736680678575, 9.7998046875),
+				new google.maps.LatLng(60.0962579008989, 11.62353515625),
+				new google.maps.LatLng(59.30927268823262, 9.84375),
+				new google.maps.LatLng(58.58390865017629, 7.31689453125),
+				new google.maps.LatLng(60.0962579008989, 4.32861328125)
+			];
+
+			var polygonArea = new google.maps.Polygon({
+				paths: areaCover,
+				geodesic: true
+			});
+
+			map.addListener("click", function(event) {
+				var eventLatLng = event.latLng;
+				var area = polygonArea;
+				var clickCondition = google.maps.geometry.poly.containsLocation(eventLatLng, area);
+				if(clickCondition) {
+					var latPos = eventLatLng.lat();
+					var lngPos = eventLatLng.lng();
+					var markerInsert = new google.maps.Marker({
+						map: map,
+						position: {lat: latPos, lng: lngPos},
+						icon: markerIcon,
+						animation: google.maps.Animation.BOUNCE	
+					});
+				}
+			});
+    })();
+    
+		(function geometryIsLocationOnEdge() {
+			var locationCoords = new google.maps.LatLng(60.4720, 8.4689);
+      var map = new google.maps.Map(document.getElementById("gMap6"), {
+        center: locationCoords,
+        zoom: 5
+      });
+			
+			var areaCover = [
+				new google.maps.LatLng(61.92723383745902, 5.25146484375),
+				new google.maps.LatLng(61.43736680678575, 9.7998046875),
+				new google.maps.LatLng(60.0962579008989, 11.62353515625),
+				new google.maps.LatLng(59.30927268823262, 9.84375),
+				new google.maps.LatLng(58.58390865017629, 7.31689453125),
+				new google.maps.LatLng(60.0962579008989, 4.32861328125)
+			];
+
+			var polygonArea = new google.maps.Polygon({
+				paths: areaCover,
+				geodesic: true
+			});
+
+			map.addListener("click", function(event) {
+				var eventLatLng = event.latLng;
+				var area = polygonArea;
+				var clickCondition = google.maps.geometry.poly.isLocationOnEdge(eventLatLng, area, 10e-1);
+				if(clickCondition) {
+					var latPos = eventLatLng.lat();
+					var lngPos = eventLatLng.lng();
+					var markerInsert = new google.maps.Marker({
+						map: map,
+						position: {lat: latPos, lng: lngPos},
+						icon: markerIcon,
+						animation: google.maps.Animation.BOUNCE	
+					});
+				}
+			});
+    })();
   }
 }
 
