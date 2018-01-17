@@ -17,6 +17,7 @@ body {
   padding: 0;
   font-size: 2.0rem;
   font-family: $contentFont;
+  cursor: url("{{ site.baseurl }}/assets/cursors/dawgDefaultCursor.cur"), none;
 }
 
 .IOSClickableStatus {
@@ -118,6 +119,54 @@ a.refLink {
 .closeButton:active:hover, .closeButton:active:focus, .closeButton:active {
   background: $white;
   border-color: $white;
+}
+
+.form-group {
+  .dawgLabel {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-size: 1.5rem;
+    @include transition(all, 0.25s, linear);
+  }
+  .dawgLabel.showTransform {
+    top: -15px;
+    font-size: 1.3rem;
+    color: $weldonBlue;
+  }
+  .dawgInput {
+    border: 1px solid $roseQuartz;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    box-shadow: none;
+    height: 45px;
+    -webkit-box-shadow: none;
+    color: $black;
+    font-weight: 600;
+    @include transition(all, 0.25s, linear);
+  }
+  .dawgInput.showTransform {
+    border-color: transparent;
+  }
+  .highlight {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $weldonBlue;
+    @include transition(all, 0.25s, linear);
+  }
+  .highlight.showTransform {
+    width: 100%;
+  }
+  .gSearch {
+    background: url("{{ site.baseurl }}/assets/images/search-icon.png") no-repeat left center;
+    background-size: 20px;
+    padding-left: 25px;
+  }
 }
 
 .dawgGoogleMaps {
@@ -371,6 +420,11 @@ a.refLink {
     }
     .geometryVideoParent {
 			background: url("{{ site.baseurl }}/assets/images/geometry-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
+    .autocompleteVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/over-the-bridge-bg.jpg") no-repeat center center;
 			background-size: cover;
 			background-attachment: fixed;
     }
@@ -642,6 +696,113 @@ a.refLink {
           font-size: 1.4rem;
           margin: 0;
           padding-left: 15px;
+        }
+      }
+      .autocompleteForm {
+        margin-top: 15px;
+      }
+      .autocompleteResultParent {
+        margin-top: 15px;
+        padding: 15px;
+        //background: url("{{ site.baseurl }}/assets/images/autocomplete-result-bg.jpg") no-repeat center center;
+        background: $paleSilver;
+        background-size: cover;
+        background-attachment: fixed;
+        border-radius: 3px;
+        -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.5);
+        overflow: hidden;
+        .resultCard {
+          width: 100%;
+          max-width: 350px;
+          margin: 0 auto;
+          padding: 15px;
+          border-radius: 3px;
+          background: $white;
+          position: relative;
+          z-index: 25;
+          .locationIcon {
+            img {
+              max-width: 45px;
+            }
+          }
+					.locationNameValue {
+						color: #ff8e31
+					}
+          .locationFullNameValue {
+            margin-bottom: 0;
+						font-size: 1.5rem;
+          }
+          .locationTypesValue {
+            margin: 0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: $roseQuartz;
+						text-transform: uppercase;
+          }
+          .headingBar {
+            width: 100px;
+            margin-top: 10px;
+          }
+          ul {
+            li {
+              font-family: $headingFont;
+              font-size: 1.3rem;
+              font-weight: 600;
+              color: $paleSilver;
+							@include wordWrap();
+              span {
+                font-family: $contentFont;
+                font-weight: 400;
+                color: $weldonBlue;
+              }
+            }
+          }
+          .urlReference, .utcReference, .contactReference {
+            margin-top: 15px;
+            span {
+              font-size: 1.3rem;
+              font-weight: 600;
+              font-family: $headingFont;
+              color: $paleSilver;
+              display: block;
+            }
+            a {
+              font-size: 1.3rem;
+              display: block;
+							@include wordWrap();
+            }
+            svg {
+              display: block;
+              margin: 0 auto;
+              width: 30px;
+              height: 30px;
+            }
+            .utcValue {
+              font-size: 1.3rem;
+              color: $weldonBlue;
+            }
+						.referenceIcon {
+							width: 30px;
+							height: 30px;
+							margin: 10px auto 0;
+						}
+          }
+					.contactReference {
+						ul {
+							margin-top: 10px;
+							li {
+								color: $black;
+								span {
+								color: $black;
+								}
+							}
+						}
+						p {
+							font-size: 1.3rem;
+						}
+					}
         }
       }
     }

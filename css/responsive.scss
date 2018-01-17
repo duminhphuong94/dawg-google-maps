@@ -21,6 +21,14 @@
     .dawgModalUnit {
       cursor: pointer;
     }
+
+    .infoSection {
+      .segment {
+        .autocompleteResultParent {
+          background-attachment: scroll;
+        }
+      }
+    }
   }
 }
 
