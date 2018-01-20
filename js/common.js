@@ -5544,6 +5544,534 @@ function autocompleteAddressesAndSearch() {
         parentElement.removeClass("hide");
       }
     })();
+    
+    (function autocompleteComponentRestrictions() {
+      var locationCoords = new google.maps.LatLng(37.0902, -95.7129);
+      var map = new google.maps.Map(document.getElementById("gMap5"), {
+        center: locationCoords,
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
+
+      var autocompleteService = new google.maps.places.Autocomplete(document.getElementById("search5"), {
+        types: ["establishment"],
+        componentRestrictions: {country: ["US", "ZA"]}
+      });
+
+      autocompleteService.addListener("place_changed", function() {
+        var $this = this;
+        setAutocompleteResults($this.getPlace());
+      });
+
+      var marker = new google.maps.Marker({
+        icon: markerIcon,
+      });
+
+      function setAutocompleteResults(thisResultObj) {
+        console.log(thisResultObj);
+        var latValue = thisResultObj.geometry.location.lat();
+        var lngValue = thisResultObj.geometry.location.lng();
+        var newLocationCoords = new google.maps.LatLng(latValue, lngValue);
+        map.setOptions({
+          zoom: 13,
+          center: newLocationCoords
+        });
+        marker.setMap(null);
+        marker.setOptions({
+          position: newLocationCoords,
+          map: map,
+          animation: google.maps.Animation.BOUNCE
+        });
+
+        var parentElement = $("#autocompleteResult5");
+        parentElement.empty();
+        var resultClone = $("#resultCardClone").clone();
+
+        function insertHRBar() {
+          $('<hr class="headingBar">').appendTo(resultClone);
+        }
+
+        resultClone.find(".locationNameValue").text(thisResultObj.name);
+        resultClone.find(".locationFullNameValue").text(thisResultObj.formatted_address);
+        
+        var typesString = "";
+        $.each(thisResultObj.types, function(index, stringValue) {
+          typesString += (typesString === "") ? (stringValue) : (", " + stringValue);
+        });
+        resultClone.find(".locationTypesValue").text(typesString);
+
+        resultClone.find(".locationIcon").find("img").attr({
+          src: thisResultObj.icon,
+          alt: thisResultObj.formatted_address,
+          title: thisResultObj.formatted_address
+        });
+
+        resultClone.find(".latitudeValue").text(thisResultObj.geometry.location.lat()).addBack().find(".longitudeValue").text(thisResultObj.geometry.location.lng()).addBack().find(".placeIdValue").text(thisResultObj.place_id);
+        resultClone.find(".urlReference").find("a").attr({
+          href: thisResultObj.url
+        }).text(thisResultObj.url);
+        resultClone.find(".utcReference").find(".utcValue").text(thisResultObj.utc_offset);
+       
+        if(thisResultObj.international_phone_number) {
+          var createContactRef = function() {
+            var subParentDiv = $('<div class="contactReference"></div>');
+            var imageUnit = $('<img/>');
+            imageUnit.attr({
+              src: baseUrl + "/dawg-google-maps/assets/images/phone.svg",
+              alt: "Contact Information",
+              title: "Contact Information",
+              class: "img-responsive referenceIcon",
+            });
+            imageUnit.appendTo(subParentDiv);
+
+            var spanUnit = $('<span class="text-center"></span>');
+            spanUnit.text("Contact Information").appendTo(subParentDiv);
+
+            var paraUnit = $('<p class="text-center"></p>');
+            paraUnit.text(thisResultObj.international_phone_number).appendTo(subParentDiv);
+
+            subParentDiv.appendTo(resultClone);
+            insertHRBar();
+          };
+          createContactRef();
+        }
+
+        if(thisResultObj.opening_hours) {
+          var createOpeningHours = function() {
+            var subParentDiv = $('<div class="contactReference"></div>');
+            var imageUnit = $('<img/>');
+            imageUnit.attr({
+              src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+              alt: "Opening Hours",
+              title: "Opening Hours",
+              class: "img-responsive referenceIcon",
+            });
+            imageUnit.appendTo(subParentDiv);
+
+            var spanUnit = $('<span class="text-center"></span>');
+            var openStatusText = (thisResultObj.opening_hours.open_now) ? ("Open Now") : ("Closed");
+            spanUnit.text(openStatusText).appendTo(subParentDiv);
+
+            if(thisResultObj.opening_hours.weekday_text.length > 0) {
+              var listParent = $('<ul class="text-center list-unstyled"></ul>');
+              $.each(thisResultObj.opening_hours.weekday_text, function(q, thisStringValue) {
+                var liEl = $('<li></li>');
+                $('<span></span>').text(thisStringValue).appendTo(liEl);
+                liEl.appendTo(listParent);
+              });
+              listParent.appendTo(subParentDiv);
+            }
+
+            subParentDiv.appendTo(resultClone);
+            insertHRBar();
+          };
+          createOpeningHours();
+        }
+
+        if(thisResultObj.rating) {
+          var createRatingRef = function() {
+            var subParentDiv = $('<div class="contactReference"></div>');
+            var imageUnit = $('<img/>');
+            imageUnit.attr({
+              src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg",
+              alt: "Rating",
+              title: "Rating",
+              class: "img-responsive referenceIcon",
+            });
+            imageUnit.appendTo(subParentDiv);
+
+            var spanUnit = $('<span class="text-center"></span>');
+            spanUnit.text("Rating").appendTo(subParentDiv);
+
+            var paraUnit = $('<p class="text-center"></p>');
+            paraUnit.text(thisResultObj.rating).appendTo(subParentDiv);
+
+            subParentDiv.appendTo(resultClone);
+          };
+          createRatingRef();
+          insertHRBar();
+        }
+
+        if(thisResultObj.website) {
+          var createWebsiteRef = function() {
+            var subParentDiv = $('<div class="contactReference"></div>');
+            var imageUnit = $('<img/>');
+            imageUnit.attr({
+              src: baseUrl + "/dawg-google-maps/assets/images/blue-link.svg",
+              alt: "Rating",
+              title: "Rating",
+              class: "img-responsive referenceIcon",
+            });
+            imageUnit.appendTo(subParentDiv);
+
+            var spanUnit = $('<span class="text-center"></span>');
+            spanUnit.text("Webiste Link").appendTo(subParentDiv);
+
+            var hrefUnit = $('<a></a>');
+            hrefUnit.attr({
+              href: thisResultObj.website,
+              class: "refLink text-center",
+              target: "_blank",
+            });
+            hrefUnit.text(thisResultObj.website).appendTo(subParentDiv);
+
+            subParentDiv.appendTo(resultClone);
+          };
+          createWebsiteRef();
+          insertHRBar();
+        }
+          
+        resultClone.removeAttr("id").removeClass("hide").appendTo(parentElement);
+        parentElement.removeClass("hide");
+      }
+    })();
+    
+    (function autocompletePlaceIdOnlyResults() {
+      var autocompleteService = new google.maps.places.Autocomplete(document.getElementById("search6"), {
+        types: ["establishment"],
+        placeIdOnly: true
+      });
+
+      autocompleteService.addListener("place_changed", function() {
+        var $this = this;
+        setAutocompleteResults($this.getPlace());
+      });
+
+      var marker = new google.maps.Marker({
+        icon: markerIcon,
+      });
+
+      function setAutocompleteResults(thisResultObj) {
+        console.log(thisResultObj);
+        var parentElement = $("#autocompleteResult6");
+        parentElement.empty();
+        var resultClone = $("#resultCardPlaceIdOnly").clone();
+
+        function insertHRBar() {
+          $('<hr class="headingBar">').appendTo(resultClone);
+        }
+
+        resultClone.find(".locationNameValue").text(thisResultObj.name);
+        resultClone.find(".placeIdValue").text(thisResultObj.place_id);
+        
+        var typesString = "";
+        $.each(thisResultObj.types, function(index, stringValue) {
+          typesString += (typesString === "") ? (stringValue) : (", " + stringValue);
+        });
+        resultClone.find(".locationTypesValue").text(typesString);
+
+        resultClone.removeAttr("id").removeClass("hide").appendTo(parentElement);
+        parentElement.removeClass("hide");
+      }
+    })();
+
+    (function searchBoxBasics() {
+      var locationCoords, map;
+			var wholeWorld = {
+				set1: new google.maps.LatLng(-90, -180),
+				set2: new google.maps.LatLng(90, 180)
+			};
+			var defaultBounds = new google.maps.LatLngBounds(wholeWorld.set1, wholeWorld.set2);
+      function createMapLocation(geoCoords) {
+        map = new google.maps.Map(document.getElementById("gMap7"), {
+          center: geoCoords,
+          zoom: 5,
+          mapTypeId: "terrain"
+        });
+      }
+      if(!!navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(successNav, errorNav);
+        function successNav(position) {
+          var latValue = position.coords.latitude;
+          var lngValue = position.coords.longitude;
+          console.log(latValue, lngValue);
+          locationCoords = new google.maps.LatLng(latValue, lngValue);
+          createMapLocation(locationCoords);
+        }
+        function errorNav() {
+          createMapLocation(locationCoords = new google.maps.LatLng(37.0902, -95.7129));
+        }
+      }
+      else {
+        createMapLocation(locationCoords = new google.maps.LatLng(37.0902, -95.7129));
+      }
+
+      var searchBox = new google.maps.places.SearchBox(document.getElementById("search7"), {
+        bounds: defaultBounds
+      });
+      searchBox.addListener("places_changed", function() {
+        var $this = this;
+        populateSearchBoxResults($this.getPlaces());
+      });
+
+      function populateSearchBoxResults(resultArray) {
+        console.log(resultArray);
+        var parentElement = $("#autocompleteResult7");
+        parentElement.empty().removeClass("hide");
+        if(resultArray.length > 0) {
+          $.each(resultArray, function(index, thisResultObj) {
+            var resultClone = $("#searchBoxResultClone").clone();
+            resultClone.find(".nameValue").text(thisResultObj.name).addBack().find(".addressValue").text(thisResultObj.formatted_address);
+            
+            var typesString = "";
+            $.each(thisResultObj.types, function(q, thisTypeString) {
+              typesString += (typesString === "") ? (thisTypeString) : (", " + thisTypeString);
+            });
+            resultClone.find(".typesValue").text(typesString.toUpperCase());
+            resultClone.removeAttr("id").removeClass("hide").appendTo(parentElement);
+
+            resultClone.find(".resultIconHolder").find("img").attr({
+              src: thisResultObj.icon,
+              alt: typesString,
+              title: typesString
+            });
+
+            var latValue = thisResultObj.geometry.location.lat();
+            var lngValue = thisResultObj.geometry.location.lng();
+            resultClone.find(".latitudeValue").text(latValue).addBack().find(".longitudeValue").text(lngValue).addBack().find(".placeIdValue").text(thisResultObj.place_id);
+
+            (function createRatingRef() {
+              if(!!thisResultObj.rating) {
+                var subDiv = $('<div class="contentReference"></div>');
+                
+                var imageUnit = $('<img/>');
+                imageUnit.attr({
+                  src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg",
+                  alt: "Rating Information",
+                  title: "Rating Information",
+                  class: "img-responsive referenceIcon",
+                });
+                imageUnit.appendTo(subDiv);
+
+                $('<h4></h4>').text("Rating Information").appendTo(subDiv);
+                $('<p></p>').text(thisResultObj.rating).appendTo(subDiv);
+                $('<hr class="headingBar">').appendTo(subDiv);
+                subDiv.insertBefore(resultClone.find(".footerColors"));
+              }
+            })();
+
+            resultClone.removeClass("hide").removeAttr("id").appendTo(parentElement);
+
+            if(((index + 1) % 3) === 0) {
+              $('<div class="clearfix hidden-xs"></div>').appendTo(parentElement);
+            }
+          });
+        }
+        else {
+          $("#searchBoxNullClone").clone().removeClass("hide").removeAttr("id").appendTo(parentElement);
+        }
+      }
+    })();
+    
+    (function autocompleteServicePredictions() {
+      var locationCoords, map;
+			var wholeWorld = {
+				set1: new google.maps.LatLng(-90, -180),
+				set2: new google.maps.LatLng(90, 180)
+			};
+			var defaultBounds = new google.maps.LatLngBounds(wholeWorld.set1, wholeWorld.set2);
+      function createMapLocation(geoCoords) {
+        map = new google.maps.Map(document.getElementById("gMap8"), {
+          center: geoCoords,
+          zoom: 5,
+          mapTypeId: "terrain"
+        });
+      }
+      if(!!navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(successNav, errorNav);
+        function successNav(position) {
+          var latValue = position.coords.latitude;
+          var lngValue = position.coords.longitude;
+          console.log(latValue, lngValue);
+          locationCoords = new google.maps.LatLng(latValue, lngValue);
+          createMapLocation(locationCoords);
+        }
+        function errorNav() {
+          createMapLocation(locationCoords = new google.maps.LatLng(37.0902, -95.7129));
+        }
+      }
+      else {
+        createMapLocation(locationCoords = new google.maps.LatLng(37.0902, -95.7129));
+      }
+
+      var autocompleteService = new google.maps.places.AutocompleteService();
+      var inputSearch = $("#search8");
+      inputSearch.on("keyup", function() {
+        var $this = $(this);
+        var $thisInputValue = $this.val();
+        if($thisInputValue !== "") {
+          autocompleteService.getQueryPredictions({input: $thisInputValue}, populateSuggestions);
+        }
+        else {
+          $("#autocompleteServiceList1").empty();
+        }
+      });
+
+      function populateSuggestions(predictionArray, status) {
+        if(status === "OK") {
+          //console.log(predictionArray);
+          var parentList = $("#autocompleteServiceList1");
+          parentList.empty().removeClass("hide");
+          if(predictionArray.length > 0) {
+            $.each(predictionArray, function(index, thisResultObj) {
+              //console.log(thisResultObj);
+              var descriptionString = thisResultObj.description;
+              var liResultHTML;
+              if(thisResultObj.matched_substrings.length > 0) {
+                var matchObj = thisResultObj.matched_substrings[0];
+                var sliceString = descriptionString.slice(matchObj.offset, matchObj.length);
+                var matchStart = descriptionString.indexOf(sliceString);
+                var matchEnd = matchStart + sliceString.length - 1;
+                var beforeMatch = descriptionString.slice(0, matchStart);
+                var afterMatch = descriptionString.slice(matchEnd + 1);
+                liResultHTML = beforeMatch + '<span>' + sliceString + '</span>' + afterMatch;
+              }
+              var liElement = $('<li></li>').html(liResultHTML).attr({
+                "data-placeid": thisResultObj.place_id,
+                "data-description": thisResultObj.description
+              });
+              liElement.on("click", function() {
+                var $this = $(this);
+                $this.parent().parent().find(".dawgInput").val(descriptionString);
+                fetchDataAndPlaceResults($this.attr("data-description"), $this.attr("data-placeid"));
+                parentList.addClass("hide");
+              });
+              liElement.appendTo(parentList);
+            });
+          }
+          else {
+            $("<li></li>").text("No Search Results Available").appendTo(parentList);
+          }
+        }
+      }
+
+      function fetchDataAndPlaceResults(descriptionString, placeIdString) {
+        switch(true) {
+          case (!!placeIdString):
+            function placeIdRequest() {
+              var requestObj = {
+                placeId: placeIdString
+              };
+
+              var placesService = new google.maps.places.PlacesService(map);
+              placesService.getDetails(requestObj, function(placeResultObj, status) {
+                if(status === "OK") {
+                  console.log(placeResultObj);
+                  var parentResultHolder = $("#autocompleteResult8");
+                  parentResultHolder.removeClass("hide").empty();
+                  var resultClone = $("#resultCardClone").clone();
+
+                  var typesString = "";
+                  $.each(placeResultObj.types, function(q, thisTypeString) {
+                    thisTypeString = thisTypeString.split("_").join(" ");
+                    typesString += (typesString === "") ? (thisTypeString) : (", "  + thisTypeString);
+                  });
+
+                  resultClone.find(".locationTypesValue").text(typesString);
+                  resultClone.find(".locationIcon").find("img").attr({
+                    src: placeResultObj.icon,
+                    alt: typesString,
+                    title: typesString
+                  });
+
+                  var latLocValue = placeResultObj.geometry.location.lat();
+                  var lngLocValue = placeResultObj.geometry.location.lng();
+                  resultClone.find(".latitudeValue").text(latLocValue).addBack().find(".longitudeValue").text(lngLocValue).addBack().find(".placeIdValue").text(placeResultObj.place_id);
+
+                  if(!!placeResultObj.opening_hours) {
+                    function createOpeningHoursRef() {
+                      var subDiv = $('<div class="contactReference"></div>');
+                      var iconImage = $('<img/>');
+                      iconImage.attr({
+                        src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+                        alt: "Opening Hours",
+                        title: "Opening Hours",
+                        class: "img-responsive referenceIcon"
+                      });
+                      iconImage.appendTo(subDiv);
+  
+                      var subDivHeading = $('<h4></h4>');
+                      if(placeResultObj.opening_hours.open_now === true) {
+                        subDivHeading.text("Open Now");
+                      }
+                      else {
+                        subDivHeading.text("Closed Now");
+                      }
+                      subDivHeading.appendTo(subDiv);
+
+                      var subListParent = $('<ul class="list-unstyled text-center"></ul>');
+                      $.each(placeResultObj.opening_hours.weekday_text, function(w, thisHoursString) {
+                        $('<li></li>').text(thisHoursString).appendTo(subListParent);
+                      });
+                      subListParent.appendTo(subDiv);
+                      subDiv.appendTo(resultClone);
+                      $('<hr class="headingBar">').appendTo(resultClone);
+                    }
+                    createOpeningHoursRef();
+                  }
+
+                  if(!!placeResultObj.international_phone_number) {
+                    function createPhoneNumberRef() {
+                      var subDiv = $('<div class="contactReference"></div>');
+                      var iconImage = $('<img/>');
+                      iconImage.attr({
+                        src: baseUrl + "/dawg-google-maps/assets/images/phone.svg",
+                        alt: "Opening Hours",
+                        title: "Opening Hours",
+                        class: "img-responsive referenceIcon"
+                      });
+                      iconImage.appendTo(subDiv);
+                      $('<h4></h4>').text("Contact Number").appendTo(subDiv);
+                      $('<p></p>').text(placeResultObj.international_phone_number).appendTo(subDiv);
+                      subDiv.appendTo(resultClone);
+                      $('<hr class="headingBar">').appendTo(resultClone);
+                    }
+                    createPhoneNumberRef();
+                  }
+
+                  if(!!placeResultObj.website) {
+                    function createRefWebsite() {
+                      var subDiv = $('<div class="contactReference"></div>');
+                      var iconImage = $('<img/>');
+                      iconImage.attr({
+                        src: baseUrl + "/dawg-google-maps/assets/images/blue-link.svg",
+                        alt: "Opening Hours",
+                        title: "Opening Hours",
+                        class: "img-responsive referenceIcon"
+                      });
+                      iconImage.appendTo(subDiv);
+
+                      $('<h4></h4>').text("Website Link").appendTo(subDiv);
+                      var webLink = $('<a></a>');
+                      webLink.attr({
+                        href: placeResultObj.website,
+                        target: "_blank",
+                        class: "refLink text-center"
+                      });
+                      webLink.text(placeResultObj.website).appendTo(subDiv);
+                      subDiv.appendTo(resultClone);
+                      $('<hr class="headingBar">').appendTo(resultClone);
+                    }
+                    createRefWebsite();
+                  }
+
+                  resultClone.find(".locationNameValue").text(placeResultObj.name).addBack().find(".locationFullNameValue").text(placeResultObj.formatted_address);
+                  resultClone.find(".utcValue").text(placeResultObj.utc_offset).addBack().find(".urlReference").find("a").text(placeResultObj.url).attr({
+                    href: placeResultObj.href
+                  });
+                  resultClone.removeAttr("id").removeClass("hide").appendTo(parentResultHolder);
+                }
+              });
+            }
+            placeIdRequest();
+            break;
+
+          default:
+            console.log("Acquire Information With Description");
+            break;
+        }
+      }
+    })();
   }
 }
 

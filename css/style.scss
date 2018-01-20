@@ -700,6 +700,25 @@ a.refLink {
       }
       .autocompleteForm {
         margin-top: 15px;
+        .form-group {
+          .autocompleteServiceList {
+            li {
+              color: $roseQuartz;
+              font-family: $headingFont;
+              font-weight: 600;
+              font-size: 1.1rem;
+              padding: 6px 6px 6px 20px;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-top: 0;
+              background: url("{{ site.baseurl }}/assets/images/polymarker.png") no-repeat 3px 50%;
+              background-size: 15px;
+              cursor: pointer;
+              span {
+                color: $black;
+              }
+            }
+          }
+        }
       }
       .autocompleteResultParent {
         margin-top: 15px;
@@ -799,10 +818,109 @@ a.refLink {
 								}
 							}
 						}
-						p {
+            h4 {
+              font-size: 1.5rem;
+              color: $roseQuartz;
+              text-align: center;
+              margin: 0;
+            }
+            p {
+              color: $weldonBlue;
+              text-align: center;
 							font-size: 1.3rem;
-						}
+            }
 					}
+        }
+        .searchBoxResultCard {
+          padding: 10px;
+          margin-bottom: 10px;
+          .borderBoxContainer {
+            -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.5);
+            box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.5);
+            background: #323d43;
+            border-radius: 3px;
+            overflow: hidden;
+            .resultIconHolder {
+              padding: 10px;
+              img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: $white;
+                padding: 5px;
+              }
+            }
+            .headingBar {
+              width: 150px;
+              margin: 10px auto;
+            }
+            .headingSection {
+              padding: 10px;
+              h3 {
+                margin: 0;
+                color: $white;
+                font-size: 2.3rem;
+              }
+              h4 {
+                margin-top: 0;
+                color: $weldonBlue;
+                font-size: 1.5rem;
+              }
+              p {
+                font-size: 1.0rem;
+                color: $paleSilver;
+                margin: 0;
+              }
+            }
+            .contentReference {
+              padding: 10px;
+              font-size: 1.3rem;
+              ul {
+                li {
+                  color: $white;
+                  font-family: $headingFont;
+                  span {
+                    color: $weldonBlue;
+                    font-family: $contentFont;
+                  }
+                }
+              }
+              h4 {
+                font-size: 1.5rem;
+                color: $white;
+                text-align: center;
+              }
+              p {
+                color: $weldonBlue;
+                text-align: center;
+              }
+              .referenceIcon {
+                width: 30px;
+                height: 30px;
+                margin: 10px auto 0;
+              }
+            }
+            .footerColors {
+              .color {
+                float: left;
+                width: 25%;
+                height: 8px;
+              }
+              .colorGreen {
+                background: #29b368;
+              }
+              .colorYellow {
+                background: #f4c600;
+              }
+              .colorBlue {
+                background: #309cdc;
+              }
+              .colorPurple {
+                background: #9e60b6;
+              }
+            }
+          }
         }
       }
     }
