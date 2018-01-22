@@ -18,6 +18,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
     <div class="frameBorder dawgRow">
       <div class="segment">
         <h1>Google Maps Javascript API - Autocomplete for Addresses and Search Terms</h1>
+        <p>A look at how you could search for infomration with the help of a form element and show details on your map.</p>
         <button class="btn btn-default dawgButton" type="button">Get Started</button>
       </div>
     </div>
@@ -30,6 +31,14 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
   <div class="dawgRow">
     <div class="segment overviewSegment">
       <h2 class="text-center">Overview</h2>
+      <p>Autocomplete feature in Google Maps API is a part of the Places Library. It provides a user to search for any arbritary location details or any form of generic details belonging to a specific Latitude-Longitude Point or an Area. This features will require you have an <b>Input</b> element of <b>Text Type</b>, with its id details linked to your Javascript code.</p>
+      <p>Developers have the option to either choose to populate the results automatically (with the help of the <b>Autocomplete Service Class</b>) or create a custom list of responses(with the help of the <b>SearchBox Class</b>) when a search is being made.</p>
+      <p>In order to start using this feature of Google Maps Javascript API, enable the <b>Google Places API Web Service</b> from your respective dashboard, post creating the necessary API Key. You would also need to ensure that a <span class="code"><b>Script Tag</b></span> is set with the necessary parameters like below:</p>
+      <p>
+        <span class="code">
+            &lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;libraries=places"&gt;&lt;/script&gt;
+        </span>
+      </p>
       <p>Checkout the examples below and refer to the example codes attached to each of them to get started. To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/places-autocomplete" target="_blank" class="refLink">Google Maps Javasript API - Autocomplete for Addresses and Search Terms</a> for more information.</p>
     </div>
   </div>
@@ -49,6 +58,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 			</span>
 			<div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps Autocomplete - <span class="subTopic">Regions</span></h2>
+      <p>Once you have your intial setup in place, the Autocomplete feature needs to be initiated by creating a class, which is <span class="code">new google.maps.places.Autocomplete(<b>Input Element</b>, <b>Options Object</b>)</span>. Its first parameter is the respective Id Value of the search element that you would be using, followed by the Options Object that determines the results that would be shown while you're searching.</p>
+      <p>In the example below, the Options Object carries the <b>Types</b> field option as <b>(regions)</b>, which will now help populate results of Countries, Cities etc...</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap1"></div>
@@ -70,7 +82,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-searchlocation.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -89,6 +101,8 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 			</span>
 			<div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps Autocomplete - <span class="subTopic">Geocode</span></h2>
+      <p>In the example below, the Options Object carries the <b>Types</b> field option as <b>Geocode</b>, which will now help populate geocoding results rather than business results.</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap2"></div>
@@ -106,11 +120,11 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Section Details Ends Here-->
 
 <!--Example 2 Modal Details Starts Here-->
-<div class="dawgModalUnit hiddenTransform" id="exampleModal1">
+<div class="dawgModalUnit hiddenTransform" id="exampleModal2">
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-searchgeocode.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -129,6 +143,8 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 			</span>
 			<div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps Autocomplete - <span class="subTopic">Search Establishment</span></h2>
+      <p>If you are interested in acquring information about an establishment, the example below has its Options Objec <b>Types</b> field set to <b>Establishment</b>, which will now help populate business results only.</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap3"></div>
@@ -150,7 +166,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-searchestablishment.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -169,6 +185,8 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 			</span>
 			<div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps Autocomplete - <span class="subTopic">Strict Bounds</span></h2>
+      <p>Enabling the <b>strictBounds</b> field in the Options Object with a Boolean <b>True</b> value helps create a bias on the results, which are only bound to a specific geolocation area.</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap4"></div>
@@ -190,7 +208,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 	<button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
 	<div class="posContainer hiddenTransform">
 		<div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-strictbounds.png" class="img-responsive center-block"/>
 		</div>
 	</div>
 </div>
@@ -209,6 +227,8 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       </span>
       <div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps Autocomplete - <span class="subTopic">Component Restrictions</span></h2>
+      <p>The <b>componentRestrictions</b> field can be used to provide results based on a particular region. Region(s) are specified with the help of a 2 character <b>ISO 3166-1 Alpha-2 compatible country code</b>, with a maximum of 5 countries that can be placed for this particular field. Multiple countries needs to be passed on as a List/Array.</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap5"></div>
@@ -230,7 +250,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
   <button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
   <div class="posContainer hiddenTransform">
     <div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-componentrestrictions.png" class="img-responsive center-block"/>
     </div>
   </div>
 </div>
@@ -249,6 +269,8 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       </span>
       <div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps Autocomplete - <span class="subTopic">Place Id Only</span></h2>
+      <p>If you would be interested in only acquring the place Id Value, setting the <b>placeIdOnly</b> field in the Options Object with a Boolean value of <b>true</b>, would return results with a registered place id. The final result however, is not as detailed as other types of searches being made, bearing only limited fields in the API Result.</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
     <div class="segment overviewSegment">
       <form class="form autocompleteForm">
@@ -269,7 +291,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
   <button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
   <div class="posContainer hiddenTransform">
     <div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-placeidonly.png" class="img-responsive center-block"/>
     </div>
   </div>
 </div>
@@ -288,6 +310,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       </span>
       <div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
       <h2 class="text-center">Google Maps SearchBox - <span class="subTopic">Let's Start</span></h2>
+      <p>The <b>Search Box </b> feature in Google Maps Javascript API is initiated by creating a searchBox class(<span class="code">new google.maps.places.SearchBox(<b>Input Element</b>, <b>Options Object</b>)</span>), where the <b>Input Element</b> parameter refers to a specific Input Element with type of text, identified with its respective Id Value and the <b>Options Object</b> which contains a Google Map LatLngBounds object set with <span class="code">new google.maps.LatLngBounds()</span>. While certain results are similar to the Autocomplete feature, the <b>Search Box feature</b> also allows you to search with generic statements like <b>"Indian Restaurants In Tokyo"</b>.</p>
+      <p>The results of this type of search are handled with the help of a callback function, results can be either singular if a very specific detail is being searched for or a list of results being produced to show all options availabled at a specific area or region. While the map location being displayed below is kept merely to load an intiial location, visit the next example which showcases how you can customize your search results output with a list, then populate the result(s) in the Results Area as well as placing custom markers on your map to show differents points of interests available.</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap7"></div>
@@ -309,7 +334,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
   <button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
   <div class="posContainer hiddenTransform">
     <div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-searchbox-basic.png" class="img-responsive center-block"/>
     </div>
   </div>
 </div>
@@ -327,7 +352,10 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       </svg>
       </span>
       <div class="toolTipMessage overviewToolTip hiddenTransform">Click To View Example Code</div>
-      <h2 class="text-center">Google Maps Autocomplete Service</h2>
+      <h2 class="text-center">Google Maps Autocomplete Service - <span class="subTopic">Get Predictions</span></h2>
+      <p>Google Map Javascript API - Autocomplete Service provides you the option to programmatically retrieve details and information, along with customizing your results and the way it could be displayed. Binding a <span class="code">getPlacePredictions()</span> or <span class="code">getQueryPredictions()</span> to a specfic Input Element helps populate results. You could even go ahead and use some custom CSS Styles if you would like as well.</p>
+      <p>In our example below, the Input Search Element is bound with the <b>getQueryPredictions()</b> method to help populate the results with an Unordered List. Every list item is bound with an <b>onclick</b> event to trigger the rest of the search process. If a user were to click on a option having high specificity, the example code populates the final result with a <b>Place Id</b> value else, the results are populated as a list where details from each list object is populated in the result area.</p>
+      <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call.</p>
     </div>
     <div class="segment overviewSegment">
       <div class="googleMapHolder" id="gMap8"></div>
@@ -351,7 +379,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
   <button class="btn btn-default closeButton"><img src="{{ site.baseurl }}/assets/images/close-icon.png" class="img-responsive center-block" alt="close" title="Close"/></button>
   <div class="posContainer hiddenTransform">
     <div class="modalContent">
-      <img src="{{ site.baseurl }}/assets/images/example-code/drawing-manager-create-basic.png" class="img-responsive center-block"/>
+      <img src="{{ site.baseurl }}/assets/images/example-code/autocomplete-getPredictons.png" class="img-responsive center-block"/>
     </div>
   </div>
 </div>
@@ -556,7 +584,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p class="text-center typesValue"></p>
       <hr class="headingBar">
     </div>
-    <div class="contentReference">
+    <div class="contentReference initialContentReference">
       <ul class="list-unstyled text-center">
         <li>Latitude <span class="latitudeValue"></span></li>
         <li>Longitude <span class="longitudeValue"></span></li>

@@ -5766,35 +5766,17 @@ function autocompleteAddressesAndSearch() {
     })();
 
     (function searchBoxBasics() {
-      var locationCoords, map;
+      var locationCoords;
 			var wholeWorld = {
 				set1: new google.maps.LatLng(-90, -180),
 				set2: new google.maps.LatLng(90, 180)
 			};
 			var defaultBounds = new google.maps.LatLngBounds(wholeWorld.set1, wholeWorld.set2);
-      function createMapLocation(geoCoords) {
-        map = new google.maps.Map(document.getElementById("gMap7"), {
-          center: geoCoords,
-          zoom: 5,
-          mapTypeId: "terrain"
-        });
-      }
-      if(!!navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(successNav, errorNav);
-        function successNav(position) {
-          var latValue = position.coords.latitude;
-          var lngValue = position.coords.longitude;
-          console.log(latValue, lngValue);
-          locationCoords = new google.maps.LatLng(latValue, lngValue);
-          createMapLocation(locationCoords);
-        }
-        function errorNav() {
-          createMapLocation(locationCoords = new google.maps.LatLng(37.0902, -95.7129));
-        }
-      }
-      else {
-        createMapLocation(locationCoords = new google.maps.LatLng(37.0902, -95.7129));
-      }
+      var map = new google.maps.Map(document.getElementById("gMap7"), {
+        center: new google.maps.LatLng(37.0902, -95.7129),
+        zoom: 5,
+        mapTypeId: "terrain"
+      });
 
       var searchBox = new google.maps.places.SearchBox(document.getElementById("search7"), {
         bounds: defaultBounds
@@ -5907,9 +5889,11 @@ function autocompleteAddressesAndSearch() {
         }
       });
 
+      var markersArray = [];
+
       function populateSuggestions(predictionArray, status) {
         if(status === "OK") {
-          //console.log(predictionArray);
+          console.log(predictionArray);
           var parentList = $("#autocompleteServiceList1");
           parentList.empty().removeClass("hide");
           if(predictionArray.length > 0) {
@@ -5956,7 +5940,14 @@ function autocompleteAddressesAndSearch() {
               var placesService = new google.maps.places.PlacesService(map);
               placesService.getDetails(requestObj, function(placeResultObj, status) {
                 if(status === "OK") {
-                  console.log(placeResultObj);
+                  console.log(markersArray);
+
+                  $.each(markersArray, function(w, thisMarker) {
+                    console.log("trying to remove marker");
+                    thisMarker.setMap(null);
+                  });
+                  markersArray = [];
+
                   var parentResultHolder = $("#autocompleteResult8");
                   parentResultHolder.removeClass("hide").empty();
                   var resultClone = $("#resultCardClone").clone();
@@ -6060,6 +6051,17 @@ function autocompleteAddressesAndSearch() {
                     href: placeResultObj.href
                   });
                   resultClone.removeAttr("id").removeClass("hide").appendTo(parentResultHolder);
+                  
+                  var placeIdMarker = new google.maps.Marker({
+                    map: map,
+                    position: {lat: latLocValue, lng: lngLocValue},
+                    animation: google.maps.Animation.BOUNCE,
+                    icon: baseUrl + "/dawg-google-maps/assets/images/polymarker.png"
+                  });
+                  markersArray.push(placeIdMarker);
+                  console.log(markersArray);
+                  map.setCenter(new google.maps.LatLng(latLocValue, lngLocValue));
+                  map.setZoom(15);
                 }
               });
             }
@@ -6067,7 +6069,136 @@ function autocompleteAddressesAndSearch() {
             break;
 
           default:
-            console.log("Acquire Information With Description");
+            function placeTextSearchRequest() {
+              var requestObj = {
+                query: descriptionString
+              };
+
+              var textSearchRequest = new google.maps.places.PlacesService(map);
+              textSearchRequest.textSearch(requestObj, function(responseArray, status) {
+                if(status === "OK") {
+                  var parentResultsHolder = $("#autocompleteResult8");
+                  parentResultsHolder.removeClass("hide").empty();
+                  
+                  $.each(markersArray, function(w, thisMarker) {
+                    thisMarker.setMap(null);
+                  });
+                  markersArray = [];
+
+                  $.each(responseArray, function(index, thisResponseObj) {
+                    console.log(thisResponseObj);
+                    var resultClone = $("#searchBoxResultClone").clone();
+                    var typesString = "";
+                    $.each(thisResponseObj.types, function(q, thisTypeString) {
+                      typesString += (typesString === "") ? (thisTypeString) : (", " + thisTypeString);
+                    });
+
+                    resultClone.find(".resultIconHolder").find("img").attr({
+                      src: thisResponseObj.icon,
+                      alt: typesString,
+                      title: typesString
+                    });
+
+                    resultClone.find(".nameValue").text(thisResponseObj.name).addBack().find(".addressValue").text(thisResponseObj.formatted_address);
+                    resultClone.find(".typesValue").text(typesString);
+
+                    var latString = thisResponseObj.geometry.location.lat();
+                    var lngString = thisResponseObj.geometry.location.lng();
+                    resultClone.find(".latitudeValue").text(latString).addBack().find(".longitudeValue").text(lngString).addBack().find(".placeIdValue").text(thisResponseObj.place_id);        
+
+                    if(!!thisResponseObj.opening_hours) {
+                      function createOpeningHoursRef() {
+                        var subDiv = $('<div class="contentReference"></div>');
+
+                        var subDivIcon = $('<img/>');
+                        subDivIcon.attr({
+                          src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+                          class: "img-responsive referenceIcon"
+                        });
+
+                        var subDivHeading = $('<h4 class="text-center"></h4>');
+                        if(thisResponseObj.opening_hours === true) {
+                          subDivIcon.attr({
+                            alt: "Open Now",
+                            title: "Open Now"
+                          });
+                          subDivHeading.text("Open Now");
+                        }
+                        else {
+                          subDivIcon.attr({
+                            alt: "Closed Now",
+                            title: "Closed Now"
+                          });
+                          subDivHeading.text("Closed");
+                        }
+                        subDivIcon.appendTo(subDiv);
+                        subDivHeading.appendTo(subDiv);
+
+                        if(thisResponseObj.opening_hours.weekday_text.length > 0) {
+                          var ulListParent = $('<ul class="list-unstyled text-center"></ul>');
+                          $.each(thisResponseObj.opening_hours.weekday_text, function(q, thisStringValue) {
+                            $('<li></li>').text(thisStringValue).appendTo(ulListParent);
+                          });
+                          ulListParent.appendTo(subDiv);
+                        }
+
+                        $('<hr class="headingBar">').appendTo(subDiv);
+                        subDiv.insertAfter(resultClone.find(".borderBoxContainer").find(".initialContentReference"));
+                      }
+                      createOpeningHoursRef();
+                    }
+
+                    if(!!thisResponseObj.rating) {
+                      function createRatingRef() {
+                        var subDiv = $('<div class="contentReference"></div>');
+                        
+                        var imageIcon = $('<img/>');
+                        imageIcon.attr({
+                          class: "img-responsive referenceIcon",
+                          alt: "Rating",
+                          title: "Rating",
+                          src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg"
+                        });
+                        imageIcon.appendTo(subDiv);
+
+                        $('<h4 class="text-center"></h4>').text("Rating").appendTo(subDiv);
+                        $('<p class="text-center"></p>').text(thisResponseObj.rating).appendTo(subDiv); 
+
+                        $('<hr class="headingBar">').appendTo(subDiv);
+                        subDiv.insertAfter(resultClone.find(".borderBoxContainer").find(".initialContentReference"));
+                      }
+                      createRatingRef();
+                    }
+
+                    resultClone.removeAttr("id").removeClass("hide").appendTo(parentResultsHolder);
+                    if(index !== 0 && ((index + 1) % 3) === 0) {
+                      $('<div class="clearfix hidden-xs"></div>').appendTo(parentResultsHolder);
+                    }
+                    
+                    var descriptionTextMarker = new google.maps.Marker({
+                      position: {lat: latString, lng: lngString},
+                      icon: baseUrl + "/dawg-google-maps/assets/images/polymarker.png",
+                      title: thisResponseObj.name
+                    });
+                    markersArray.push(descriptionTextMarker);
+                  });
+
+                  $.each(markersArray, function(e, thisMarkerIcon) {
+                    thisMarkerIcon.setMap(map);
+                    if(e === 0) {
+                      console.log(thisMarkerIcon.getPosition());
+                      var newLatValue = thisMarkerIcon.getPosition().lat();
+                      var newLngValue = thisMarkerIcon.getPosition().lng();
+                      map.setOptions({
+                        zoom: 10,
+                        center: new google.maps.LatLng(newLatValue, newLngValue)
+                      });
+                    }
+                  });
+                }
+              });
+            }
+            placeTextSearchRequest();
             break;
         }
       }
