@@ -428,6 +428,11 @@ a.refLink {
 			background-size: cover;
 			background-attachment: fixed;
     }
+    .pageNotFoundVideoParent {
+			background: url("{{ site.baseurl }}/assets/images/404-bg.jpg") no-repeat center center;
+			background-size: cover;
+			background-attachment: fixed;
+    }
     .posContainer {
       position: absolute;
       top: 50%;
@@ -448,6 +453,24 @@ a.refLink {
 						margin-top: 45px;
 						width: 250px;
 					}
+        }
+      }
+    }
+    .pageNotFoundContainer {
+      color: $white;
+      .content {
+        max-width: 500px;
+        margin: 0 auto;
+        b {
+          color: $roseQuartz;
+        }
+        hr {
+          width: 150px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        p {
+          font-size: 1.4rem;
         }
       }
     }

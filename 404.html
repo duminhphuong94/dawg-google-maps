@@ -1,24 +1,26 @@
 ---
-layout: default
+url: "/404"
+layout: "default-structure"
+title: "DAWG Google Maps - Page Not Found!"
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<!--Jumbotron Section Details Starts Here-->
+<div class="jumbotronParent positionRelative">
+  <div class="curtain"></div>
+  <div class="videoParent pageNotFoundVideoParent">
+    <video autoplay="autoplay" loop muted class="hidden-xs">
+      <source src="{{ site.baseurl }}/assets/videos/404-video-bg.mp4" type="video/mp4"/>
+      <source src="{{ site.baseurl }}/assets/videos/404-video-bg.ogg" type="video/ogg"/>
+      <source src="{{ site.baseurl }}/assets/videos/404-video-bg.webm" type="video/webm"/>
+    </video>
+  </div>
+  <div class="posContainer pageNotFoundContainer">
+    <div class="content">
+      <img src="{{ site.baseurl }}/assets/images/broken-link-white.png" class="img-responsive center-block brokenLinkImage" alt="Page Not Found" title="Page Not Found"/>
+      <h1 class="text-center">Page Not Found!</h1>
+      <p class="text-center">Sorry, the page your searching for was not found. If by chance a particular link was not working on this site, please write to <b>sricharan.krishnan@gmail.com</b> about your experience. Thanks.</p>
+      <hr>
+    </div>
+  </div>
 </div>
+<!--Jumbotron Section Details Ends Here-->

@@ -5,7 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>{{ page.title }}</title>
+    <!--<title>{{ page.title }}</title>-->
+
+    <!--Jekyll SEO Details Starts Here-->
+    {% seo %}
+    <meta name="keywords" content="{{ page.keywords }}" />
+    <!--Jekyll SEO Details Ends Here-->
+
+    <!--404 Redirection Details Starts Here-->
+    {% if page.url == "/404.html" %}
+      <meta http-equiv="refresh" content="5; url=/">
+    {% endif %}
+    <!--404 Redirection Details Ends Here-->
+
     <link href="{{ site.baseurl }}/assets/images/compass.svg" rel="shortcut icon" type="image/svg"/>
 
     <!-- Bootstrap -->
