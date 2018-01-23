@@ -20,7 +20,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
         <h1>Drawing On Your Maps - Shapes</h1>
         <p>Understanding how to add various shapes to your Google Maps and even making them <b>Editable</b> or <b>Draggable</b> for your users.</p>
         <p>Just like drawing a Path!</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -28,9 +28,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Polylines</h2>
       <p>This section provides the basic understanding of how to implement simple <b>Polylines</b> on your google map. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
       <p>Refer to <a href="https://developers.google.com/maps/documentation/javascript/shapes" target="_blank">Google Maps Javascript API - Shapes</a> for more information.</p>
@@ -40,9 +40,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -55,7 +55,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <p>A <b>Polyline</b> is constructed as an overlay on your Google Maps. This is done with the help of an array of <b>Latitude-Longitude Coordinates</b> along with some other fields that together comprises the <b>Polyline Options Object</b>.</p>
       <p>In our example here, the map starts off with its center at the country of <b>Brazil</b>. The red colored <b>Polyline Path</b> starts off at <b>Sao Paolo</b>, moving south-wards to <b>Asuncion</b>, futher south to <b>Cordoba</b>, then heading north towards <b>Quito</b> and then finally connecting back at Sao Paolo.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -74,9 +74,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -88,7 +88,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Remove Polyline</span></h3>
       <p>The simplest way to remove a polyline from a particular map, is to have its <b>map field</b> in its <span class="code">Polyline Options Object</span> set to null. This example depicts the same path with a polyline as the previous one. The difference being that every 2 seconds, the polyline is removed from the map and then placed in again.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -107,9 +107,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -122,7 +122,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <p>The example here would help generate a <b>Polyline Path</b> on your Google Map when a user clicks on it. Please note that the intial path is created only after two points on the map have been clicked, although every click (including the first one) is being registered.</p>
       <p>You can interact with this map by first clicking at any point on the map, followed by clicking on another location. By continuing this process, it will help create a trailing <b>Polyline Path</b> on all the places that you have clicked.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -141,9 +141,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Polygons</h2>
       <p>This section provides the basic understanding of how to implement simple <b>Polygons</b> on your google map. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
       <p><span class="keypoint"><span class="glyphicon glyphicon-info-sign"></span><b>Key Point:</b></span> Unlike polyline shapes, <b>Polygon Shapes</b> do not require the starting point to be repeated in its respective <b>Path Array</b>. It performs an auto self-enclose. Have a look at the examples below and click the <span class="code"><b>{ }</b> Example Code Icon</span> to understand this concept.</p>
@@ -154,9 +154,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -168,7 +168,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Basic Polygon</span></h3>
       <p><b>Polygons</b> in Google Maps are generated with the help of the <span class="code">Polygon Object Options</span>. The object in this example, would take in the neccessary <b>Latitude-Longitude Coordinates</b> which is in the form of an array, followed by <span class="code">strokeWidth, strokeColor, strokeWeight, strokeOpacity, fillColor, fillOpacity</span>. Don't forget to attach the <b>Map</b> to which the polygon needs to be generated upon.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -187,9 +187,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -201,7 +201,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Remove Polygon</span></h3>
       <p>The simplest way to remove a polygon from a particular map, is to have its <b>map field</b> in its <span class="code">Polygon Options Object</span> set to null. This example depicts the same area with a polygon as the previous one. The difference being that every 2 seconds, the polygon  is removed from the map and then placed in again.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap5"></div>
     </div>
   </div>
@@ -220,9 +220,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -235,7 +235,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <p>In this example, we will be examing the various <b>Latitude-Longitude Coordinates</b> that have been used to setup the Polygon Shape. To inspect/retrieve the polygon Lat-Lng coordinates with which it was built, a <b>Click Event</b> has been attached to the polygon area here. Then the <span class="code">getPath()</span> method is used to retrieve all the paths in the polygon array. You could at this stage iterate through using a <b>for-loop</b> to get each single point using the <span class="code">getAt()</span> method.</p>
       <p>Interact with this example, you'll notice that the click event not only specifies the specific <b>Latitude-Longitude</b> coordinates for the click but also provides <b>5 Coordinate Points</b> which are responsible for creating this polygon shape.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap6"></div>
     </div>
   </div>
@@ -254,9 +254,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 6 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal7">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -269,7 +269,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <p>Any space inside a <b>Polygon Area</b> can be created, which would create a <b>Hole</b> effect. This exaple demonstrates just that. However, the only issue with using the regular <span class="code">Polygon Class</span> in Google Maps is that these inner Coordinates that creates holes, needs to be placed in an order opposite to the placement order of the outermost <b>Latitude-Longitude Coordinates</b>.</p>
       <p>The <span class="code">paths</span> field in the Polygon Options Object, would take in an <b>Array</b> containing <span class="code">Arrays</span> where each would carry the list of coordinates. The outermost area that needs to be covered would be placed first in the list of <span class="code">Path Arrays</span>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap7"></div>
     </div>
   </div>
@@ -288,9 +288,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 7 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Rectangle</h2>
       <p>This section provides the basic understanding of how to implement simple <b>Rectangles</b> on your google map. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
       <p><span class="keypoint"><span class="glyphicon glyphicon-info-sign"></span><b>Key Point:</b></span> Unlike polygon shapes, <b>Rectangles</b> require a <span class="code">bounds</span> property to be defined in its options object, carrying the respective <b>North, South, East &amp; West</b> Lat-Lng Coordinates. These coordinates are generated from a Google <span class="code">new google.maps.LatLngBounds</span> Class from which you could incorporate its <span class="code">toJSON()</span> method to retrieve bounds info.</p>
@@ -302,9 +302,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal8">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -316,7 +316,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Basic Rectangle</span></h3>
       <p>In this example, there are two areas on the map which are overlayed with <b>Rectangle Shapes</b>. In terms of styling, the Rectangle <b>Options Object</b> similar to that of polygons, accepts fields like <b>strokeColor, strokeWeight, fillColor</b> etc.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap8"></div>
     </div>
   </div>
@@ -335,9 +335,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 8 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal9">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -349,7 +349,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Removing Rectangle</span></h3>
       <p>A <b>Rectangle</b> similar to that of Polygon shapes, can be disassociated/removed from a map by setting its <span class="code">setMap()</span> argument value to <b>null</b>. To place the rectangle on the map again, pass the respective <b>map variable</b> as an argument again.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap9"></div>
     </div>
   </div>
@@ -368,9 +368,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 9 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Circle</h2>
       <p>This section provides the basic understanding of how to implement simple <b>Circles</b> on your google map. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
       <p>Circle Shapes are similar to polygon shapes and rectangle shapes, in the sence that the <b>Circles Options Object</b> takes in fields like <span class="code">strokeOpacity, strokeColor, strokeWeight</span> etc, but requires a <span class="code">Center (Lat-Lng Object) and Radius</span> for it to be generated. Have a look at the examples below and click the <span class="code"><b>{ }</b> Example Code Icon</span> to understand this concept.</p>
@@ -381,9 +381,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal10">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -395,7 +395,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Basic Circle</span></h3>
       <p>Our example here showcases three cities in this part of the world. Radius of the circles are generated based upon the <b>Square Root</b> values of the populations of these three cities, each of which is further mulitplied into 200. The <b>Radius Field</b> value can be given as per your requirements to finally generate the circle shape.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap10"></div>
     </div>
   </div>
@@ -414,9 +414,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 10 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal11">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -428,7 +428,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Removing Circle</span></h3>
       <p>A <b>Circle Shape</b> can be disassociated/removed from a particular google map, by setting its respective <span class="code">setMap()</span> method argument to <b>null</b>. It can be placed again by providing the respective <b>map variable</b> as the argument again.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap11"></div>
     </div>
   </div>
@@ -447,9 +447,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 11 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Making Shapes Editable/Draggable</h2>
       <p>Any shape in Google Maps Javascript API can be set to an <span class="code">Editable</span> status, allowing users to interact with the map and any shapes that have been drawn as an overlay. This is applicable for <b>Polylines, Polygons, Rectangles and Circles</b>.</p>
       <p>Have a look at the examples below and click the <span class="code"><b>{ }</b> Example Code Icon</span> to understand this concept.</p>
@@ -460,9 +460,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal12">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -475,7 +475,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <p>An example where an initially constructed polyline over a map is set to <span class="code">editable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then edit the polyline. You would notice that the line takes a certain curve. This is becuase the <span class="code">geodesic</span> field in its options object is set to <b>true</b>.</p>
       <p>Create your own map without this field option and notice the difference.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap12"></div>
     </div>
   </div>
@@ -494,9 +494,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 12 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal13">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -508,7 +508,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Draggable Polyline</span></h3>
       <p>An example where an initially constructed polyline over a map is set to <span class="code">draggable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then drag the polyline.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap13"></div>
     </div>
   </div>
@@ -527,9 +527,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 13 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal14">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -542,7 +542,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <p>An example where an initially constructed polygon over a map is set to <span class="code">editable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then edit the polyline. You would notice that the line takes a certain curve. This is becuase the <span class="code">geodesic</span> field in its options object is set to <b>true</b>.</p>
       <p>Create your own map without this field option and notice the difference.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap14"></div>
     </div>
   </div>
@@ -561,9 +561,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 14 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal15">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -575,7 +575,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Draggable Polygon</span></h3>
       <p>An example where an initially constructed polygon over a map is set to <span class="code">draggable: true</span> in its options object. Also zoom out of the map to a level where you can start to see other contients and then drag the polygon.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap15"></div>
     </div>
   </div>
@@ -594,9 +594,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 15 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal16">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -608,7 +608,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Editable Rectangle</span></h3>
       <p>An example where an initially constructed rectangle over a map is set to <span class="code">editable: true</span> in its options object.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap16"></div>
     </div>
   </div>
@@ -627,9 +627,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 16 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal17">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -641,7 +641,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Draggable Rectangle</span></h3>
       <p>An example where an initially constructed rectangle over a map is set to <span class="code">draggable: true</span> in its options object.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap17"></div>
     </div>
   </div>
@@ -660,9 +660,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 17 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal18">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -674,7 +674,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Editable Circle</span></h3>
       <p>An example where an initially constructed circle over a map is set to <span class="code">editable: true</span> in its options object.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap18"></div>
     </div>
   </div>
@@ -693,9 +693,9 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
 <!--Example 18 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal19">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -707,7 +707,7 @@ title: "DAWG Google Maps | Drawing On Your Google Maps - Shapes"
       <h3>Google Map Shapes - <span class="subTopic">Draggable Circle</span></h3>
       <p>An example where an initially constructed circle over a map is set to <span class="code">draggable: true</span> in its options object.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap19"></div>
     </div>
   </div>

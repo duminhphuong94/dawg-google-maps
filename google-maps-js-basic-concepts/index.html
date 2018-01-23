@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
       <div class="segment">
         <h1>Google Maps Javascript API</h1>
         <p>Get to know about creating Maps using Javascript with these basics. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -42,7 +42,7 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
       <p>Creating a Google Map with Javascript is easy, merely having some mandatory details or fields that need to be in place. We'll first need (for this example), a <b>Latitude and Longitude Coordinates</b> which is invoked with <span class="code">new google.maps.LatLng(<b>Lat</b>, <b>Lng</b>)</span>, a specific <b>Zoom Value</b> and a center <b>Map Center</b> that is based on the Lat-Lng Coordinates.</p>
       <p>By default, the <span class="code">mapTypeId</span> is <b>roadmap</b>. Let's have a look at the other map types below.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRigtTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -61,9 +61,9 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -75,7 +75,7 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
       <h3>Google Maps JS Basics: <span class="subTopic">Satellite Map</span></h3>
       <p>In this example, the city of <b>Madrid</b> is being showcased with its <span class="code">mapTypeId</span> as <b>satellite</b>.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -94,9 +94,9 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -108,7 +108,7 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
       <h3>Google Maps JS Basics: <span class="subTopic">Hybrid Map</span></h3>
       <p>In this example, the city of <b>Rome</b> is being showcased with its <span class="code">mapTypeId</span> as <b>hybrid</b>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -127,9 +127,9 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -141,7 +141,7 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
       <h3>Google Maps JS Basics: <span class="subTopic">Terrain Map</span></h3>
       <p>In this example, <b>Mexico City</b> is being showcased with its <span class="code">mapTypeId</span> as <b>terrain</b>.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -160,9 +160,9 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Image Rotatory Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -195,9 +195,9 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Creating Custom Base Map Types Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -214,7 +214,7 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
       </span>
       <p>For more information about this segment, <a href="https://developers.google.com/maps/documentation/javascript/maptypes#CustomMapTypes" target="_blank" class="refLink">click here</a>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div id="gMap6" class="googleMapHolder"></div>
     </div>
   </div>
@@ -233,9 +233,9 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
 <!--Example 6 Modal Details Ends Here-->
 
 <!--Creating Custom Overlay Base Map Types Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal7">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -247,7 +247,7 @@ title: "DAWG Google Maps | Google Maps JS API Basic Concepts"
       <h2 class="text-center">Google Maps - <span class="subTopic">Creating Custom Overlay Map Types</span></h2>
 			<p>The example below is similar to the previous one. Except instead of creating a new <b>Custom Base Map Type</b> altogether, we use the same technique this time to create a <b>Overlay</b> with <span class="code">map.overlayMapTypes.insertAt(0, new CoordMapType(new google.maps.Size(256, 256)))</span> given the result as depicted below.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div id="gMap7" class="googleMapHolder"></div>
     </div>
   </div>

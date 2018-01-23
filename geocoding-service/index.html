@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Geocoding Service"
       <div class="segment">
         <h1>Google Maps Javascript API - Geocoding Service</h1>
         <p>Please ensure to have <span class="code">Google Maps JavaScript API and the Google Maps Geocoding Service API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Geocoding Service"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>Google Maps Javascript API - Geocoding Services refers to converting one form of location detail to another form, which could be either a <b>Human Readable</b> address value or a <b>Latitude-Longitude</b> Coordinate into a Human readable value. In order to be able to use this service, a geocoding object would need to be first created, followed by supplying this object with various options. The new object is created with <span class="code">new google.maps.Geocoder()</span>, to which the <span class="code">.geocode(optionsObject, callbackFunc)</span> method is called upon.</p>
       <p>The examples below have various forms of results which are displayed on the respective Google Map Element. You can click on the bouncing markers to get an idea of what kind of results are being displayed. You can also refer to the example code attach to each.</p>
@@ -40,9 +40,9 @@ title: "DAWG Google Maps | Geocoding Service"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -54,7 +54,7 @@ title: "DAWG Google Maps | Geocoding Service"
       <h2>Google Maps Geocoding Service - <span class="subTopic">Search By Address</span></h2>
       <p>In this example, we supply a <b>Human Readable</b> address field option to the options object upon which a callback function displays the final result of the API call.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -73,9 +73,9 @@ title: "DAWG Google Maps | Geocoding Service"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -87,7 +87,7 @@ title: "DAWG Google Maps | Geocoding Service"
       <h2>Google Maps Geocoding Service - <span class="subTopic">Search By Location</span></h2>
       <p>Here, we supply a <b>Latitude-Longitude</b> coordinate based input for acquring the Geocoding Results into the options object, the results of which are acquired with the help of the callback function. This particular process of converting a Latitude-Longitude Coordinate to Human readable result is also called as <b>Reverse Geocoding</b>.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -106,9 +106,9 @@ title: "DAWG Google Maps | Geocoding Service"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -120,7 +120,7 @@ title: "DAWG Google Maps | Geocoding Service"
       <h2>Google Maps Geocoding Service - <span class="subTopic">Search By Place Id</span></h2>
       <p>You can also use the Geocoding service to acquire results of a particular place by providing its respective <b>Place ID</b> value.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -139,9 +139,9 @@ title: "DAWG Google Maps | Geocoding Service"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -153,7 +153,7 @@ title: "DAWG Google Maps | Geocoding Service"
       <h2>Google Maps Geocoding Service - <span class="subTopic">Viewport Bias</span></h2>
       <p>In this example, a general search for a particular <b>Human Readable</b> address value is restricted to a specific <b>Viewport Area</b>. The final result provides any information about that specific search made within a specified viewport area.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -172,9 +172,9 @@ title: "DAWG Google Maps | Geocoding Service"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -187,7 +187,7 @@ title: "DAWG Google Maps | Geocoding Service"
       <p>Geocoding results can also be baised to a specific region, without which any general/non specific search would often result in providing multiple results post the callback function execution. In our example here, a search for <b>Mahatma Gandhi Road</b> is made and without the <b>Components Restriction Field</b> in the respective options object, we would have multiple results.</p>
       <p>We can further filter and restrict the search with the Component Restriction option object and here, a locality value of <b>Bangalore</b> helps us with just that.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap5"></div>
     </div>
   </div>

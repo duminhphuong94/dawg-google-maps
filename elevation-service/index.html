@@ -20,7 +20,7 @@ title: "DAWG Google Maps | Elevation Service"
         <h1>Google Maps Javascript API - Elevation Service</h1>
         <p>Please ensure to have <span class="code">Google Maps JavaScript API and the Google Maps Elevation API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
         <p>To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/elevation" target="_blank" class="refLink">Google Maps Javasript API - Elevation Service</a> for more information.</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -28,9 +28,9 @@ title: "DAWG Google Maps | Elevation Service"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment positionRelative">
+    <div class="segment overviewSegment positionRelative hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>The Google Maps Javascript API - Elevation Service helps provide information about the Elevation of a particular location or a group of location from their respective Lattitude and Longitude Coordinates. The initial step is to create an <b>Elevation Service Object</b> with <span class="code">new google.maps.ElevationSerivce()</span>. You would also need an Array of Lat-Lng Coordinates which would then be used as reference points upon which the API call needs to be made.</p>
       <p>Our first two examples demonstrate merely acquring elevation values for the locations. This is done using the <span class="code">getElevationForLocations()</span> method to which the Lat-Lng Array and a callback function to handle the final API response, are passed as arguments.</p>
@@ -41,9 +41,9 @@ title: "DAWG Google Maps | Elevation Service"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -55,7 +55,7 @@ title: "DAWG Google Maps | Elevation Service"
       <h2>Google Maps Elevation Service - <span class="subTopic">Basics I</span></h2>
       <p>In this example, our Google Maps location over Mount Fuji - Japan, is displaying its <b>Elevation (Mts)</b> and <b>Latittude Longitude Coordinates</b> with the help of an Info Window.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -74,9 +74,9 @@ title: "DAWG Google Maps | Elevation Service"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -88,7 +88,7 @@ title: "DAWG Google Maps | Elevation Service"
       <h2>Google Maps Elevation Service - <span class="subTopic">Basics II</span></h2>
       <p>Here, we have our Google Maps location over the Mariana Trench. If you do notice this example, the Elevation value is being displayed as a <b>Negative</b> number. This negative value indicates the depth of the location.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -107,9 +107,9 @@ title: "DAWG Google Maps | Elevation Service"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -121,7 +121,7 @@ title: "DAWG Google Maps | Elevation Service"
       <h2>Google Maps Elevation Service - <span class="subTopic">Elevation Along A Path</span></h2>
       <p>Elevation Services can also be requested for acquiring information along a path on your map. Interact with the map by clicking on the markers placed on it to get information pertaining to the location's elevation.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>

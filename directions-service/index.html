@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Directions Service"
       <div class="segment">
         <h1>Google Maps Javascript API - Directions Service</h1>
         <p>Please ensure to have <span class="code">Google Maps JavaScript API and the Google Maps Directions API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Directions Service"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -43,10 +43,10 @@ title: "DAWG Google Maps | Directions Service"
       <p>You would the need to invoke the <b>route()</b> method of the Direction Service Object, passing it the Directions Options Object, which contains the mandatory fields, with a callback function to process the required result.</p>
       <p>In our example below, a Direction Service Request is placed for getting information between <b>New York City</b> and <b>Philadelphia</b> with the Travel Mode as <b>Driving</b>. To get a better understanding of this, visit the example code details for this section. Also, view the results of the API call made with your browser's <b>Console Logs</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
-    <div class="segment overviewSegment" id="gMap1ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap1ResultHolder">
     </div>
   </div>
 </div>
@@ -64,9 +64,9 @@ title: "DAWG Google Maps | Directions Service"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -79,10 +79,10 @@ title: "DAWG Google Maps | Directions Service"
       <p>The <b>Transit Travel Mode</b> grants us access to local transport options in a region. Along with this, an additional field <b>Transit Options</b>, which can be passed to our Directions Service Request options object. To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Transit Options</b>.</p>
       <p>In our example below, the direction service request provides us information on the Transit Transport option available from <b>Empire State Building, NYC</b> to <b>Long Island City NYC</b>. Refer to the example code as well if you would like to.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
-    <div class="segment overviewSegment" id="gMap2ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap2ResultHolder">
     </div>
   </div>
 </div>
@@ -100,9 +100,9 @@ title: "DAWG Google Maps | Directions Service"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -115,10 +115,10 @@ title: "DAWG Google Maps | Directions Service"
       <p>The <b>Driving Travel Mode</b> grants us access to an additional field <b>Driving Options</b>, which can be passed to our Directions Service Request options object. To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Driving Options</b>.</p>
       <p>In our example below, the direction service request provides us information on driving from <b>Empire State Building, NYC</b> to <b>New York Hall Of Science</b>, with the additionally passed <b>Driving Options Object</b>. Refer to the example code as well if you would like to.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
-    <div class="segment overviewSegment" id="gMap3ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap3ResultHolder">
     </div>
   </div>
 </div>
@@ -136,9 +136,9 @@ title: "DAWG Google Maps | Directions Service"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -151,10 +151,10 @@ title: "DAWG Google Maps | Directions Service"
       <p>All our previous examples, have their distances being rendered in Miles. Google Maps currently supports both <b>METRIC</b>(<span class="code">google.maps.UnitSystem.METRIC</span>) and <b>IMPERIAL</b>(<span class="code">google.maps.UnitSystem.IMPERIAL</span>) unit systems. Our example below provides details of a Direction Service Request, where distances are shown in <b>Kilometers</b> instead of the default Miles.</p>
       <p>To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Unit Systems</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
-    <div class="segment overviewSegment" id="gMap4ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap4ResultHolder">
     </div>
   </div>
 </div>
@@ -172,9 +172,9 @@ title: "DAWG Google Maps | Directions Service"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -188,13 +188,13 @@ title: "DAWG Google Maps | Directions Service"
       <p>If a particular waypoint on route to the final destination is set as <span class="code">stopover: true</span>, this splits the entire route into two parts (Point A -&gt; Waypoint and then Waypoint -&gt; Final Destination). Depending upon the number of stopovers set as true, Google Maps API would split one route into sub-routes.</p>
       <p>To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Using Waypoints in Routes</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap5"></div>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <p>Our example above, set over <b>New York</b>, has a Direction Service Request from <b>Brooklyn Bridge</b> to <b>Robert F Kennedy Bridge</b>, but passing the <b>Waypoint Field</b> into the service request object, with one waypoint set to <span class="code">stopover: true</span>, splits the full route into two parts. This is how the final Route Instructions rendered below is generated.</p>
     </div>
-    <div class="segment overviewSegment" id="gMap5ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap5ResultHolder">
     </div>
   </div>
 </div>
@@ -212,9 +212,9 @@ title: "DAWG Google Maps | Directions Service"
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -227,13 +227,13 @@ title: "DAWG Google Maps | Directions Service"
       <p>The <span class="code">provideRouteAlternatives</span> field in the directions request object, if set to <b>True</b>, would then help provide more than 1 possible route to a particular destination. You can notice this with the help of your browser console. <b>Console.Log</b> the result from the final API call made and look our for the <b>routes</b> property in your API result, which would be an array containing atleast 2 route objects.</p>
       <p>To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Providing Route Alternatives</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap6"></div>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <p>Our example above shows 2 routes from the Empire State Building to Central Park Zoo in New York City. The first route information is highlighted with an active <b>blue</b> color, indicating that this is the route detail you are presently viewing. To get information about the other route, click on the <b>faded grey</b> polyline path on the map and you'll see a new set of route instructions.</p>
     </div>
-    <div class="segment overviewSegment" id="gMap6ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap6ResultHolder">
     </div>
   </div>
 </div>
@@ -251,9 +251,9 @@ title: "DAWG Google Maps | Directions Service"
 <!--Example 6 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal7">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -267,10 +267,10 @@ title: "DAWG Google Maps | Directions Service"
       <p>In our example below, initially, a Directions Service request is made from <b>Empire State Building, NYC</b> to the <b>Bellevue Hospital Center, NYC</b>, with <span class="code">travelMode: "WALKING"</span>. As we have an Event Listener for <b>directions_changed</b>, a new set of route instructions are generated when the event gets triggered. Please note that this particular event gets finally triggered post a regular <b>mousedown</b> event.</p>
       <p>To get a better and in-depth understanding of the various options that would be available, please refer to <a href="https://developers.google.com/maps/documentation/javascript/directions" target="_blank" class="refLink">Google Maps Javascript API - Directions</a> and search for the section that has details of <b>Draggable Directions</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap7"></div>
     </div>
-    <div class="segment overviewSegment" id="gMap7ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap7ResultHolder">
     </div>
   </div>
 </div>

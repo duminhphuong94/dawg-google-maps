@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Google Maps Embed API"
       <div class="segment">
         <h1>Google Maps Embed API</h1>
         <p>An embed version for placing google maps onto your web-pages without having to code in Javascript. Please ensure to enable the <span class="code">Google Maps Embed API</span> at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key.</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Google Maps Embed API"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>Embed is done with an iframe on your webpage, which carries an <span class="code">src</span> attribute values that finally helps display the map. There are 5 types of modes:</p>
       <ul class="overviewList">
@@ -46,13 +46,13 @@ title: "DAWG Google Maps | Google Maps Embed API"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Embed Maps: <span class="subTopic">Place Mode</span></h3>
       <p>Embed a map location onto your webpage with <span class="code">place</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&amp;q=Central+Park+New+York</span>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&q=Central+Park+New+York"></iframe>
     </div>
   </div>
@@ -60,13 +60,13 @@ title: "DAWG Google Maps | Google Maps Embed API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
       <h3>Embed Maps: <span class="subTopic">Direction Mode</span></h3>
       <p>Embed a map location onto your webpage with <span class="code">directions</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin=trump+tower+newyork&destination=central+park+newyork</span>.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&origin=trump+tower+newyork&destination=central+park+newyork"></iframe>
     </div>
   </div>
@@ -74,13 +74,13 @@ title: "DAWG Google Maps | Google Maps Embed API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Embed Maps: <span class="subTopic">Search Mode</span></h3>
       <p>Embed a map location onto your webpage with <span class="code">search</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/search?key=YOUR_API_KEY&amp;q=indian+restaurants+in+tokyo</span>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&q=indian+restaurants+in+tokyo"></iframe>
     </div>
   </div>
@@ -88,13 +88,13 @@ title: "DAWG Google Maps | Google Maps Embed API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
       <h3>Embed Maps: <span class="subTopic">View Mode</span></h3>
       <p>Embed a map location onto your webpage with <span class="code">view</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/search?key=YOUR_API_KEY&amp;center=36.1699,-115.1398&amp;zoom=15&amp;maptype=satellite</span>.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=36.1699,-115.1398&zoom=15&maptype=satellite"></iframe>
     </div>
   </div>
@@ -102,13 +102,13 @@ title: "DAWG Google Maps | Google Maps Embed API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Embed Maps: <span class="subTopic">StreetView Mode</span></h3>
       <p>Embed a map location onto your webpage with <span class="code">streetview</span> mode in the iframe url. For example to display the map onto the right, the src value for the iframe would be <span class="code">https://www.google.com/maps/embed/v1/streetview?key=YOUR_API_KEY&amp;location=29.9773,31.1325&amp;heading=210&amp;pitch=30&amp;fov=35</span>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <iframe frameborder="0" style="border:0;" class="embed-maps-iframe" src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&location=29.9773,31.1325&heading=210&pitch=30&fov=35"></iframe>
     </div>
   </div>

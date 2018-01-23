@@ -18,7 +18,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
     <div class="frameBorder dawgRow">
       <div class="segment">
         <h1>Google Maps Javascript API - Geometry Library</h1>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -26,9 +26,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>The Google Maps Geometry Library comprises of a set number of static methods provided to calculate or determine geometric data on the surface of your Google Map. The methods includes computing values based on the <b>Spherical Namespace</b>, <b>Encoding Namespace</b> and <b>Poly Namespace</b>.</p>
       <p>To be able to use this library, please ensure to have the <b>Google Maps Javascript API</b> activated on your API Dashboard post creating your API Key as well as passing the library parameter like the script tag shown below:</p>
@@ -44,9 +44,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -64,7 +64,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
         <ul class="pointList"></ul>
       </div>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -83,9 +83,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -102,7 +102,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
         <ul class="pointList"></ul>
       </div>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -121,9 +121,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -139,7 +139,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
         <ul class="pointList"></ul>
       </div>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -158,9 +158,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -177,7 +177,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
         <ul class="pointList"></ul>
       </div>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -196,9 +196,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -211,7 +211,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
       <p>The <b>Contains Location()</b> Geometry Method is used to find out if a specific location on a map, is within an area that is covered by an overlay like a polygon. The return type value for this method is <b>Boolean</b>. In this example, there is a specfic area that is covered on the map (but not visibly placed on it) with a Polygon. If you were to click within the specified covered area, the <b>containsLocation()</b> method is fired and an animated bouncing marker would be placed on it.</p>
       <p>Please note that this method requires two arguments to be passed into it, one being the <b>event.latLng</b> object and another is the actual overlay shape(<span class="code">new google.maps.Polygon()</span> for this example).</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap5"></div>
     </div>
   </div>
@@ -230,9 +230,9 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -245,7 +245,7 @@ title: "DAWG Google Maps | Google Maps Geometry Library"
       <p>The <b>isLocationOnEdge()</b> method is used to determine if a specific Latitude-Longitude Coordinate is falling at the edge or near the edge of a kind of overlay, like a polygon. This particular method accepts 3 arguments, the <b>event.latLng Object</b>, the <b>overlay object</b> which would be specified (for example, <span class="code">new google.maps.Polygon()</span>) and a <b>tolerance</b> number value. The return value of this method is a Boolean data type.</p>
       <p>In this example, interact with the map by clicking on it, if the click event happens to be close to the edge of the polygon area (specified also with a tolerance value), then a bouncing marker would appear on the map.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap6"></div>
     </div>
   </div>

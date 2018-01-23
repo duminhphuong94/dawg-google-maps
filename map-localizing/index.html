@@ -20,7 +20,7 @@ title: "DAWG Google Maps | Map Localizing"
         <h1>Localizing Your Google Maps</h1>
         <p>See how changing the language being displayed on your google maps has its effects. You'll need to work with dynamic handling of your <span class="code">Google Maps Javascript API</span> by passing additional parameters for this.</p>
         <p>Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <span class="code">https://console.developers.google.com/apis/</span> post creating your API key</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -28,9 +28,9 @@ title: "DAWG Google Maps | Map Localizing"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment positionRelative">
+    <div class="segment overviewSegment positionRelative hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -59,14 +59,14 @@ title: "DAWG Google Maps | Map Localizing"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Google Maps JS Basics: <span class="subTopic">Lets Start - Localizing</span></h3>
       <p>Once you've figured out the way you could dynamically generate your <span class="code">&lt;script&gt;</span> tag to call on <b>Google Maps API</b>, generating the required map location is fairly simple as shown in the <a href="{{ site.baseurl }}/google-maps-js-basic-concepts/" class="refLink" target="_blank">Basic Concepts Segments</a> on this site.</p> 
       <p>In this example, we've chosen our location center to be <b>New Delhi, India</b> but notice that once we've made changes to the <span class="code">language</span> and <span class="code">region</span> parameters that have been appended to our Google API Script tag, the map now displays its details in <b>Greek</b>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>

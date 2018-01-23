@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Google Street View Image API"
       <div class="segment">
         <h1>Google Street View Image API</h1>
         <p>Learn about the Google Street View Image API, which allows you to embed a static non-interactive Street View Image on your webpage. Please ensure to enable the <span class="code">Google Street View Image API</span> at <a class="refLink" href="https://console.developers.google.com/apis/dashboard" target="_blank"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Google Street View Image API"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>Embed is done with an <span class="code">&lt;img&gt;</span> tag on your webpage, which carries an <span class="code">src</span> attribute values that finally helps display the map. The image request URL is <span class="code">https://maps.googleapis.com/maps/api/streetview?parameters</span>.</p>
       <p>Refer to <a href="https://developers.google.com/maps/documentation/streetview/">Google Street View Image API Guide</a> for further information.</p>
@@ -39,13 +39,13 @@ title: "DAWG Google Maps | Google Street View Image API"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Street View: <span class="subTopic">Basics - I</span></h3>
       <p>Using the <span class="code">&lt;img&gt;</span> html tag, you can generate an image with its <span class="code">https://maps.googleapis.com/maps/api/streetview?key=YOUR_API_KEY&amp;location=27.1750,78.0422&amp;size=1920x450&amp;heading=360</span>, which shows the Taj Mahal. Here, the <b>location</b> parameter has been provided with Latitude-Longitude coordinates along with the <b>size</b> of the image and the <b>heading</b> parameter.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <img class="img-responsive center-block staticMapImage" src="https://maps.googleapis.com/maps/api/streetview?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&location=27.1750,78.0422&size=1920x450&heading=360"/>
     </div>
   </div>
@@ -53,13 +53,13 @@ title: "DAWG Google Maps | Google Street View Image API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
       <h3>Street View: <span class="subTopic">Basics - II</span></h3>
       <p>Using the <span class="code">&lt;img&gt;</span> html tag, you can generate an image with its <span class="code">https://maps.googleapis.com/maps/api/streetview?key=YOUR_API_KEY&amp;location=grand+canyon+usa&amp;size=1920x450&amp;heading=295</span>, which shows the Grand Canyon. Difference from the previous image being that instead of providing Latitude-Longitude coordinates, the <b>location</b> parameter is provided with text appended with <span class="code">+</span>.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <img class="img-responsive center-block staticMapImage" src="https://maps.googleapis.com/maps/api/streetview?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&location=grand-canyon+usa&size=1920x450&heading=295"/>
     </div>
   </div>
@@ -67,13 +67,13 @@ title: "DAWG Google Maps | Google Street View Image API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Street View: <span class="subTopic">FOV and Pitch</span></h3>
       <p>The <b>fov</b> [a.k.a Field Of View], determines the horizontal view of the location. Smaller values represents zoom in(s) with a maximum allowed of 120. The <b>pitch</b> parameter represents the up or down angle of the camera relative to that particular location picture. For example, to generate the image of the Pyramids like shown, use <span class="code">https://maps.googleapis.com/maps/api/streetview?key=YOUR_API_KEY&amp;location=29.9773,31.1325&amp;size=1920x450&amp;fov=50&pitch=20</span>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <img class="img-responsive center-block staticMapImage" src="https://maps.googleapis.com/maps/api/streetview?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&location=29.9773,31.1325&size=1920x450&fov=50&pitch=20"/>
     </div>
   </div>
@@ -81,13 +81,13 @@ title: "DAWG Google Maps | Google Street View Image API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
       <h3>Street View: <span class="subTopic">Imagery or Location Not Found?</span></h3>
       <p>Sometimes there is a possibility that you would not get an image from the Google Street View Image API. Go ahead and give a request for something like <span class="code">https://maps.googleapis.com/maps/api/streetview?key=YOUR_API_KEY&amp;location=planet+pluto+milky+way+galaxy&amp;size=1920x450</span>.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <img class="img-responsive center-block staticMapImage" src="https://maps.googleapis.com/maps/api/streetview?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&location=planet+pluto+milky+way+galaxy&size=1920x450"/>
     </div>
   </div>

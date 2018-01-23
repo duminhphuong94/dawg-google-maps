@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <div class="segment">
         <h1>Google Maps Javascript API - Autocomplete for Addresses and Search Terms</h1>
         <p>A look at how you could search for infomration with the help of a form element and show details on your map.</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>Autocomplete feature in Google Maps API is a part of the Places Library. It provides a user to search for any arbritary location details or any form of generic details belonging to a specific Latitude-Longitude Point or an Area. This features will require you have an <b>Input</b> element of <b>Text Type</b>, with its id details linked to your Javascript code.</p>
       <p>Developers have the option to either choose to populate the results automatically (with the help of the <b>Autocomplete Service Class</b>) or create a custom list of responses(with the help of the <b>SearchBox Class</b>) when a search is being made.</p>
@@ -46,9 +46,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -62,7 +62,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>In the example below, the Options Object carries the <b>Types</b> field option as <b>(regions)</b>, which will now help populate results of Countries, Cities etc...</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">
@@ -89,9 +89,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -104,7 +104,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>In the example below, the Options Object carries the <b>Types</b> field option as <b>Geocode</b>, which will now help populate geocoding results rather than business results.</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">
@@ -131,9 +131,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -146,7 +146,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>If you are interested in acquring information about an establishment, the example below has its Options Objec <b>Types</b> field set to <b>Establishment</b>, which will now help populate business results only.</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">
@@ -173,9 +173,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -188,7 +188,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>Enabling the <b>strictBounds</b> field in the Options Object with a Boolean <b>True</b> value helps create a bias on the results, which are only bound to a specific geolocation area.</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">
@@ -215,9 +215,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
       <span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal5">
       <?xml version="1.0" encoding="utf-8"?>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -230,7 +230,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>The <b>componentRestrictions</b> field can be used to provide results based on a particular region. Region(s) are specified with the help of a 2 character <b>ISO 3166-1 Alpha-2 compatible country code</b>, with a maximum of 5 countries that can be placed for this particular field. Multiple countries needs to be passed on as a List/Array.</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap5"></div>
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">
@@ -257,9 +257,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
       <span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal6">
       <?xml version="1.0" encoding="utf-8"?>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -272,7 +272,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>If you would be interested in only acquring the place Id Value, setting the <b>placeIdOnly</b> field in the Options Object with a Boolean value of <b>true</b>, would return results with a registered place id. The final result however, is not as detailed as other types of searches being made, bearing only limited fields in the API Result.</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call, done with the help of a callback function.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">
           <input type="text" id="search6" name="search6" class="form-control dawgInput gSearch" placeholder="Search Establishment or Business [Place Id Only Results]"> 
@@ -298,9 +298,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Example 6 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
       <span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal7">
       <?xml version="1.0" encoding="utf-8"?>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -314,7 +314,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>The results of this type of search are handled with the help of a callback function, results can be either singular if a very specific detail is being searched for or a list of results being produced to show all options availabled at a specific area or region. While the map location being displayed below is kept merely to load an intiial location, visit the next example which showcases how you can customize your search results output with a list, then populate the result(s) in the Results Area as well as placing custom markers on your map to show differents points of interests available.</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap7"></div>
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">
@@ -341,9 +341,9 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
 <!--Example 7 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
       <span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal8">
       <?xml version="1.0" encoding="utf-8"?>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -357,7 +357,7 @@ title: "DAWG Google Maps | Google Maps Autocomplete for Addresses and Search Ter
       <p>In our example below, the Input Search Element is bound with the <b>getQueryPredictions()</b> method to help populate the results with an Unordered List. Every list item is bound with an <b>onclick</b> event to trigger the rest of the search process. If a user were to click on a option having high specificity, the example code populates the final result with a <b>Place Id</b> value else, the results are populated as a list where details from each list object is populated in the result area.</p>
       <p>Go ahead and interact with the example below to see how this works, you could also optionally choose to keep you <b>Browser Console</b> open to see the Results made from the API call.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap8"></div>
       <form class="form autocompleteForm">
         <div class="form-group positionRelative">

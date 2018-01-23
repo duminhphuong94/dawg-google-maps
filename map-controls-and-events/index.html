@@ -20,7 +20,7 @@ title: "DAWG Google Maps | Map Controls And Events"
         <h1>Map Controls</h1>
         <p>Getting to understand map controls on your google map and what you could do with them. Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
         <p>Please refer to <a href="https://developers.google.com/maps/documentation/javascript/controls" target="_blank"><span class="code">Google Maps Javascript API - Controls</span></a> for more information.</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -28,9 +28,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -42,7 +42,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Google Map Controls - <span class="subTopic">Disable Default UI</span></h3>
       <p>All maps created with the Javascript API, will be rendered with certain default controls. If you would like to completely disable all controls from your map, place <span class="code">disableDefaultUI</span> to <b>true</b> in your <b>Map Options Object</b>. This example displays a google map without any controls being displayed on it.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -61,9 +61,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -76,7 +76,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <p>This particular option set within the <b>Map Options Object</b> comes with three possible values: <span class="code">google.maps.MapTypeControlStyle.HORIZONTAL_BAR</span>, <span class="code">google.maps.MapTypeControlStyle.DROPDOWN_MENU</span> and <span class="code">google.maps.MapTypeControlStyle.DEFAULT</span>.</p>
       <p>In this particular example, the <b>Map Type Controls</b> have been modified to a dropdown style list.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -95,9 +95,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Map Controls Positioning Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment positionRelative">
+    <div class="segment overviewSegment positionRelative hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -111,7 +111,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <p>You would notice that the positions of our map's controls have been changed from their reguar/default position. Depending upon what controls are available at what times (for eg, rotation controls being available at a specific zoom point), making changes in the <b>Map Options Object</b> would have its effects on these controls.</p>
       <p>Please refer to <a class="refLink" href="https://developers.google.com/maps/documentation/javascript/controls#ControlPositioning" target="_blank">Google Maps API - Control Positioning</a> for more information.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -130,9 +130,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -146,7 +146,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <p>Once your custom element is generated as you wanted it, you could then attach an event to it (here we're attaching a Javascript <span class="code">onclick</span> event to reset the ceter of the map to its initial coordinates).</p>
       <p>Move the map around to a different location and then click the <b>Reset Center</b> button to understand this example.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -165,9 +165,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -180,7 +180,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <p>This example demonstrates how we could store a certain value on a button click event attachment and then, retrieve those same values with the click of another button. Here, move the map to a different location and click on the <b>Set This Center</b> button. This will now set your current map position as a default position.</p>
       <p>Move around the map again and then click the <b>Reset Position</b> button, which will then move back the map to the same point where you had initially stored it as the default center location.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap5"></div>
     </div>
   </div>
@@ -199,9 +199,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Map Events</h2>
       <p>This particular section deals with handling <span class="code">Events</span> for Google Maps Javascript API. Please refer to <a class="refLink" href="https://developers.google.com/maps/documentation/javascript/events" target="_blank">Google Maps Javascript Events</a> for more information.</p>
     </div>
@@ -210,9 +210,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -224,7 +224,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Google Map Controls - <span class="subTopic">Listening to Map Events</span></h3>
       <p>In order to understand this example, open up your <span class="code"><b>browser console</b></span> and then interact with the map. You would see that your browser console shows the events which are occuring. For example, a mouse type event (in this for example <span class="code">click</span> event) would actually give you the <b>Latitude and Longitude [latLng] Object</b> from which you can get the latitude and longitude details for a place clicked on this map.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap6"></div>
     </div>
   </div>
@@ -243,9 +243,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 6 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Controlling Zoom and Panning - <span class="subTopic">Gesture Handling</span></h2>
       <p>We'll now look into how to change/customize the way users would be interacting with your map, especially during <span class="code">Page Scrolling Actions</span>. Please refer to <a class="refLink" href="https://developers.google.com/maps/documentation/javascript/interaction" target="_blank">Google Maps Javascript - Controlling Zoom and Pan</a> for more information.</p>
     </div>
@@ -254,9 +254,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal7">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -268,7 +268,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Gesture Handling - <span class="subTopic">Cooperative</span></h3>
       <p>This <span class="code">gestureHandling</span> mode is the default mode for Google Maps, indicating that google maps centers nor bounds change when scrolling over them. Applicable either on mobile or desktops. Changes can be made only upon actually <b>Dragging</b> the map (on desktop) or using a <b>Two Finger Movements</b> for mobile and other similar devices.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap7"></div>
     </div>
   </div>
@@ -287,9 +287,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 7 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal8">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -301,7 +301,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Gesture Handling - <span class="subTopic">None</span></h3>
       <p>This mode indicates that <b>Drag Feature</b> on desktops and <b>Pinching &amp; Panning</b> on mobile and similar devices are disabled. In this example, while <span class="code">gestureHandling</span> has been set to <b>none</b>, the map's <b>Zoom Feature</b> has also been disabled.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap8"></div>
     </div>
   </div>
@@ -320,9 +320,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 8 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal8">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -334,7 +334,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Gesture Handling - <span class="subTopic">Greedy</span></h3>
       <p>In this example, we've set the <span class="code">gestureHandling</span> field to <b>greedy</b>. This makes the map pan or scroll when a user is scrolling on the browser where the mouse pointer happens to be on the map, or a <b>One or Two Finger</b> action on mobile and other similar devices.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap9"></div>
     </div>
   </div>
@@ -353,9 +353,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 9 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Marker Events</h2>
       <p>We'll now look into some of the events that can be bound to your google maps markers. Please refer to <a class="refLink" href="https://developers.google.com/maps/documentation/javascript/reference#Marker" target="_blank">Google Maps Javascript - Marker Class</a> for more information.</p>
     </div>
@@ -364,9 +364,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal10">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -379,7 +379,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <p><b>Map Markers</b> also come with their respective events which are triggered on various client side actions. In this example, you could keep your <b>Browser Console</b> open to see the various events that are being triggered for the marker.</p>
       <p>There are certain kinds of mouse based events like <span class="code">click</span> whose functions can be provided with an <b>event object</b> from which you could acquire the <b>Latitude-Longitude</b> coordinates for the marker.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap10"></div>
     </div>
   </div>
@@ -398,9 +398,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 10 Modal Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection overviewParentSection">
+<div class="infoSection animatableSection overviewParentSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Shape Class Events</h2>
       <p>Based on the <b>Reference Tab</b> on Google Maps Javascript API, the examples enlisted below examines the various events that can be bound to Google Maps Shapes, namely - <b>Polyline, Polygons, Rectangle and Circle Classes</b>. Please refer to <a href="https://developers.google.com/maps/documentation/javascript/reference" target="_blank" class="refLink">Google Maps Javascript References</a> and search for these specific classes for more information.</p>
     </div>
@@ -409,9 +409,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal11">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -423,7 +423,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Shape Class Events - <span class="subTopic">Polyline Class</span></h3>
       <p>This example has events that have been bound based on the <b>Polyline Shape Class</b>. Keep your browser <b>Console Logs</b> open to see how events get triggered based on map interaction. Do click on the example code icon for the example soure code.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap11"></div>
     </div>
   </div>
@@ -442,9 +442,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 11 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal12">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -456,7 +456,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Shape Class Events - <span class="subTopic">Polygon Class</span></h3>
       <p>This example has events that have been bound based on the <b>Polygon Shape Class</b>. Keep your browser <b>Console Logs</b> open to see how events get triggered based on map interaction. Do click on the example code icon for the example soure code.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap12"></div>
     </div>
   </div>
@@ -475,9 +475,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 12 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal13">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -489,7 +489,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Shape Class Events - <span class="subTopic">Rectangle Class</span></h3>
       <p>This example has events that have been bound based on the <b>Rectangle Shape Class</b>. Keep your browser <b>Console Logs</b> open to see how events get triggered based on map interaction. Do click on the example code icon for the example soure code.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap13"></div>
     </div>
   </div>
@@ -508,9 +508,9 @@ title: "DAWG Google Maps | Map Controls And Events"
 <!--Example 13 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal14">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -522,7 +522,7 @@ title: "DAWG Google Maps | Map Controls And Events"
       <h3>Shape Class Events - <span class="subTopic">Circle Class</span></h3>
       <p>This example has events that have been bound based on the <b>Circle Shape Class</b>. Keep your browser <b>Console Logs</b> open to see how events get triggered based on map interaction. Do click on the example code icon for the example soure code.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap14"></div>
     </div>
   </div>

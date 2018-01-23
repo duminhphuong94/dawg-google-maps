@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Google Static Maps API"
       <div class="segment">
         <h1>Google Static Maps API</h1>
         <p>An embed version for placing google maps onto your web-pages without having to code in Javascript. Please ensure to enabled the <span class="code">Google Static Maps API</span> at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis"><span class="code">https://console.developers.google.com/apis</span></a> post creating your API key.</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Google Static Maps API"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>A Google Static Map is created in response to an HTTP request via a URL, the type of file could be either GIF, PNG or JPEG. The google map image is embedded within an <span class="code">&lt;img&gt;</span> tag A google static maps api url is of the following form: <span class="code">https://maps.googleapis.com/maps/api/staticmap?parameters</span>.</p>
       <p>Please refer to <a href="https://developers.google.com/maps/documentation/static-maps/" target="_blank">Google Static Maps Documentation</a> for more information.</p>
@@ -39,13 +39,13 @@ title: "DAWG Google Maps | Google Static Maps API"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Static Maps: <span class="subTopic">Required Parameters</span></h3>
       <p>In the example on the showing Moscow, parameters being used to generate these would be <b>Center</b>, <b>Zoom</b>, <b>Size</b> and the respective <b>API Key</b>. The url request to generate the image would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=kremlin+russia&amp;zoom=15&amp;size=1920x450</span>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=kremlin+russia&zoom=15&size=1920x450"/>
     </div>
   </div>
@@ -53,14 +53,14 @@ title: "DAWG Google Maps | Google Static Maps API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
       <h3>Static Maps: <span class="subTopic">Scale Parameter</span></h3>
       <p>Applied in default value of <span class="code">1</span>, other accepted values for this parameters are <b>2></b> and <b>4 [Available for Google Maps APIs Premium Plan Customers]</b>. This parameter is responsible for developing higher resolution images.</p>
       <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=grand+canyon+usa&zoom=12&amp;size=1920x450&amp;scale=2</span>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=grand+canyon+usa&zoom=12&size=1920x450&scale=2"/>
     </div>
   </div>
@@ -68,14 +68,14 @@ title: "DAWG Google Maps | Google Static Maps API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Static Maps: <span class="subTopic">Format, Maptype and Lanugage</span></h3>
       <p>Available formats for Static Maps are <b>JPEG</b>, <b>GIF</b> and <b>PNG</b> types. Maptypes are available in <span class="code">roadmap</span>, <span class="code">satellite</span>, <span class="code">hybrid</span> and <span class="code">terrain</span>. Language support available only for some supported country tiles.</p>
       <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=new+delhi+india&amp;zoom=12&amp;size=1920x450&amp;scale=2&amp;format=JPEG&amp;maptype=terrain&amp;language=hindi</span></p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=new+delhi+india&zoom=12&size=1920x450&scale=2&format=JPEG&maptype=terrain&language=hindi"/>
     </div>
   </div>
@@ -83,15 +83,15 @@ title: "DAWG Google Maps | Google Static Maps API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
       <h3>Static Maps: <span class="subTopic">Map Markers</span></h3>
       <p>Markers refers to one or more parameters that defines map pins at set locations. A marker parameter has a set of key-value pairings which could be used, namely <b>size</b>, <b>color</b> and <b>label</b>. Markers also have the capacity to taken in location details.</p>
       <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;size=1920x450&amp;markers=color:blue|label:A|cape+town+south+africa&amp;markers=color:black|label:D|durban+south+africa&amp;markers=color:purple|label:B|mossel+bay+south+africa&amp;markers=color:yellow|label:C|port+elizabeth+south+africa</span></p>
       <p>Google Static Maps has an option to help insert custom markers, but over serveral attempts to even have images placed on Google Drive, it doesn't seem to be a reliable feature.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&size=1920x450&markers=color:blue|label:A|cape+town+south+africa&markers=color:black|label:D|durban+south+africa&markers=color:purple|label:B|mossel+bay+south+africa&markers=color:yellow|label:C|port+elizabeth+south+africa"/>
     </div>
   </div>
@@ -99,14 +99,14 @@ title: "DAWG Google Maps | Google Static Maps API"
 <!--Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
       <h3>Static Maps: <span class="subTopic">Paths</span></h3>
       <p>Paths helps connect two or more lines as an overlay on your google maps, where key value pairs for this parameter are separated by a pipe character (<span class="code">|</span>). Optinal path styles include <b>weight</b> (specifies thickness of the path line), <b>color</b> (helps define the color of the path line, <b>fillcolor</b> (for specifying a color value that would be used to fill up a closed loop area, like shown in the example), <b>geodesic</b> ( indicates that the requested path should be interpreted as a geodesic line that follows the curvature of the earth. When false, the path is rendered as a straight line in screen space. Defaults to false).</p>
       <p>The url request for the image generated would be <span class="code">https://maps.googleapis.com/maps/api/staticmap?key=YOUR_API_KEY&amp;center=paris+france+&amp;size=1920x450&amp;zoom=8&amp;path=weight:2|color:blue|fillcolor:orange|geodesic:true|<br/>versailles+france|dreux+france|rouen+france|beauvais+france|<br/>saint+denis+france|paris+france|versailles+france</span>.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <img class="img-responsive staticMapImage" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAlCo2dLOV-Dmyt-l4WMCDt7EORd0t8vLc&center=paris+france+&size=1920x450&zoom=8&path=weight:2|color:blue|fillcolor:orange|geodesic:true|versailles+france|dreux+france|rouen+france|beauvais+france|saint+denis+france|paris+france|versailles+france"/>
     </div>
   </div>

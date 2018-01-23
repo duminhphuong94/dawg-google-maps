@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <div class="segment">
         <h1>Google Javascript Places API</h1>
         <p>See how to handle <b>NearBy Search</b>, <b>Text Search</b> and more in this page. Please ensure to enable the <span class="code">Google Maps Embed API</span> at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key.</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>As mentioned by google, <span class="code">"The Places service is a self-contained library, separate from the main Maps JavaScript API code"</span>. Our HTML document first needs to be initiated with the respective URL, <span class="code">&lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"&gt;&lt;/script&gt;</span>.</p> 
       <p>The API example(s) shown below are handled on the client-side. Ensure to activate the <span class="code">Google Maps Javascript API</span> and <span class="code">
@@ -41,9 +41,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -57,7 +57,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <p>We'll begin by selecting a location or latitude-longitude cooridates. Here, the location is <b>Tokyo</b>, set with lat-long coordinates, which is then initiated into a map image with Javascript. To create a <span class="code">Places Search</span>, we'll need to create a <b>Service Object</b> with <span class="code">new google.maps.places.PlacesService(map)</span>, followed by <span class="code">service.nearbySearch(request, callback)</span>.</p>
       <p>The <span class="code">request</span> argument is an object and <span class="code">callback</span> refers to a function that would help generate the results of your call. You could then either <span class="code">console.log</span> to view the results on your browser console or <span class="code">create markers</span> to place them on the map itself.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -76,9 +76,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -91,7 +91,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <p>In this example, we've added another field to the request object called <b>keyword</b> which would help provided a slightly more filtered results for the places search. Here, while still in Tokyo, the request has been placed with a <b>keyword</b> value called <span class="code">russian</span> which should signify restaurant that serve Russian Food.</p>
       <p>The <b>openNow</b> field also provides an additional level of filter, which takes a <span class="code">Boolean</span> data type.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -110,9 +110,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -125,7 +125,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <p>The <b>minPriceLevel</b> and <b>maxPriceLevel</b>, have values ranging from 0 (which are most affordable) to 4 (most expensive). For this example, a search has been made with the <b>keyword</b> field bearing the value <span class="code">indian restaurant</span>, along with the <b>minPriceLevel</b> and <b>maxPriceLevel</b> values set at <span class="code">4</span>.</p>
       <p>The final result(s) signify the most expensive <span class="code">Indian Restaurants</span> present in Tokyo.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -144,9 +144,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -158,7 +158,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <h3>Nearby Search Request: <span class="subTopic">Name Field</span></h3>
       <p>The <b>name</b> field helps restrict locations that contain the string value being passed here. In this example, our location is <b>Orlando, Florida</b>, where we've created a search for restaurants with that would bear the name <span class="code">subway</span>. The API would then process this request and display the result(s) as shown in the map.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -177,9 +177,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -195,7 +195,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <ul id="rankByResults">
       </ul>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap5"></div>
     </div>
   </div>
@@ -214,9 +214,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -232,7 +232,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <ul class="resultsUI">
       </ul>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap6"></div>
     </div>
   </div>
@@ -251,9 +251,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 6 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal7">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -269,7 +269,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <ul class="resultsUI">
       </ul>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap7"></div>
     </div>
   </div>
@@ -288,9 +288,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 7 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal8">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -306,7 +306,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <ul class="resultsUI">
       </ul>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap8"></div>
     </div>
   </div>
@@ -325,9 +325,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 8 Modal Details Ends Here-->
 
 <!--Detailed Info on the Place Search Results Object Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal9">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -340,7 +340,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <p>The result returned by <span class="code">Nearby Search</span> and <span class="code">Text Search</span> returns an array containing objects as its result. There are various properties that each of these objects carry, details of which can be referred to by clicking <a href="https://developers.google.com/maps/documentation/javascript/places#place_search_responses" target="_blank">here</a>.</p>
       <p>Example provided below provides you a snapshot of such an object from a search result array. We're inspecting the results of the search for the <span class="code">Caesar's Palace, Las Vegas - Nevada</span>. Some of the fields that you could expect include:</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div id="gMap9" class="googleMapHolder"></div>
       <ul class="objectResultList">
       </ul>
@@ -361,9 +361,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 9 Modal Details Ends Here-->
 
 <!--Handling Pagination of Results Object Info Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal10">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -377,7 +377,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <p>If there are any additional pages of details which are available from this <b>pagination</b> argument, it would be based on the <span class="code">Boolean</span> value of <span class="code">pagination.hasNextPage</span>, further results can be invoked with <span class="code">pagination.nextPage();</span>.</p>
       <p>In the example below, click on the <b>Load More</b> button, which would help populate more results from this particular API Text Search being made for searching <b>Pawn Shops Listing</b> in Las Vegas, NV. As more results appear, the map gets updated with more markers.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div id="gMap10" class="googleMapHolder"></div>
       <button class="btn btn-default dawgButton loadMoreButton" type="button">Load More</button>
       <div class="errorMessage hide"><span></span></div>
@@ -398,9 +398,9 @@ title: "DAWG Google Maps | Javascript Places API"
 <!--Example 10 Modal Details Ends Here-->
 
 <!--Place Details Results Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal11">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -414,7 +414,7 @@ title: "DAWG Google Maps | Javascript Places API"
       <p>After receiving a successful response, there are a list of property/fields from the object result that we can use to display information about a specific place. View the given example below to understand what these fields may be or <a href="https://developers.google.com/maps/documentation/javascript/places#place_details" target="_blank" class="refLink">click here</a> for more infomration.</p>
       <p>Another interesting part of the <b>Place Details</b> are photos. The individual photo urls can be acquired by sending a <span class="code">photo.getUrl({"maxWidth": <b>x</b>, "maxHeight": <b>y</b>})</span>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div id="gMap11" class="googleMapHolder"></div>
       <button class="btn btn-default dawgButton loadMoreButton" type="button">Load More</button>
       <div class="errorMessage hide"><span></span></div>

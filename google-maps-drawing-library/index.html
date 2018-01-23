@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
       <div class="segment">
         <h1>Google Maps Javascript API - Drawing Library</h1>
         <p>Imagine you're a Military General, charting out your next plan to attack your enemy! Drawing on a map has never been so much fun. Yay!</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p>Google Maps Javascript API - Drawing Manager, allows us to create overlays instantly over a map or geographical regions. These overlays are similar to the <b>Google Maps Javascript API - Shapes</b> like Circles and Rectangles. To be able to use this feature, an initial setup needs to be done to have this library imported into your work. Please also ensure to enable the <b>Google Maps Javascript API</b> in your respective dashboard once your API key has been generated.</p>
       <p>
@@ -44,9 +44,9 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -60,7 +60,7 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
 			<p>To highlight some of the options used in the example below, the <b>drawingMode</b> option helps determine the initial Drawing Option that woudl be active as default when clicking and drawing on your map. This helps also highlight a dark outeredge to the option on the <b>Controls</b> attached on to your map. Setting this value as <b>null</b> means that the user would have to select an option from the control and only post this the drawing manager actually become active.</p>
 			<p>The <b>drawingControl</b> field receives a Boolean value, indicating whether it would be present on the map or not. The <b>drawingOptions</b> field is an object, which can help set the position of the controls on your map and also determine what shapes or overlays would be available to the user.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
 		<div class="segment overviewSegment">
@@ -82,9 +82,9 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -96,7 +96,7 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
       <h2 class="text-center">Google Maps Drawing Manager - <span class="subTopic">Hide/Show Drawing Manager</span></h2>
 			<p>The Drawing Manager can be placed in a <b>Hidden</b> or <b>Visible</b> status by applying a Boolean Value to the <b>drawingControls</b> field. In the example below, for the purpose of understanding the difference between both states, a <span class="code">setTimeout()</span> method is used to toggle between both states. However, please note that this method does not disable the Drawing Manager from your map.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -115,9 +115,9 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -129,7 +129,7 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
       <h2 class="text-center">Google Maps Drawing Manager - <span class="subTopic">Enable/Disable Drawing Manager</span></h2>
 			<p>To entirely disable or disassociate a Drawing Manager from your respective map, the <b>setMap()</b> method's argument needs to be set to as <b>null</b>. In the example below, a <span class="code">setTimeout()</span> method is used to toggle between both these states. Interact with the map while the Drawing Manager is enabled and then try to interact with it once disabled.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -148,9 +148,9 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenLeftTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -163,7 +163,7 @@ title: "DAWG Google Maps | Google Maps Drawing Library"
 			<p>Whenever a Drawing Manager is used to create an overlay, there are two kinds of events which are fired. The first type is the <b>Type of Overlay Completed</b> event and the other is the general <b>Overlay Completed Event</b>. The <b>Type of Overlay Completed</b> event is specific to that of a Circle or a Rectangle whereas the general <b>Overlay Completed Event</b> signifies some overlay has been completed and based on the kind of overlay created, you would then have access to all methods specific to that overlay.</p>
 			<p>The methods for each of the overlay are the same as the methods for the <b>Google Maps Javascript API - Shapes</b>. To start off with the events for this particular class, open up your browser console and create an overlay to see the <b>event.type</b> and <b>event.overlay</b> results. You could refer to <a href="https://developers.google.com/maps/documentation/javascript/drawinglayer#drawing_events" target="_blank" class="refLink">Drawing Events</a> and <a href="https://developers.google.com/maps/documentation/javascript/reference#OverlayCompleteEvent" target="_blank" class="refLink">Overlay Completed Event Object Specifications</a> for more information.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>

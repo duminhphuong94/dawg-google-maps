@@ -460,11 +460,15 @@ a.refLink {
     position: relative;
     z-index: 150;
 		background: $white;
+    max-width: 1366px;
+    margin-left: auto;
+    margin-right: auto;
     .segment {
       padding: 0 15px;
       float: left;
       width: 50%;
       position: relative;
+      @include transition(all, 0.8s, ease-out);
       span.sourceCode {
         background: $roseQuartz;
         padding: 4px 4px;
@@ -1081,6 +1085,26 @@ a.refLink {
           }
         }
       }
+    }
+  }
+  .animatableSection {
+    .hiddenLeftTransform {
+      transform: translateX(-15%);
+      -webkit-transform: translateX(-15%);
+      visibility: hidden;
+      opacity: 0;
+    }
+    .hiddenRightTransform {
+      transform: translateX(15%);
+      -webkit-transform: translateX(15%);
+      visibility: hidden;
+      opacity: 0;
+    }
+    .hiddenBottomTransform {
+      transform: translateY(15%);
+      -webkit-transform: translateY(15%);
+      visibility: hidden;
+      opacity: 0;
     }
   }
   .dawgModalUnit {

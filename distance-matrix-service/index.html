@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
       <div class="segment">
         <h1>Google Maps Javascript API - Distance Matrix Service</h1>
         <p>Please ensure to have <span class="code">Google Maps JavaScript API and the Google Maps Distance Matrix API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -43,7 +43,7 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
       <p>In our example below, our origin address is the <b>Red Square</b> and the destination address is the <b>Moscow Zoo</b>. An Info Window is generated merely to show the final result of the API call.</p>
       <p>To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/distancematrix" target="_blank" class="refLink">Google Maps Javasript API - Distance Matrix</a> for more information.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -62,9 +62,9 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -78,10 +78,10 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
       <p>The results for this particular example is shown after the map.</p>
       <p>To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/distancematrix" target="_blank" class="refLink">Google Maps Javasript API - Distance Matrix</a> and search for <b>Travel Modes</b> and <b>Transit Options</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
-    <div class="segment overviewSegment" id="gMap2ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap2ResultHolder">
     </div>
   </div>
 </div>
@@ -99,9 +99,9 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -115,10 +115,10 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
       <p>The results for this particular example is shown after the map.</p>
       <p>To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/distancematrix" target="_blank" class="refLink">Google Maps Javasript API - Distance Matrix</a> and search for <b>Travel Modes</b> and <b>Driving Options</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
-    <div class="segment overviewSegment" id="gMap3ResultHolder">
+    <div class="segment overviewSegment hiddenBottomTransform" id="gMap3ResultHolder">
     </div>
   </div>
 </div>
@@ -136,9 +136,9 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
 			<span class="sourceCode overviewSourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -152,7 +152,7 @@ title: "DAWG Google Maps | Distance Maxtrix Service"
       <p>In our example below, the Distance Service request result from the <b>Red Square</b> to the <b>Moscow Zoo</b> now has its distance given in <b>Miles</b>(shown in the overlay InfoWindow), as we have placed the value of <span class="code">google.maps.UnitSystem.IMPERIAL</span> for its unit system field.</p>
       <p>To get a better in-depth understanding of how this works, please visit <a href="https://developers.google.com/maps/documentation/javascript/distancematrix" target="_blank" class="refLink">Google Maps Javasript API - Distance Matrix</a> and search for <b>Unit System</b>.</p>
     </div>
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>

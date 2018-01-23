@@ -19,7 +19,7 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
       <div class="segment">
         <h1>Map Markers &amp; Info Window</h1>
         <p>Everything that you'll need to get upto speed with creating and placing <b>Markers</b> and <b>Info Window Basics</b> on your google maps. Just remember that these  are nothing but kinds of overlays.</p>
-        <button class="btn btn-default dawgButton" type="button">Get Started</button>
+        <button class="btn btn-default dawgButton" type="button" data-slideto="#thisSection1">Get Started</button>
       </div>
     </div>
   </div>
@@ -27,9 +27,9 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
 <!--Jumbotron Section Details Ends Here-->
 
 <!--Overview Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection" id="thisSection1">
   <div class="dawgRow">
-    <div class="segment overviewSegment">
+    <div class="segment overviewSegment hiddenBottomTransform">
       <h2 class="text-center">Overview</h2>
       <p><b>Markers</b> on google maps help identify a particular location, by default being created with a specific image by googgle maps. These markers can also be customized with our own images of <b>Icons</b> that we can place on our maps. Markers can also be interactive, for example, clicking on a marker could help pop-up an <b>Info Window</b>.</p>
       <p>Please ensure to have <span class="code">Google Maps JavaScript API</span> enabled at <a class="refLink" target="_blank" href="https://console.developers.google.com/apis/dashboard"><span class="code">https://console.developers.google.com/apis/dashboard</span></a> post creating your API key</p>
@@ -40,9 +40,9 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
 <!--Overview Section Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal1">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -55,7 +55,7 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
       <p>A basic marker placement is relatively easy once you've built your required google map. In order to place a marker on your map, you'll need a specific <b>Lat-Lng Coordinate</b> and the <b>Map</b> onto which you'll place the marker on. Markers get created with the <span class="code">new google.maps.Marker()</span> constructor which takes in an object with the Coordinates and Map settings.</p>
       <p>In our example here, the location is <b>Hawaii</b> with the marker being placed onto the <b>Lat-Lng Coordinates</b> that was used to create the center for this map. Use your mouse and hover over the marker and a <b>Title Box</b> with a small message would appear.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap1"></div>
     </div>
   </div>
@@ -74,9 +74,9 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
 <!--Example 1 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal2">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -90,7 +90,7 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
       <p>Animation options are also availabe for markers, available in two options provided by google maps api - <span class="code">google.maps.Animation.BOUNCE</span> &amp; <span class="code">google.maps.Animation.DROP</span>. This example demonstrates markers being set on the map with an animation and then remove from the map, only to be placed at a different location.</p>
       <p>Marker location changed every 3 seconds.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap2"></div>
     </div>
   </div>
@@ -109,9 +109,9 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
 <!--Example 2 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal3">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -123,7 +123,7 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
       <h3>Google Maps Markers: <span class="subTopic">Marker Labels</span></h3>
       <p>Markers on your map can be customized. In this example over <b>Hawaii</b>, a marker with a label <b>"H"</b> has been placed over <b>Honolulu</b>. Once we initiate a <span class="code">Marker Object</span> with respect to whatever our map would be, you'll need to add a field named <span class="code">label</span> which would then carry a value for the marker label.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap3"></div>
     </div>
   </div>
@@ -142,9 +142,9 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
 <!--Example 3 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal4">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -156,7 +156,7 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
       <h3>Google Maps Markers: <span class="subTopic">Marker Labels with Simple Icons</span></h3>
       <p>In this example, the default google maps marker is replaced by our very own custom image (png). This is achieved by adding the <b>icon</b> field to the <span class="code">Marker Object</span>. The animating bounce effect is achieved with the <b>animation</b> which was seen in our earlier example.</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap4"></div>
     </div>
   </div>
@@ -175,9 +175,9 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
 <!--Example 4 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment">
+    <div class="segment hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal5">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -189,7 +189,7 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
       <h3>Google Maps Markers: <span class="subTopic">Marker Labels - Draggable</span></h3>
       <p>Continuing with our Hawaiian T-Shirt Icon over <b>Honolulu</b>, the icon is now <b>Draggable</b>. Click and drag the icon to a different location on the map to see how this works.</p>
     </div>
-    <div class="segment">
+    <div class="segment hiddenRightTransform">
       <div class="googleMapHolder" id="gMap5"></div>
     </div>
   </div>
@@ -208,9 +208,9 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
 <!--Example 5 Modal Details Ends Here-->
 
 <!--Section Details Starts Here-->
-<div class="infoSection">
+<div class="infoSection animatableSection">
   <div class="dawgRow">
-    <div class="segment col-md-push-6">
+    <div class="segment col-md-push-6 hiddenLeftTransform">
 			<span class="sourceCode" data-modalLink="#exampleModal6">
 			<?xml version="1.0" encoding="utf-8"?>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 16 16">
@@ -223,7 +223,7 @@ title: "DAWG Google Maps | Map Markers And Info Windows"
       <p>As the name suggests, <b>Info Windows</b> are elements that are used in Google Maps to display some form of information about a specific geolocation on the map. Its normally seen hanging over a marker, which has a <span class="code">click event</span> attached to it to help open the respective Info Window. The info window <span class="code">Options Object</span> carries a field named <b>content</b> which can either carry simple text to custom made <b>HTML Elements</b> to provide a certain sense of customization.</p>
       <p>In our example, click on the marker over <b>Hawaii</b> an a small <b>Info Window</b> would open up providing you some information. [@ Text is courtesy of Google Search - merely being depected for understanding].</p>
     </div>
-    <div class="segment col-md-pull-6">
+    <div class="segment col-md-pull-6 hiddenRightTransform">
       <div class="googleMapHolder" id="gMap6"></div>
     </div>
   </div>

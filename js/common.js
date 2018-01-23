@@ -17,6 +17,44 @@ function bubbleLoader() {
   startBubbleAni();
 }
 
+function smoothScrollToFirstSection() {
+  if($(".dawgButton").length > 0) {
+    function createSmoothScroll() {
+      var smoothButton = $(".dawgButton");
+      smoothButton.on("click", function() {
+        var $this = $(this);
+        if($this.attr("data-slideto")) {
+					$('html, body').animate({
+						scrollTop: $($(this).attr("data-slideto")).offset().top - 60
+					}, 950);
+        }
+      });
+    }
+    createSmoothScroll();
+  }
+}
+
+function smoothFlowInSegments() {
+	if($(".animatableSection").length > 0) {
+		var animatableSection = $(".animatableSection");
+    console.log("calling");
+		animatableSection.each(function(index, thisSection) {
+			var viewport = $(window);
+			var viewportHeight = viewport.height();
+			var viewportAlreadyScrolled = viewport.scrollTop();
+			var viewportBottom = viewportAlreadyScrolled + viewportHeight;
+			var thisSectionPosObj = $(thisSection).offset();
+			var thisSectionTopPos = thisSectionPosObj.top;
+			var thisSectionBotPos = thisSectionTopPos + $(thisSection).outerHeight();
+			if(thisSectionTopPos <= (viewportBottom - 200) && thisSectionBotPos >= viewportAlreadyScrolled) {
+				$(thisSection).find(".segment").removeClass("hiddenLeftTransform");
+				$(thisSection).find(".segment").removeClass("hiddenRightTransform");
+				$(thisSection).find(".segment").removeClass("hiddenBottomTransform");
+			}
+		});
+	}
+}
+
 function restrictSiteScroll() {
   var siteContainer = $("#mainSiteBorder");
   var currentScrollPos = 0;
@@ -74,6 +112,7 @@ function generalBodyFunctionality() {
       }
     });
   })();
+
 }
 
 function documentScrollPercent() {
@@ -6208,6 +6247,7 @@ function autocompleteAddressesAndSearch() {
 
 function centralProcessor() {
   bubbleLoader();
+  smoothScrollToFirstSection();
   generalBodyFunctionality();
   documentScrollPercent();
   siteMenuFunctionality();
@@ -6237,6 +6277,7 @@ function centralProcessor() {
 
   $(window).on("scroll", function() {
     documentScrollPercent();
+		smoothFlowInSegments();
   });
 }
 
