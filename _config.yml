@@ -42,5 +42,5 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# webpages permalink url without additiona .html extensions setup
+# Webpages permalink url without additiona .html extensions setup
 permalink: /:categories/:title/
