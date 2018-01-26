@@ -1309,6 +1309,10 @@ a.refLink {
   }
 }
 
+/*****************************************\
+      MEDIA QUERIES STARTS HERE
+\*****************************************/
+
 @media (min-aspect-ratio: 16/9) {
 	.dawgGoogleMaps {
 		.jumbotronParent {
@@ -1334,3 +1338,7 @@ a.refLink {
 		}
 	}	
 }
+
+/*****************************************\
+      MEDIA QUERIES ENDS HERE
+\*****************************************/
