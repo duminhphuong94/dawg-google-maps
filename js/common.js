@@ -111,7 +111,6 @@ function generalBodyFunctionality() {
       }
     });
   })();
-
 }
 
 function documentScrollPercent() {
