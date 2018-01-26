@@ -2073,7 +2073,7 @@ function googleMapMarkersAndInfoWindow() {
       });
       var honolulu = new google.maps.LatLng(21.3069, -157.8583);
       var wLocationOrigin = window.location.origin;
-      var baseUrl = "/dawg-google-maps";
+      var baseUrl = "";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
       var marker = new google.maps.Marker({
         position: honolulu,
@@ -2091,7 +2091,7 @@ function googleMapMarkersAndInfoWindow() {
       });
       var honolulu = new google.maps.LatLng(21.3069, -157.8583);
       var wLocationOrigin = window.location.origin;
-      var baseUrl = "/dawg-google-maps";
+      var baseUrl = "";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
       var marker = new google.maps.Marker({
         position: honolulu,
@@ -2327,7 +2327,7 @@ function googleMapControlsAndEvents() {
       var animationArray = ["google.maps.Animation.BOUNCE", "google.maps.Animation.DROP"];
       
       var wLocationOrigin = window.location.origin;
-      var baseUrl = "/dawg-google-maps";
+      var baseUrl = "";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/hawaii.png";
 
       var marker = new google.maps.Marker({
@@ -2784,7 +2784,7 @@ function drawingOnYourMapShapes() {
       });
       
       var wLocationOrigin = window.location.origin;
-      var baseUrl = "/dawg-google-maps";
+      var baseUrl = "";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/polymarker.png";
 
       var polyPath = new google.maps.Polyline({
@@ -3468,7 +3468,7 @@ function googleMapsDataLayers() {
       });
 
       var wLocationOrigin = window.location.origin;
-      var baseUrl = "/dawg-google-maps";
+      var baseUrl = "";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/polymarker.png";
       map.data.setStyle({
         icon: imageUrl
@@ -3490,7 +3490,7 @@ function googleMapsDataLayers() {
       });
 
       var wLocationOrigin = window.location.origin;
-      var baseUrl = "/dawg-google-maps";
+      var baseUrl = "";
       var imageUrl = wLocationOrigin + baseUrl + "/assets/images/polymarker.png";
       map.data.setStyle({
         icon: imageUrl
@@ -4632,7 +4632,7 @@ function googleMapsGeocodingServiceAPI() {
 
 function drawingLayerLibrary() {
   if(document.location.href.indexOf("google-maps-drawing-library") > -1) {
-    var baseUrl = window.location.origin + "/dawg-google-maps";
+    var baseUrl = window.location.origin + "";
     var imagesSrc = baseUrl + "/assets/images/";
     (function createBasicDrawingLib() {
       var locationCoords = new google.maps.LatLng(30.0444, 31.2357);
@@ -4760,7 +4760,7 @@ function drawingLayerLibrary() {
 function geometryLibrary() {
   if(document.location.href.indexOf("google-maps-geometry-library") > -1) {
     var baseUrl = window.location.origin;
-    var markerIcon = baseUrl + "/dawg-google-maps/assets/images/polymarker.png";
+    var markerIcon = baseUrl + "/assets/images/polymarker.png";
     (function geometryComputeLength() {
       var locationCoords = new google.maps.LatLng(60.4720, 8.4689);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -5049,7 +5049,7 @@ function geometryLibrary() {
 function autocompleteAddressesAndSearch() {
   if(document.location.href.indexOf("google-maps-autocomplete") > -1) {
     var baseUrl = window.location.origin;
-    var markerIcon = baseUrl + "/dawg-google-maps/assets/images/polymarker.png";
+    var markerIcon = baseUrl + "/assets/images/polymarker.png";
     (function autocompleteSearchLocation() {
       var locationCoords = new google.maps.LatLng(3.1390, 101.6869);
       var map = new google.maps.Map(document.getElementById("gMap1"), {
@@ -5275,7 +5275,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/phone.svg",
+              src: baseUrl + "/assets/images/phone.svg",
               alt: "Contact Information",
               title: "Contact Information",
               class: "img-responsive referenceIcon",
@@ -5299,7 +5299,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+              src: baseUrl + "/assets/images/clock-calendar.svg",
               alt: "Opening Hours",
               title: "Opening Hours",
               class: "img-responsive referenceIcon",
@@ -5331,7 +5331,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg",
+              src: baseUrl + "/assets/images/rating-icon.svg",
               alt: "Rating",
               title: "Rating",
               class: "img-responsive referenceIcon",
@@ -5355,7 +5355,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/blue-link.svg",
+              src: baseUrl + "/assets/images/blue-link.svg",
               alt: "Rating",
               title: "Rating",
               class: "img-responsive referenceIcon",
@@ -5475,7 +5475,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/phone.svg",
+              src: baseUrl + "/assets/images/phone.svg",
               alt: "Contact Information",
               title: "Contact Information",
               class: "img-responsive referenceIcon",
@@ -5499,7 +5499,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+              src: baseUrl + "/assets/images/clock-calendar.svg",
               alt: "Opening Hours",
               title: "Opening Hours",
               class: "img-responsive referenceIcon",
@@ -5531,7 +5531,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg",
+              src: baseUrl + "/assets/images/rating-icon.svg",
               alt: "Rating",
               title: "Rating",
               class: "img-responsive referenceIcon",
@@ -5555,7 +5555,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/blue-link.svg",
+              src: baseUrl + "/assets/images/blue-link.svg",
               alt: "Rating",
               title: "Rating",
               class: "img-responsive referenceIcon",
@@ -5656,7 +5656,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/phone.svg",
+              src: baseUrl + "/assets/images/phone.svg",
               alt: "Contact Information",
               title: "Contact Information",
               class: "img-responsive referenceIcon",
@@ -5680,7 +5680,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+              src: baseUrl + "/assets/images/clock-calendar.svg",
               alt: "Opening Hours",
               title: "Opening Hours",
               class: "img-responsive referenceIcon",
@@ -5712,7 +5712,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg",
+              src: baseUrl + "/assets/images/rating-icon.svg",
               alt: "Rating",
               title: "Rating",
               class: "img-responsive referenceIcon",
@@ -5736,7 +5736,7 @@ function autocompleteAddressesAndSearch() {
             var subParentDiv = $('<div class="contactReference"></div>');
             var imageUnit = $('<img/>');
             imageUnit.attr({
-              src: baseUrl + "/dawg-google-maps/assets/images/blue-link.svg",
+              src: baseUrl + "/assets/images/blue-link.svg",
               alt: "Rating",
               title: "Rating",
               class: "img-responsive referenceIcon",
@@ -5857,7 +5857,7 @@ function autocompleteAddressesAndSearch() {
                 
                 var imageUnit = $('<img/>');
                 imageUnit.attr({
-                  src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg",
+                  src: baseUrl + "/assets/images/rating-icon.svg",
                   alt: "Rating Information",
                   title: "Rating Information",
                   class: "img-responsive referenceIcon",
@@ -6013,7 +6013,7 @@ function autocompleteAddressesAndSearch() {
                       var subDiv = $('<div class="contactReference"></div>');
                       var iconImage = $('<img/>');
                       iconImage.attr({
-                        src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+                        src: baseUrl + "/assets/images/clock-calendar.svg",
                         alt: "Opening Hours",
                         title: "Opening Hours",
                         class: "img-responsive referenceIcon"
@@ -6045,7 +6045,7 @@ function autocompleteAddressesAndSearch() {
                       var subDiv = $('<div class="contactReference"></div>');
                       var iconImage = $('<img/>');
                       iconImage.attr({
-                        src: baseUrl + "/dawg-google-maps/assets/images/phone.svg",
+                        src: baseUrl + "/assets/images/phone.svg",
                         alt: "Opening Hours",
                         title: "Opening Hours",
                         class: "img-responsive referenceIcon"
@@ -6064,7 +6064,7 @@ function autocompleteAddressesAndSearch() {
                       var subDiv = $('<div class="contactReference"></div>');
                       var iconImage = $('<img/>');
                       iconImage.attr({
-                        src: baseUrl + "/dawg-google-maps/assets/images/blue-link.svg",
+                        src: baseUrl + "/assets/images/blue-link.svg",
                         alt: "Opening Hours",
                         title: "Opening Hours",
                         class: "img-responsive referenceIcon"
@@ -6095,7 +6095,7 @@ function autocompleteAddressesAndSearch() {
                     map: map,
                     position: {lat: latLocValue, lng: lngLocValue},
                     animation: google.maps.Animation.BOUNCE,
-                    icon: baseUrl + "/dawg-google-maps/assets/images/polymarker.png"
+                    icon: baseUrl + "/assets/images/polymarker.png"
                   });
                   markersArray.push(placeIdMarker);
                   console.log(markersArray);
@@ -6151,7 +6151,7 @@ function autocompleteAddressesAndSearch() {
 
                         var subDivIcon = $('<img/>');
                         subDivIcon.attr({
-                          src: baseUrl + "/dawg-google-maps/assets/images/clock-calendar.svg",
+                          src: baseUrl + "/assets/images/clock-calendar.svg",
                           class: "img-responsive referenceIcon"
                         });
 
@@ -6196,7 +6196,7 @@ function autocompleteAddressesAndSearch() {
                           class: "img-responsive referenceIcon",
                           alt: "Rating",
                           title: "Rating",
-                          src: baseUrl + "/dawg-google-maps/assets/images/rating-icon.svg"
+                          src: baseUrl + "/assets/images/rating-icon.svg"
                         });
                         imageIcon.appendTo(subDiv);
 
@@ -6216,7 +6216,7 @@ function autocompleteAddressesAndSearch() {
                     
                     var descriptionTextMarker = new google.maps.Marker({
                       position: {lat: latString, lng: lngString},
-                      icon: baseUrl + "/dawg-google-maps/assets/images/polymarker.png",
+                      icon: baseUrl + "/assets/images/polymarker.png",
                       title: thisResponseObj.name
                     });
                     markersArray.push(descriptionTextMarker);
