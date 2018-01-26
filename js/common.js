@@ -37,7 +37,6 @@ function smoothScrollToFirstSection() {
 function smoothFlowInSegments() {
 	if($(".animatableSection").length > 0) {
 		var animatableSection = $(".animatableSection");
-    console.log("calling");
 		animatableSection.each(function(index, thisSection) {
 			var viewport = $(window);
 			var viewportHeight = viewport.height();
